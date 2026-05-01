@@ -6,12 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "deploy": "npm run build && firebase deploy --only hosting",
+    "firebase:login": "firebase login",
+    "firebase:init": "firebase init hosting"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
+    "@google-cloud/aiplatform": "^6.6.0",
+    "@google/genai": "^1.51.0",
     "@hookform/resolvers": "^3.9.1",
     "@mui/icons-material": "^9.0.0",
     "@mui/material": "^9.0.0",

@@ -10,6 +10,13 @@
 # production
 /build
 
+# folders
+/.agents/
+/.junie/
+/.idea/
+/.vscode/
+/.vscode-test/
+
 # debug
 npm-debug.log*
 yarn-debug.log*
@@ -18,6 +25,11 @@ yarn-error.log*
 
 # env files
 .env*
+
+# Google Cloud / Firebase
+service-account-key.json
+*.json.key
+.firebaserc
 
 # vercel
 .vercel

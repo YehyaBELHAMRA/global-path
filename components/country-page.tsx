@@ -22,6 +22,7 @@ import {
   Info as InfoIcon,
   Circle as CircleIcon,
 } from "@mui/icons-material"
+import { AIChatInterface } from "@/components/ai-chat-interface"
 import type { Country } from "@/lib/countries"
 
 interface CountryPageProps {
@@ -193,16 +194,24 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
         </Grid>
       </Grid>
 
+      {/* AI Chat Interface */}
+      <Box sx={{ mt: 5 }}>
+        <Typography variant="h4" component="h2" sx={{ mb: 3, textAlign: "center", fontWeight: 600 }}>
+          Assistant IA - Conseils Personnalisés
+        </Typography>
+        <AIChatInterface country={country.slug} />
+      </Box>
+
       {/* CTA */}
       <Box sx={{ mt: 5, textAlign: "center" }}>
         <Link href="/" passHref>
           <Button
-            variant="contained"
+            variant="outlined"
             color="secondary"
             size="large"
             sx={{ px: 4, py: 1.5 }}
           >
-            Consulter l&apos;Assistant IA
+            Explorer d&apos;autres destinations
           </Button>
         </Link>
       </Box>

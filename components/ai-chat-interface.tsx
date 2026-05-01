@@ -23,16 +23,12 @@ interface Message {
   role: "user" | "assistant"
   content: string
   timestamp: Date
+  sources?: string[]
 }
 
-const initialMessages: Message[] = [
-  {
-    id: "1",
-    role: "assistant",
-    content: "Bienvenue sur Global Blue Card ! Je suis votre assistant IA spécialisé en immigration, dédié à accompagner les professionnels algériens dans leurs démarches de visa et de résidence à l'international. Comment puis-je vous aider aujourd'hui ?",
-    timestamp: new Date(),
-  },
-]
+interface AIChatInterfaceProps {
+  country?: string
+}
 
 const suggestedQuestions = [
   "Quelles sont les conditions pour la Carte Bleue Européenne ?",
@@ -41,7 +37,17 @@ const suggestedQuestions = [
   "Comparer les visas de travail EAU vs Qatar",
 ]
 
-export function AIChatInterface() {
+export function AIChatInterface({ country }: AIChatInterfaceProps) {
+  const initialMessages: Message[] = [
+    {
+      id: "1",
+      role: "assistant",
+      content: country 
+        ? `Bienvenue sur Global Blue Card ! Je suis votre assistant IA spécialisé en immigration pour ${country === 'belgium' ? 'la Belgique' : country === 'luxembourg' ? 'le Luxembourg' : 'ce pays'}. Je peux vous aider avec des informations précises et actualisées sur les visas et procédures d'immigration. Comment puis-je vous aider aujourd'hui ?`
+        : "Bienvenue sur Global Blue Card ! Je suis votre assistant IA spécialisé en immigration, dédié à accompagner les professionnels algériens dans leurs démarches de visa et de résidence à l'international. Comment puis-je vous aider aujourd'hui ?",
+      timestamp: new Date(),
+    },
+  ]
   const [messages, setMessages] = useState<Message[]>(initialMessages)
   const [inputValue, setInputValue] = useState("")
   const [isTyping, setIsTyping] = useState(false)
@@ -53,7 +59,7 @@ export function AIChatInterface() {
     }
   }, [messages])
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (!inputValue.trim()) return
 
     const userMessage: Message = {
@@ -67,16 +73,56 @@ export function AIChatInterface() {
     setInputValue("")
     setIsTyping(true)
 
-    setTimeout(() => {
-      const assistantMessage: Message = {
+    try {
+      if (country && (country === 'belgium' || country === 'luxembourg')) {
+        // Call the RAG API
+        const response = await fetch(`/api/chat/${country}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ message: inputValue }),
+        })
+
+        if (!response.ok) {
+          throw new Error('API request failed')
+        }
+
+        const data = await response.json()
+
+        const assistantMessage: Message = {
+          id: (Date.now() + 1).toString(),
+          role: "assistant",
+          content: data.response,
+          sources: data.sources,
+          timestamp: new Date(),
+        }
+        setMessages((prev) => [...prev, assistantMessage])
+      } else {
+        // Fallback to stubbed response
+        setTimeout(() => {
+          const assistantMessage: Message = {
+            id: (Date.now() + 1).toString(),
+            role: "assistant",
+            content: getContextualResponse(inputValue),
+            timestamp: new Date(),
+          }
+          setMessages((prev) => [...prev, assistantMessage])
+          setIsTyping(false)
+        }, 1500)
+      }
+    } catch (error) {
+      console.error('Error sending message:', error)
+      const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: "assistant",
-        content: getContextualResponse(inputValue),
+        content: "Désolé, une erreur s'est produite. Veuillez réessayer.",
         timestamp: new Date(),
       }
-      setMessages((prev) => [...prev, assistantMessage])
+      setMessages((prev) => [...prev, errorMessage])
+    } finally {
       setIsTyping(false)
-    }, 1500)
+    }
   }
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -187,6 +233,31 @@ export function AIChatInterface() {
               <Typography variant="body2" sx={{ lineHeight: 1.6 }}>
                 {message.content}
               </Typography>
+              {message.sources && message.sources.length > 0 && (
+                <Box sx={{ mt: 1.5, pt: 1.5, borderTop: 1, borderColor: 'divider' }}>
+                  <Typography variant="caption" sx={{ fontWeight: 600, color: 'text.secondary' }}>
+                    Sources :
+                  </Typography>
+                  <Box sx={{ mt: 0.5 }}>
+                    {message.sources.map((source, index) => (
+                      <Box key={index} sx={{ mt: 0.5 }}>
+                        <a
+                          href={source}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            color: message.role === "assistant" ? "#1976d2" : "#ffffff",
+                            textDecoration: "none",
+                            fontSize: "0.75rem",
+                          }}
+                        >
+                          {source}
+                        </a>
+                      </Box>
+                    ))}
+                  </Box>
+                </Box>
+              )}
               <Typography
                 variant="caption"
                 sx={{
