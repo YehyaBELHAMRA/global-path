@@ -16,6 +16,35 @@ const COUNTRY_CORPORA: Record<string, string> = {
   luxembourg: process.env.LUXEMBOURG_RAG_CORPUS_ID || '',
 }
 
+// Module-level cache for system prompt (loaded once)
+let cachedSystemPrompt: string | null = null
+let promptInitialized = false
+
+async function getSystemPrompt(): Promise<string> {
+  // Return cached prompt if already loaded
+  if (promptInitialized && cachedSystemPrompt) {
+    return cachedSystemPrompt
+  }
+
+  // Try environment variable first (preferred for production)
+  if (process.env.GEMINI_SYSTEM_PROMPT) {
+    cachedSystemPrompt = process.env.GEMINI_SYSTEM_PROMPT
+    promptInitialized = true
+    return cachedSystemPrompt
+  }
+
+  // Fallback to Secret Manager (only called once due to cache flag)
+  try {
+    cachedSystemPrompt = await getSecret('GEMINI_SYSTEM_PROMPT')
+    promptInitialized = true
+    console.log('✅ System prompt loaded successfully')
+    return cachedSystemPrompt
+  } catch (error) {
+    console.error('❌ Failed to fetch system prompt:', error)
+    throw new Error('Failed to load system prompt')
+  }
+}
+
 export async function POST(
   request: NextRequest,
   { params }: { params: Promise<{ country: string }> }
