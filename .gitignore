@@ -31,9 +31,9 @@ service-account-key.json
 *.json.key
 .firebaserc
 
-# vercel
-.vercel
-
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Skills
+skills-lock.json
