@@ -7,7 +7,13 @@ runConfig:
   # cpu: 1
   # memoryMiB: 512
 
-# Environment variables and secrets.
+secrets:
+  - variable: GEMINI_SYSTEM_PROMPT
+    secret: GEMINI_SYSTEM_PROMPT
+  - variable: GOOGLE_GENAI_API_KEY
+    secret: GOOGLE_GENAI_API_KEY
+
+# Additional environment variables.
 # env:
   # Configure environment variables.
   # See https://firebase.google.com/docs/app-hosting/configure#user-defined-environment

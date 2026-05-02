@@ -1,5 +1,6 @@
 import { GoogleGenAI } from '@google/genai'
 import { NextRequest, NextResponse } from 'next/server'
+import { getSecret } from '@/lib/secrets'
 
 // Initialize Google GenAI client for Vertex AI
 const genAI = new GoogleGenAI({
@@ -30,6 +31,20 @@ export async function POST(
       )
     }
 
+    // Fetch system prompt from Google Secret Manager
+    let GeminiSystemPrompt: string
+    try {
+      GeminiSystemPrompt = await getSecret('GEMINI_SYSTEM_PROMPT')
+      console.log('✅ System prompt loaded from Google Secret Manager')
+      console.log('📝 GeminiSystemPrompt:', GeminiSystemPrompt)
+    } catch (error) {
+      console.error('❌ Failed to fetch system prompt from Secret Manager:', error)
+      return NextResponse.json(
+        { error: 'Failed to load system prompt' },
+        { status: 500 }
+      )
+    }
+
     const corpusId = COUNTRY_CORPORA[country]
     if (!corpusId) {
       return NextResponse.json(
@@ -56,6 +71,7 @@ export async function POST(
             },
           },
         ],
+        systemInstruction: GeminiSystemPrompt,
         maxOutputTokens: 65535,
         temperature: 1,
         topP: 0.95

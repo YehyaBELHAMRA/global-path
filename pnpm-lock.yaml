@@ -25,6 +25,9 @@ importers:
       '@google-cloud/aiplatform':
         specifier: ^6.6.0
         version: 6.6.0
+      '@google-cloud/secret-manager':
+        specifier: ^6.1.2
+        version: 6.1.2
       '@google/genai':
         specifier: ^1.51.0
         version: 1.51.0
@@ -339,6 +342,10 @@ packages:
 
   '@google-cloud/aiplatform@6.6.0':
     resolution: {integrity: sha512-CVPo83uZGTrH0gids2kMfckjryktU7VhmYm+QncJcTVC7FBjEuZTqz5vhHqoJ5t2IHcmwGoi2sDmM3yl0ZMQaA==}
+    engines: {node: '>=18'}
+
+  '@google-cloud/secret-manager@6.1.2':
+    resolution: {integrity: sha512-X4GiHC1OsZU8LOcnM/hk7Q+W/orZLSJz6IAvBJrjaQCj1pSRHkTHJnU87A6E5G8/ubIJjL6vs1GJ8f17TkDzPw==}
     engines: {node: '>=18'}
 
   '@google/genai@1.51.0':
@@ -2643,6 +2650,12 @@ snapshots:
   '@floating-ui/utils@0.2.10': {}
 
   '@google-cloud/aiplatform@6.6.0':
+    dependencies:
+      google-gax: 5.0.6
+    transitivePeerDependencies:
+      - supports-color
+
+  '@google-cloud/secret-manager@6.1.2':
     dependencies:
       google-gax: 5.0.6
     transitivePeerDependencies:
