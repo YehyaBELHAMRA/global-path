@@ -5,9 +5,13 @@ export interface Country {
   region: "european-blue-card" | "europe-other" | "north-america" | "gcc" | "oceania"
   description: string
   highlights: string[]
-  requirements: string[]
-  processingTime: string
   visaType: string
+  officialName: string
+  capital: string
+  officialLanguages: string[]
+  population: number
+  area: number
+  currency: string
 }
 
 export const euCountries: Country[] = [
@@ -18,9 +22,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "Le Luxembourg offre une Carte Bleue Européenne avec des conditions attractives pour les professionnels qualifiés. Centre financier de l'Europe avec une qualité de vie exceptionnelle.",
     highlights: ["Salaire minimum élevé", "Multilinguisme", "Centre financier européen", "Qualité de vie exceptionnelle"],
-    requirements: ["Diplôme d'enseignement supérieur", "Contrat de travail d'au moins 1 an", "Salaire minimum de 1.5x le salaire moyen national"],
-    processingTime: "3-4 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "Grand-Duché de Luxembourg",
+    capital: "Luxembourg",
+    officialLanguages: ["Luxembourgeois", "Français", "Allemand"],
+    population: 0.65,
+    area: 2586,
+    currency: "Euro"
   },
   {
     name: "Belgique",
@@ -29,9 +37,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "La Belgique propose une Carte Bleue Européenne pour les travailleurs hautement qualifiés. Située au cœur de l'Europe avec accès aux institutions européennes.",
     highlights: ["Capitale de l'UE", "Système de santé excellent", "Position centrale en Europe", "Diversité culturelle"],
-    requirements: ["Diplôme d'enseignement supérieur", "Contrat de travail qualifié", "Salaire brut annuel minimum requis"],
-    processingTime: "2-4 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "Royaume de Belgique",
+    capital: "Bruxelles",
+    officialLanguages: ["Néerlandais", "Français", "Allemand"],
+    population: 11.7,
+    area: 30528,
+    currency: "Euro"
   },
   {
     name: "Allemagne",
@@ -40,9 +52,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "L'Allemagne est la première économie européenne et offre d'excellentes opportunités pour les professionnels qualifiés avec sa Carte Bleue Européenne.",
     highlights: ["Première économie européenne", "Industrie technologique avancée", "Excellentes infrastructures", "Forte demande de talents"],
-    requirements: ["Diplôme reconnu", "Offre d'emploi qualifié", "Salaire annuel brut minimum de 45 300€"],
-    processingTime: "1-3 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "République fédérale d'Allemagne",
+    capital: "Berlin",
+    officialLanguages: ["Allemand"],
+    population: 83.3,
+    area: 357022,
+    currency: "Euro"
   },
   {
     name: "Autriche",
@@ -51,9 +67,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "L'Autriche offre une excellente qualité de vie et des opportunités professionnelles dans un cadre alpin magnifique.",
     highlights: ["Qualité de vie élevée", "Cadre naturel exceptionnel", "Économie stable", "Culture riche"],
-    requirements: ["Diplôme d'enseignement supérieur", "Contrat de travail", "Salaire minimum requis"],
-    processingTime: "2-3 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "République d'Autriche",
+    capital: "Vienne",
+    officialLanguages: ["Allemand"],
+    population: 9.1,
+    area: 83871,
+    currency: "Euro"
   },
   {
     name: "Pays-Bas",
@@ -62,9 +82,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "Les Pays-Bas sont reconnus pour leur ouverture internationale et leur écosystème startup dynamique.",
     highlights: ["Hub technologique européen", "Population anglophone", "Écosystème startup", "Infrastructure cyclable"],
-    requirements: ["Diplôme d'enseignement supérieur", "Emploi qualifié", "Salaire brut mensuel minimum"],
-    processingTime: "2-3 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "Royaume des Pays-Bas",
+    capital: "Amsterdam",
+    officialLanguages: ["Néerlandais"],
+    population: 17.8,
+    area: 41543,
+    currency: "Euro"
   },
   {
     name: "Suède",
@@ -73,9 +97,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "La Suède offre un équilibre travail-vie personnelle exemplaire et une forte culture d'innovation.",
     highlights: ["Équilibre vie-travail", "Innovation technologique", "Congés parentaux généreux", "Nature préservée"],
-    requirements: ["Diplôme d'enseignement supérieur", "Offre d'emploi", "Conditions salariales requises"],
-    processingTime: "2-4 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "Royaume de Suède",
+    capital: "Stockholm",
+    officialLanguages: ["Suédois"],
+    population: 10.5,
+    area: 450295,
+    currency: "Couronne suédoise"
   },
   {
     name: "Finlande",
@@ -84,9 +112,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "La Finlande est régulièrement classée parmi les pays les plus heureux au monde avec un excellent système éducatif.",
     highlights: ["Pays le plus heureux", "Éducation excellente", "Technologie avancée", "Nature sauvage"],
-    requirements: ["Diplôme d'enseignement supérieur", "Contrat de travail qualifié", "Salaire minimum requis"],
-    processingTime: "2-4 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "République de Finlande",
+    capital: "Helsinki",
+    officialLanguages: ["Finnois", "Suédois"],
+    population: 5.5,
+    area: 338145,
+    currency: "Euro"
   },
   {
     name: "Malte",
@@ -95,9 +127,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "Malte offre un climat méditerranéen agréable et un secteur des services financiers et du gaming en pleine croissance.",
     highlights: ["Climat méditerranéen", "Anglais langue officielle", "Secteur iGaming", "Fiscalité avantageuse"],
-    requirements: ["Diplôme d'enseignement supérieur", "Emploi qualifié", "Salaire minimum requis"],
-    processingTime: "2-3 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "République de Malte",
+    capital: "La Valette",
+    officialLanguages: ["Maltais", "Anglais"],
+    population: 0.53,
+    area: 316,
+    currency: "Euro"
   },
   {
     name: "Italie",
@@ -106,9 +142,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "L'Italie combine richesse culturelle et opportunités dans les secteurs de la mode, du design et de la technologie.",
     highlights: ["Patrimoine culturel", "Design et mode", "Gastronomie", "Art de vivre"],
-    requirements: ["Diplôme d'enseignement supérieur", "Contrat de travail", "Salaire annuel minimum"],
-    processingTime: "3-4 mois",
-    visaType: "Carta Blu UE"
+    visaType: "Carta Blu UE",
+    officialName: "République italienne",
+    capital: "Rome",
+    officialLanguages: ["Italien"],
+    population: 58.9,
+    area: 301340,
+    currency: "Euro"
   },
   {
     name: "Espagne",
@@ -117,9 +157,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "L'Espagne offre un excellent climat, une riche culture et des opportunités croissantes dans la tech.",
     highlights: ["Climat ensoleillé", "Qualité de vie", "Coût de vie raisonnable", "Hubs tech émergents"],
-    requirements: ["Diplôme d'enseignement supérieur", "Offre d'emploi qualifié", "Salaire minimum requis"],
-    processingTime: "2-3 mois",
-    visaType: "Tarjeta Azul UE"
+    visaType: "Tarjeta Azul UE",
+    officialName: "Royaume d'Espagne",
+    capital: "Madrid",
+    officialLanguages: ["Espagnol"],
+    population: 48.1,
+    area: 505990,
+    currency: "Euro"
   },
   {
     name: "Portugal",
@@ -128,9 +172,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "Le Portugal attire les professionnels avec son climat doux, sa qualité de vie et son écosystème tech en croissance.",
     highlights: ["Climat agréable", "Coût de vie attractif", "Communauté expat", "Écosystème startup"],
-    requirements: ["Diplôme d'enseignement supérieur", "Contrat de travail", "Salaire brut annuel minimum"],
-    processingTime: "2-3 mois",
-    visaType: "Cartão Azul UE"
+    visaType: "Cartão Azul UE",
+    officialName: "République portugaise",
+    capital: "Lisbonne",
+    officialLanguages: ["Portugais"],
+    population: 10.5,
+    area: 92212,
+    currency: "Euro"
   },
   {
     name: "Bulgarie",
@@ -139,9 +187,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "La Bulgarie offre un coût de vie bas et des opportunités croissantes dans le secteur IT.",
     highlights: ["Coût de vie bas", "Secteur IT en croissance", "Nature diverse", "Fiscalité attractive"],
-    requirements: ["Diplôme d'enseignement supérieur", "Contrat de travail", "Salaire minimum requis"],
-    processingTime: "2-3 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "République de Bulgarie",
+    capital: "Sofia",
+    officialLanguages: ["Bulgare"],
+    population: 6.4,
+    area: 110994,
+    currency: "Lev bulgare"
   },
   {
     name: "Chypre",
@@ -150,9 +202,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "Chypre combine climat méditerranéen et opportunités dans les services financiers.",
     highlights: ["Climat méditerranéen", "Services financiers", "Anglais répandu", "Qualité de vie"],
-    requirements: ["Diplôme d'enseignement supérieur", "Emploi qualifié", "Salaire minimum requis"],
-    processingTime: "2-3 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "République de Chypre",
+    capital: "Nicosie",
+    officialLanguages: ["Grec", "Turc"],
+    population: 1.2,
+    area: 9251,
+    currency: "Euro"
   },
   {
     name: "Croatie",
@@ -161,9 +217,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "La Croatie offre un cadre de vie exceptionnel avec sa côte adriatique et son intégration récente à l'UE.",
     highlights: ["Côte adriatique", "Membre récent de l'UE", "Tourisme développé", "Qualité de vie"],
-    requirements: ["Diplôme d'enseignement supérieur", "Contrat de travail", "Salaire minimum requis"],
-    processingTime: "2-4 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "République de Croatie",
+    capital: "Zagreb",
+    officialLanguages: ["Croate"],
+    population: 3.8,
+    area: 56594,
+    currency: "Euro"
   },
   {
     name: "Estonie",
@@ -172,9 +232,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "L'Estonie est pionnière en e-gouvernement et offre un écosystème startup dynamique.",
     highlights: ["E-gouvernement avancé", "Écosystème startup", "Société numérique", "E-résidence"],
-    requirements: ["Diplôme d'enseignement supérieur", "Emploi qualifié", "Salaire minimum requis"],
-    processingTime: "2-3 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "République d'Estonie",
+    capital: "Tallinn",
+    officialLanguages: ["Estonien"],
+    population: 1.36,
+    area: 45227,
+    currency: "Euro"
   },
   {
     name: "France",
@@ -183,9 +247,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "La France offre une économie diversifiée, une culture riche et un excellent système de protection sociale.",
     highlights: ["Culture riche", "Système de santé", "Gastronomie", "Hubs tech (Paris, Lyon)"],
-    requirements: ["Diplôme d'enseignement supérieur", "Contrat de travail d'au moins 1 an", "Salaire brut annuel minimum"],
-    processingTime: "2-3 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "République française",
+    capital: "Paris",
+    officialLanguages: ["Français"],
+    population: 68.0,
+    area: 551695,
+    currency: "Euro"
   },
   {
     name: "Grèce",
@@ -194,9 +262,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "La Grèce combine patrimoine historique exceptionnel et qualité de vie méditerranéenne.",
     highlights: ["Patrimoine historique", "Climat méditerranéen", "Coût de vie modéré", "Tourisme"],
-    requirements: ["Diplôme d'enseignement supérieur", "Contrat de travail", "Salaire minimum requis"],
-    processingTime: "2-4 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "République hellénique",
+    capital: "Athènes",
+    officialLanguages: ["Grec"],
+    population: 10.4,
+    area: 131957,
+    currency: "Euro"
   },
   {
     name: "Hongrie",
@@ -205,9 +277,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "La Hongrie offre un coût de vie attractif et une position centrale en Europe.",
     highlights: ["Coût de vie bas", "Position centrale", "Architecture", "Thermes"],
-    requirements: ["Diplôme d'enseignement supérieur", "Emploi qualifié", "Salaire minimum requis"],
-    processingTime: "2-3 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "Hongrie",
+    capital: "Budapest",
+    officialLanguages: ["Hongrois"],
+    population: 9.6,
+    area: 93028,
+    currency: "Forint hongrois"
   },
   {
     name: "Lettonie",
@@ -216,9 +292,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "La Lettonie offre un écosystème startup en développement et une qualité de vie nordique.",
     highlights: ["Startup ecosystem", "Nature baltique", "Coût de vie modéré", "IT en croissance"],
-    requirements: ["Diplôme d'enseignement supérieur", "Contrat de travail", "Salaire minimum requis"],
-    processingTime: "2-3 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "République de Lettonie",
+    capital: "Riga",
+    officialLanguages: ["Letton"],
+    population: 1.88,
+    area: 64589,
+    currency: "Euro"
   },
   {
     name: "Lituanie",
@@ -227,9 +307,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "La Lituanie est reconnue pour son secteur fintech et sa qualité de vie.",
     highlights: ["Hub fintech", "Qualité de vie", "Internet rapide", "Coût de vie modéré"],
-    requirements: ["Diplôme d'enseignement supérieur", "Emploi qualifié", "Salaire minimum requis"],
-    processingTime: "2-3 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "République de Lituanie",
+    capital: "Vilnius",
+    officialLanguages: ["Lituanien"],
+    population: 2.8,
+    area: 65300,
+    currency: "Euro"
   },
   {
     name: "Pologne",
@@ -238,9 +322,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "La Pologne offre une économie dynamique et un secteur IT en pleine expansion.",
     highlights: ["Économie dynamique", "Secteur IT", "Coût de vie modéré", "Villes historiques"],
-    requirements: ["Diplôme d'enseignement supérieur", "Contrat de travail", "Salaire minimum requis"],
-    processingTime: "2-3 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "République de Pologne",
+    capital: "Varsovie",
+    officialLanguages: ["Polonais"],
+    population: 36.8,
+    area: 312696,
+    currency: "Złoty"
   },
   {
     name: "République tchèque",
@@ -249,9 +337,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "La République tchèque combine patrimoine culturel et économie industrielle avancée.",
     highlights: ["Prague", "Industrie automobile", "Coût de vie", "Position centrale"],
-    requirements: ["Diplôme d'enseignement supérieur", "Offre d'emploi", "Salaire minimum requis"],
-    processingTime: "2-4 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "République tchèque",
+    capital: "Prague",
+    officialLanguages: ["Tchèque"],
+    population: 10.8,
+    area: 78867,
+    currency: "Couronne tchèque"
   },
   {
     name: "Roumanie",
@@ -260,9 +352,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "La Roumanie offre un secteur IT compétitif et un coût de vie attractif.",
     highlights: ["Secteur IT fort", "Coût de vie bas", "Francophonie", "Nature diverse"],
-    requirements: ["Diplôme d'enseignement supérieur", "Contrat de travail", "Salaire minimum requis"],
-    processingTime: "2-3 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "Roumanie",
+    capital: "Bucarest",
+    officialLanguages: ["Roumain"],
+    population: 19.0,
+    area: 238391,
+    currency: "Leu roumain"
   },
   {
     name: "Slovaquie",
@@ -271,9 +367,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "La Slovaquie offre une position centrale en Europe et une industrie automobile développée.",
     highlights: ["Industrie automobile", "Position centrale", "Coût de vie modéré", "Nature"],
-    requirements: ["Diplôme d'enseignement supérieur", "Emploi qualifié", "Salaire minimum requis"],
-    processingTime: "2-3 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "République slovaque",
+    capital: "Bratislava",
+    officialLanguages: ["Slovaque"],
+    population: 5.4,
+    area: 49035,
+    currency: "Euro"
   },
   {
     name: "Slovénie",
@@ -282,9 +382,13 @@ export const euCountries: Country[] = [
     region: "european-blue-card",
     description: "La Slovénie combine qualité de vie alpine et accès méditerranéen.",
     highlights: ["Nature alpine", "Qualité de vie", "Taille humaine", "Accès Adriatique"],
-    requirements: ["Diplôme d'enseignement supérieur", "Contrat de travail", "Salaire minimum requis"],
-    processingTime: "2-3 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "République de Slovénie",
+    capital: "Ljubljana",
+    officialLanguages: ["Slovène"],
+    population: 2.1,
+    area: 20273,
+    currency: "Euro"
   },
 ]
 
@@ -296,9 +400,13 @@ export const northAmericaCountries: Country[] = [
     region: "north-america",
     description: "Le Canada offre des programmes d'immigration variés avec une politique d'accueil reconnue mondialement.",
     highlights: ["Entrée Express", "PNP (Programmes provinciaux)", "Qualité de vie élevée", "Multiculturalisme"],
-    requirements: ["Évaluation des diplômes (ECA)", "Test de langue (IELTS/TEF)", "Expérience professionnelle", "Points CRS suffisants"],
-    processingTime: "6-12 mois",
-    visaType: "Résidence Permanente"
+    visaType: "Résidence Permanente",
+    officialName: "Canada",
+    capital: "Ottawa",
+    officialLanguages: ["Anglais", "Français"],
+    population: 40.0,
+    area: 9984670,
+    currency: "Dollar canadien"
   },
   {
     name: "États-Unis",
@@ -307,9 +415,13 @@ export const northAmericaCountries: Country[] = [
     region: "north-america",
     description: "Les États-Unis offrent diverses catégories de visas pour les professionnels qualifiés.",
     highlights: ["Visa H-1B", "Visa O-1", "Green Card par emploi", "Opportunités Silicon Valley"],
-    requirements: ["Offre d'emploi d'un sponsor", "Diplôme équivalent Bachelor minimum", "Spécialité professionnelle", "Processus USCIS"],
-    processingTime: "3-18 mois selon visa",
-    visaType: "H-1B / Green Card"
+    visaType: "H-1B / Green Card",
+    officialName: "États-Unis d'Amérique",
+    capital: "Washington, D.C.",
+    officialLanguages: ["Anglais"],
+    population: 334.9,
+    area: 9833517,
+    currency: "Dollar américain"
   },
 ]
 
@@ -321,9 +433,13 @@ export const gccCountries: Country[] = [
     region: "gcc",
     description: "Les EAU offrent des opportunités exceptionnelles à Dubaï et Abu Dhabi avec des salaires attractifs.",
     highlights: ["Pas d'impôt sur le revenu", "Dubaï hub mondial", "Golden Visa", "Infrastructure moderne"],
-    requirements: ["Offre d'emploi avec sponsor", "Diplômes attestés", "Examen médical", "Visa de travail"],
-    processingTime: "2-4 semaines",
-    visaType: "Visa de Travail / Golden Visa"
+    visaType: "Visa de Travail / Golden Visa",
+    officialName: "Émirats arabes unis",
+    capital: "Abou Dabi",
+    officialLanguages: ["Arabe"],
+    population: 9.4,
+    area: 83600,
+    currency: "Dirham des Émirats arabes unis"
   },
   {
     name: "Qatar",
@@ -332,9 +448,13 @@ export const gccCountries: Country[] = [
     region: "gcc",
     description: "Le Qatar offre des salaires compétitifs et des projets ambitieux dans divers secteurs.",
     highlights: ["Salaires élevés", "Projets d'infrastructure", "Pas d'impôt", "Qualité de vie"],
-    requirements: ["Contrat de travail", "Attestation des diplômes", "Examen médical", "NOC si applicable"],
-    processingTime: "2-4 semaines",
-    visaType: "Visa de Travail"
+    visaType: "Visa de Travail",
+    officialName: "État du Qatar",
+    capital: "Doha",
+    officialLanguages: ["Arabe"],
+    population: 2.7,
+    area: 11586,
+    currency: "Riyal qatari"
   },
   {
     name: "Koweït",
@@ -343,9 +463,13 @@ export const gccCountries: Country[] = [
     region: "gcc",
     description: "Le Koweït offre des opportunités dans le secteur pétrolier et les services.",
     highlights: ["Secteur pétrolier", "Salaires compétitifs", "Pas d'impôt", "Allocations logement"],
-    requirements: ["Offre d'emploi", "Diplômes certifiés", "Examen médical", "Visa de travail"],
-    processingTime: "3-6 semaines",
-    visaType: "Visa de Travail"
+    visaType: "Visa de Travail",
+    officialName: "État du Koweït",
+    capital: "Koweït",
+    officialLanguages: ["Arabe"],
+    population: 4.3,
+    area: 17818,
+    currency: "Dinar koweïtien"
   },
   {
     name: "Bahreïn",
@@ -354,9 +478,13 @@ export const gccCountries: Country[] = [
     region: "gcc",
     description: "Bahreïn est un centre financier régional avec un environnement business favorable.",
     highlights: ["Centre financier", "Flexi Permit", "Taille humaine", "Diversité économique"],
-    requirements: ["Contrat de travail ou Flexi Permit", "Diplômes", "Examen médical", "Enregistrement LMRA"],
-    processingTime: "2-4 semaines",
-    visaType: "Visa de Travail / Flexi Permit"
+    visaType: "Visa de Travail / Flexi Permit",
+    officialName: "Royaume de Bahreïn",
+    capital: "Manama",
+    officialLanguages: ["Arabe"],
+    population: 1.5,
+    area: 765,
+    currency: "Dinar bahreïni"
   },
   {
     name: "Oman",
@@ -365,9 +493,13 @@ export const gccCountries: Country[] = [
     region: "gcc",
     description: "Oman offre un cadre de vie paisible et des opportunités dans le tourisme et l'énergie.",
     highlights: ["Cadre paisible", "Tourisme en développement", "Secteur énergétique", "Culture authentique"],
-    requirements: ["Offre d'emploi avec sponsor", "Diplômes attestés", "Examen médical", "Visa de travail"],
-    processingTime: "3-6 semaines",
-    visaType: "Visa de Travail"
+    visaType: "Visa de Travail",
+    officialName: "Sultanat d'Oman",
+    capital: "Mascate",
+    officialLanguages: ["Arabe"],
+    population: 4.6,
+    area: 309500,
+    currency: "Rial omanais"
   },
   {
     name: "Arabie Saoudite",
@@ -376,9 +508,13 @@ export const gccCountries: Country[] = [
     region: "gcc",
     description: "L'Arabie Saoudite offre des opportunités majeures avec la Vision 2030 et des mégaprojets.",
     highlights: ["Vision 2030", "Mégaprojets (NEOM)", "Salaires élevés", "Pas d'impôt sur le revenu"],
-    requirements: ["Contrat de travail", "Iqama (permis de résidence)", "Diplômes attestés", "Examen médical"],
-    processingTime: "4-8 semaines",
-    visaType: "Visa de Travail / Iqama"
+    visaType: "Visa de Travail / Iqama",
+    officialName: "Royaume d'Arabie saoudite",
+    capital: "Riyad",
+    officialLanguages: ["Arabe"],
+    population: 36.4,
+    area: 2149690,
+    currency: "Riyal saoudien"
   },
 ]
 
@@ -390,9 +526,13 @@ export const oceaniaCountries: Country[] = [
     region: "oceania",
     description: "L'Australie offre une excellente qualité de vie et un système d'immigration par points.",
     highlights: ["Skilled Independent Visa", "Qualité de vie", "Économie stable", "Nature exceptionnelle"],
-    requirements: ["Évaluation des compétences", "Test de langue (IELTS)", "Points suffisants", "Santé et moralité"],
-    processingTime: "6-18 mois",
-    visaType: "Visa Qualifié (189/190/491)"
+    visaType: "Visa Qualifié (189/190/491)",
+    officialName: "Commonwealth d'Australie",
+    capital: "Canberra",
+    officialLanguages: ["Anglais"],
+    population: 26.6,
+    area: 7692024,
+    currency: "Dollar australien"
   },
   {
     name: "Nouvelle-Zélande",
@@ -401,9 +541,13 @@ export const oceaniaCountries: Country[] = [
     region: "oceania",
     description: "La Nouvelle-Zélande offre un cadre de vie exceptionnel et des opportunités pour les professionnels qualifiés.",
     highlights: ["Skilled Migrant Category", "Équilibre vie-travail", "Nature préservée", "Société accueillante"],
-    requirements: ["Points suffisants", "Offre d'emploi (avantage)", "Test de langue (IELTS)", "Santé et moralité"],
-    processingTime: "6-12 mois",
-    visaType: "Skilled Migrant Category"
+    visaType: "Skilled Migrant Category",
+    officialName: "Nouvelle-Zélande",
+    capital: "Wellington",
+    officialLanguages: ["Anglais", "Māori"],
+    population: 5.2,
+    area: 268021,
+    currency: "Dollar néo-zélandais"
   },
 ]
 
@@ -415,9 +559,13 @@ export const europeOtherCountries: Country[] = [
     region: "europe-other",
     description: "Le Danemark est reconnu pour son équilibre vie-travail et son économie innovante.",
     highlights: ["Équilibre vie-travail", "Design danois", "Vélo culture", "Innovation verte"],
-    requirements: ["Diplôme d'enseignement supérieur", "Offre d'emploi", "Salaire minimum requis"],
-    processingTime: "2-3 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "Royaume du Danemark",
+    capital: "Copenhague",
+    officialLanguages: ["Danois"],
+    population: 5.9,
+    area: 42933,
+    currency: "Couronne danoise"
   },
   {
     name: "Irlande",
@@ -426,9 +574,13 @@ export const europeOtherCountries: Country[] = [
     region: "europe-other",
     description: "L'Irlande est un hub technologique majeur avec de nombreuses multinationales.",
     highlights: ["Hub tech européen", "Anglophone", "Multinationales", "Culture accueillante"],
-    requirements: ["Diplôme d'enseignement supérieur", "Offre d'emploi qualifié", "Salaire minimum requis"],
-    processingTime: "2-3 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "Irlande",
+    capital: "Dublin",
+    officialLanguages: ["Irlandais", "Anglais"],
+    population: 5.3,
+    area: 70273,
+    currency: "Euro"
   },
   {
     name: "Suisse",
@@ -437,9 +589,13 @@ export const europeOtherCountries: Country[] = [
     region: "europe-other",
     description: "La Suisse est reconnue pour sa stabilité économique, ses salaires élevés et son cadre de vie premium.",
     highlights: ["Salaires élevés", "Pays multilingue", "Infrastructure de qualité", "Sécurité"],
-    requirements: ["Diplôme d'enseignement supérieur", "Offre d'emploi qualifiée", "Permis de travail suisse"],
-    processingTime: "3-6 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "Confédération suisse",
+    capital: "Berne",
+    officialLanguages: ["Allemand", "Français", "Italien", "Romanche"],
+    population: 8.8,
+    area: 41285,
+    currency: "Franc suisse"
   },
   {
     name: "Norvège",
@@ -448,9 +604,13 @@ export const europeOtherCountries: Country[] = [
     region: "europe-other",
     description: "La Norvège offre une excellente qualité de vie, un système social solide et des secteurs énergétiques dynamiques.",
     highlights: ["Qualité de vie élevée", "Nature spectaculaire", "Économie stable", "Système social fort"],
-    requirements: ["Diplôme d'enseignement supérieur", "Offre d'emploi qualifiée", "Permis de travail norvégien"],
-    processingTime: "2-4 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "Royaume de Norvège",
+    capital: "Oslo",
+    officialLanguages: ["Norvégien"],
+    population: 5.5,
+    area: 385207,
+    currency: "Couronne norvégienne"
   },
   {
     name: "Islande",
@@ -459,9 +619,13 @@ export const europeOtherCountries: Country[] = [
     region: "europe-other",
     description: "L'Islande est idéale pour les professionnels qui recherchent un environnement innovant, durable et une nature préservée.",
     highlights: ["Durabilité", "Innovation", "Cadre naturel unique", "Petite communauté internationale"],
-    requirements: ["Diplôme d'enseignement supérieur", "Offre d'emploi qualifiée", "Permis de travail islandais"],
-    processingTime: "2-4 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "Islande",
+    capital: "Reykjavik",
+    officialLanguages: ["Islandais"],
+    population: 0.38,
+    area: 103000,
+    currency: "Couronne islandaise"
   },
   {
     name: "Royaume-Uni",
@@ -470,9 +634,13 @@ export const europeOtherCountries: Country[] = [
     region: "europe-other",
     description: "Le Royaume-Uni reste une destination majeure pour les professionnels qualifiés, avec un marché du travail international et de nombreuses opportunités.",
     highlights: ["Marché du travail international", "Centres financiers mondiaux", "Diversité culturelle", "Réseaux professionnels"],
-    requirements: ["Diplôme d'enseignement supérieur", "Offre d'emploi qualifiée", "Visa de travail britannique"],
-    processingTime: "3-5 mois",
-    visaType: "Carte Bleue Européenne"
+    visaType: "Carte Bleue Européenne",
+    officialName: "Royaume-Uni de Grande-Bretagne et d'Irlande du Nord",
+    capital: "Londres",
+    officialLanguages: ["Anglais"],
+    population: 67.3,
+    area: 242495,
+    currency: "Livre sterling"
   }
 ]
 

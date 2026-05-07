@@ -16,11 +16,11 @@ import {
 } from "@mui/material"
 import {
   ArrowBack as ArrowBackIcon,
-  AccessTime as ClockIcon,
-  Description as FileCheckIcon,
   CheckCircle as CheckCircleIcon,
   Info as InfoIcon,
   Circle as CircleIcon,
+  Public as PublicIcon,
+  Assessment as AssessmentIcon,
 } from "@mui/icons-material"
 import { AIChatInterface } from "@/components/ai-chat-interface"
 import type { Country } from "@/lib/countries"
@@ -118,52 +118,88 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
           </Card>
         </Grid>
 
-        {/* Requirements */}
+        {/* Informations Générales */}
         <Grid size={{ xs: 12, lg: 6 }}>
           <Card elevation={2} sx={{ height: "100%" }}>
             <CardContent>
               <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
-                <FileCheckIcon color="secondary" />
+                <PublicIcon color="secondary" />
                 <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                  Conditions Requises
+                  Informations Générales
                 </Typography>
               </Box>
               <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                Documents et critères d&apos;éligibilité
+                Détails sur le pays
               </Typography>
               <List disablePadding>
-                {country.requirements.map((requirement, index) => (
-                  <ListItem key={index} disableGutters sx={{ py: 0.5, alignItems: "flex-start" }}>
-                    <ListItemIcon sx={{ minWidth: 28, mt: 1 }}>
-                      <CircleIcon sx={{ fontSize: 8, color: "primary.main" }} />
-                    </ListItemIcon>
-                    <ListItemText primary={requirement} />
-                  </ListItem>
-                ))}
+                <ListItem disableGutters sx={{ py: 0.5, alignItems: "flex-start" }}>
+                  <ListItemIcon sx={{ minWidth: 28, mt: 1 }}>
+                    <CircleIcon sx={{ fontSize: 8, color: "primary.main" }} />
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary={<><Typography component="span" sx={{ fontWeight: 600 }}>Nom officiel :</Typography> {country.officialName}</>} 
+                  />
+                </ListItem>
+                <ListItem disableGutters sx={{ py: 0.5, alignItems: "flex-start" }}>
+                  <ListItemIcon sx={{ minWidth: 28, mt: 1 }}>
+                    <CircleIcon sx={{ fontSize: 8, color: "primary.main" }} />
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary={<><Typography component="span" sx={{ fontWeight: 600 }}>Capitale :</Typography> {country.capital}</>} 
+                  />
+                </ListItem>
+                <ListItem disableGutters sx={{ py: 0.5, alignItems: "flex-start" }}>
+                  <ListItemIcon sx={{ minWidth: 28, mt: 1 }}>
+                    <CircleIcon sx={{ fontSize: 8, color: "primary.main" }} />
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary={<><Typography component="span" sx={{ fontWeight: 600 }}>Langues officielles :</Typography> {country.officialLanguages.join(", ")}</>} 
+                  />
+                </ListItem>
               </List>
             </CardContent>
           </Card>
         </Grid>
 
-        {/* Processing Time */}
+        {/* Chiffres Clés */}
         <Grid size={{ xs: 12, lg: 6 }}>
-          <Card elevation={2}>
+          <Card elevation={2} sx={{ height: "100%" }}>
             <CardContent>
               <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
-                <ClockIcon color="secondary" />
+                <AssessmentIcon color="secondary" />
                 <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                  Délai de Traitement
+                  Chiffres Clés
                 </Typography>
               </Box>
               <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                Durée estimée du processus
+                Données démographiques et économiques
               </Typography>
-              <Typography variant="h4" sx={{ fontWeight: 600 }} color="primary.main">
-                {country.processingTime}
-              </Typography>
-              <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-                Ce délai peut varier selon la complexité du dossier et la période de l&apos;année.
-              </Typography>
+              <List disablePadding>
+                <ListItem disableGutters sx={{ py: 0.5, alignItems: "flex-start" }}>
+                  <ListItemIcon sx={{ minWidth: 28, mt: 1 }}>
+                    <CircleIcon sx={{ fontSize: 8, color: "primary.main" }} />
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary={<><Typography component="span" sx={{ fontWeight: 600 }}>Population :</Typography> {country.population} millions</>} 
+                  />
+                </ListItem>
+                <ListItem disableGutters sx={{ py: 0.5, alignItems: "flex-start" }}>
+                  <ListItemIcon sx={{ minWidth: 28, mt: 1 }}>
+                    <CircleIcon sx={{ fontSize: 8, color: "primary.main" }} />
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary={<><Typography component="span" sx={{ fontWeight: 600 }}>Superficie :</Typography> {country.area.toLocaleString("fr-FR")} km²</>} 
+                  />
+                </ListItem>
+                <ListItem disableGutters sx={{ py: 0.5, alignItems: "flex-start" }}>
+                  <ListItemIcon sx={{ minWidth: 28, mt: 1 }}>
+                    <CircleIcon sx={{ fontSize: 8, color: "primary.main" }} />
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary={<><Typography component="span" sx={{ fontWeight: 600 }}>Devise :</Typography> {country.currency}</>} 
+                  />
+                </ListItem>
+              </List>
             </CardContent>
           </Card>
         </Grid>
