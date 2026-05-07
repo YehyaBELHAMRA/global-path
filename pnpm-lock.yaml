@@ -22,9 +22,6 @@ importers:
       '@emotion/styled':
         specifier: ^11.14.1
         version: 11.14.1(@emotion/react@11.14.0(@types/react@19.2.14)(react@19.2.5))(@types/react@19.2.14)(react@19.2.5)
-      '@google-cloud/aiplatform':
-        specifier: ^6.6.0
-        version: 6.6.0
       '@google-cloud/secret-manager':
         specifier: ^6.1.2
         version: 6.1.2
@@ -339,10 +336,6 @@ packages:
 
   '@floating-ui/utils@0.2.10':
     resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
-
-  '@google-cloud/aiplatform@6.6.0':
-    resolution: {integrity: sha512-CVPo83uZGTrH0gids2kMfckjryktU7VhmYm+QncJcTVC7FBjEuZTqz5vhHqoJ5t2IHcmwGoi2sDmM3yl0ZMQaA==}
-    engines: {node: '>=18'}
 
   '@google-cloud/secret-manager@6.1.2':
     resolution: {integrity: sha512-X4GiHC1OsZU8LOcnM/hk7Q+W/orZLSJz6IAvBJrjaQCj1pSRHkTHJnU87A6E5G8/ubIJjL6vs1GJ8f17TkDzPw==}
@@ -2648,12 +2641,6 @@ snapshots:
       react-dom: 19.2.5(react@19.2.5)
 
   '@floating-ui/utils@0.2.10': {}
-
-  '@google-cloud/aiplatform@6.6.0':
-    dependencies:
-      google-gax: 5.0.6
-    transitivePeerDependencies:
-      - supports-color
 
   '@google-cloud/secret-manager@6.1.2':
     dependencies:
