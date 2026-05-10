@@ -215,6 +215,36 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
                     primary={<><Typography component="span" sx={{ fontWeight: 600 }}>Indicatif téléphonique :</Typography> {country.phoneCode}</>} 
                   />
                 </ListItem>
+                {country.hdi && (
+                  <ListItem disableGutters sx={{ py: 0.5, alignItems: "flex-start" }}>
+                    <ListItemIcon sx={{ minWidth: 28, mt: 1 }}>
+                      <CircleIcon sx={{ fontSize: 8, color: "primary.main" }} />
+                    </ListItemIcon>
+                    <ListItemText 
+                      primary={
+                        <>
+                          <Typography component="span" sx={{ fontWeight: 600 }}>Indice de développement humain (IDH) :</Typography> {country.hdi.value}{" "}
+                          <Typography component="span" variant="caption" color="text.secondary">({country.hdi.year})</Typography>
+                        </>
+                      } 
+                    />
+                  </ListItem>
+                )}
+                {country.gini && (
+                  <ListItem disableGutters sx={{ py: 0.5, alignItems: "flex-start" }}>
+                    <ListItemIcon sx={{ minWidth: 28, mt: 1 }}>
+                      <CircleIcon sx={{ fontSize: 8, color: "primary.main" }} />
+                    </ListItemIcon>
+                    <ListItemText 
+                      primary={
+                        <>
+                          <Typography component="span" sx={{ fontWeight: 600 }}>Coefficient de Gini (inégalité des revenus) :</Typography> {country.gini.value}{" "}
+                          <Typography component="span" variant="caption" color="text.secondary">({country.gini.year})</Typography>
+                        </>
+                      } 
+                    />
+                  </ListItem>
+                )}
               </List>
             </CardContent>
           </Card>

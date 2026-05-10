@@ -22,6 +22,8 @@ export interface Country {
     publicDebt: { value: string; date: string }
     publicDeficit: { value: string; date: string }
   }
+  hdi?: { value: number; year: string }
+  gini?: { value: number; year: string }
 }
 
 export const euCountries: Country[] = [
@@ -48,7 +50,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "5,8 %", date: "T1 2026" },
       publicDebt: { value: "25,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-1,5 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.922, year: "2023" },
+    gini: { value: 30.5, year: "2019" }
   },
   {
     name: "Belgique",
@@ -73,7 +77,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "6,0 %", date: "T1 2026" },
       publicDebt: { value: "105,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-4,4 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.951, year: "2023" },
+    gini: { value: 26.4, year: "2022" }
   },
   {
     name: "Allemagne",
@@ -98,7 +104,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "3,2 %", date: "T1 2026" },
       publicDebt: { value: "63,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-1,6 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.959, year: "2023" },
+    gini: { value: 30.9, year: "2022" }
   },
   {
     name: "Autriche",
@@ -123,7 +131,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "5,2 %", date: "T1 2026" },
       publicDebt: { value: "77,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-2,9 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.930, year: "2023" },
+    gini: { value: 30.9, year: "2022" }
   },
   {
     name: "Pays-Bas",
@@ -148,7 +158,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "3,7 %", date: "T1 2026" },
       publicDebt: { value: "46,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-2,0 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.955, year: "2023" },
+    gini: { value: 30.4, year: "2020" }
   },
   {
     name: "Suède",
@@ -173,7 +185,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "8,3 %", date: "T1 2026" },
       publicDebt: { value: "31,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-0,8 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.959, year: "2023" },
+    gini: { value: 27.6, year: "2020" }
   },
   {
     name: "Finlande",
@@ -198,7 +212,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "7,4 %", date: "T1 2026" },
       publicDebt: { value: "75,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-3,0 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.948, year: "2023" },
+    gini: { value: 26.5, year: "2020" }
   },
   {
     name: "Malte",
@@ -223,7 +239,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "2,6 %", date: "T1 2026" },
       publicDebt: { value: "50,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-4,0 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.924, year: "2023" },
+    gini: { value: 34.6, year: "2022" }
   },
   {
     name: "Italie",
@@ -248,7 +266,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "7,2 %", date: "T1 2026" },
       publicDebt: { value: "137,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-4,3 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.915, year: "2023" },
+    gini: { value: 33.0, year: "2018" }
   },
   {
     name: "Espagne",
@@ -273,7 +293,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "11,6 %", date: "T1 2026" },
       publicDebt: { value: "106,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-3,0 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.918, year: "2023" },
+    gini: { value: 32.0, year: "2019" }
   },
   {
     name: "Portugal",
@@ -298,7 +320,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "6,5 %", date: "T1 2026" },
       publicDebt: { value: "98,0 % du PIB", date: "2025" },
       publicDeficit: { value: "+0,2 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.890, year: "2023" },
+    gini: { value: 31.0, year: "2019" }
   },
   {
     name: "Bulgarie",
@@ -323,7 +347,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "4,3 %", date: "T1 2026" },
       publicDebt: { value: "23,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-2,8 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.845, year: "2023" },
+    gini: { value: 39.5, year: "2023" }
   },
   {
     name: "Chypre",
@@ -348,7 +374,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "5,8 %", date: "T1 2026" },
       publicDebt: { value: "72,0 % du PIB", date: "2025" },
       publicDeficit: { value: "+2,0 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.913, year: "2023" },
+    gini: { value: 31.2, year: "2021" }
   },
   {
     name: "Croatie",
@@ -373,7 +401,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "5,8 %", date: "T1 2026" },
       publicDebt: { value: "60,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-1,9 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.889, year: "2023" },
+    gini: { value: 28.5, year: "2022" }
   },
   {
     name: "Estonie",
@@ -398,7 +428,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "7,0 %", date: "T1 2026" },
       publicDebt: { value: "20,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-3,0 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.905, year: "2023" },
+    gini: { value: 30.5, year: "2019" }
   },
   {
     name: "France",
@@ -423,7 +455,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "7,4 %", date: "T1 2026" },
       publicDebt: { value: "111,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-5,0 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.920, year: "2023" },
+    gini: { value: 29.2, year: "2019" }
   },
   {
     name: "Grèce",
@@ -448,7 +482,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "10,0 %", date: "T1 2026" },
       publicDebt: { value: "152,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-1,2 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.908, year: "2023" },
+    gini: { value: 30.8, year: "2019" }
   },
   {
     name: "Hongrie",
@@ -473,7 +509,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "4,4 %", date: "T1 2026" },
       publicDebt: { value: "73,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-4,5 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.870, year: "2023" },
+    gini: { value: 28.6, year: "2019" }
   },
   {
     name: "Lettonie",
@@ -498,7 +536,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "6,7 %", date: "T1 2026" },
       publicDebt: { value: "43,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-2,8 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.889, year: "2023" },
+    gini: { value: 35.5, year: "2020" }
   },
   {
     name: "Lituanie",
@@ -523,7 +563,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "6,4 %", date: "T1 2026" },
       publicDebt: { value: "39,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-2,4 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.895, year: "2023" },
+    gini: { value: 35.7, year: "2019" }
   },
   {
     name: "Pologne",
@@ -548,7 +590,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "5,1 %", date: "T1 2026" },
       publicDebt: { value: "54,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-5,4 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.906, year: "2023" },
+    gini: { value: 28.1, year: "2018" }
   },
   {
     name: "République tchèque",
@@ -573,7 +617,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "2,8 %", date: "T1 2026" },
       publicDebt: { value: "45,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-2,5 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.915, year: "2023" },
+    gini: { value: 24.8, year: "2019" }
   },
   {
     name: "Roumanie",
@@ -598,7 +644,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "5,5 %", date: "T1 2026" },
       publicDebt: { value: "52,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-5,0 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.845, year: "2023" },
+    gini: { value: 29.8, year: "2023" }
   },
   {
     name: "Slovaquie",
@@ -623,7 +671,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "5,4 %", date: "T1 2026" },
       publicDebt: { value: "59,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-5,5 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.880, year: "2023" },
+    gini: { value: 22.2, year: "2019" }
   },
   {
     name: "Slovénie",
@@ -648,7 +698,9 @@ export const euCountries: Country[] = [
       unemploymentRate: { value: "3,6 %", date: "T1 2026" },
       publicDebt: { value: "68,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-3,5 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.931, year: "2023" },
+    gini: { value: 24.6, year: "2019" }
   },
 ]
 
@@ -676,7 +728,9 @@ export const northAmericaCountries: Country[] = [
       unemploymentRate: { value: "6,1 %", date: "T1 2026" },
       publicDebt: { value: "104,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-1,5 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.939, year: "2023" },
+    gini: { value: 31.1, year: "2021" }
   },
   {
     name: "États-Unis",
@@ -701,7 +755,9 @@ export const northAmericaCountries: Country[] = [
       unemploymentRate: { value: "3,8 %", date: "T1 2026" },
       publicDebt: { value: "123,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-6,5 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.938, year: "2023" },
+    gini: { value: 37.5, year: "2021" }
   },
 ]
 
@@ -729,7 +785,9 @@ export const gccCountries: Country[] = [
       unemploymentRate: { value: "2,8 %", date: "T1 2026" },
       publicDebt: { value: "29,0 % du PIB", date: "2025" },
       publicDeficit: { value: "+4,5 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.940, year: "2023" },
+    gini: { value: 26.0, year: "2018" }
   },
   {
     name: "Qatar",
@@ -754,7 +812,9 @@ export const gccCountries: Country[] = [
       unemploymentRate: { value: "0,1 %", date: "T1 2026" },
       publicDebt: { value: "39,0 % du PIB", date: "2025" },
       publicDeficit: { value: "+6,0 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.886, year: "2023" },
+    gini: { value: 35.1, year: "2017" }
   },
   {
     name: "Koweït",
@@ -779,7 +839,9 @@ export const gccCountries: Country[] = [
       unemploymentRate: { value: "2,1 %", date: "T1 2026" },
       publicDebt: { value: "3,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-2,0 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.852, year: "2023" },
+    gini: { value: 33.0, year: "2020" }
   },
   {
     name: "Bahreïn",
@@ -804,7 +866,9 @@ export const gccCountries: Country[] = [
       unemploymentRate: { value: "5,4 %", date: "T1 2026" },
       publicDebt: { value: "121,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-3,0 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.899, year: "2023" },
+    gini: { value: 59.6, year: "2015" }
   },
   {
     name: "Oman",
@@ -829,7 +893,9 @@ export const gccCountries: Country[] = [
       unemploymentRate: { value: "2,3 %", date: "T1 2026" },
       publicDebt: { value: "36,0 % du PIB", date: "2025" },
       publicDeficit: { value: "+1,5 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.858, year: "2023" },
+    gini: { value: 30.0, year: "2019" }
   },
   {
     name: "Arabie Saoudite",
@@ -854,7 +920,9 @@ export const gccCountries: Country[] = [
       unemploymentRate: { value: "4,4 %", date: "T1 2026" },
       publicDebt: { value: "26,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-1,7 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.900, year: "2023" },
+    gini: { value: 32.0, year: "2021" }
   },
 ]
 
@@ -882,7 +950,9 @@ export const oceaniaCountries: Country[] = [
       unemploymentRate: { value: "4,0 %", date: "T1 2026" },
       publicDebt: { value: "49,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-1,2 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.958, year: "2023" },
+    gini: { value: 34.3, year: "2018" }
   },
   {
     name: "Nouvelle-Zélande",
@@ -907,7 +977,9 @@ export const oceaniaCountries: Country[] = [
       unemploymentRate: { value: "4,7 %", date: "T1 2026" },
       publicDebt: { value: "45,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-3,0 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.938, year: "2023" },
+    gini: { value: 32.0, year: "2020" }
   },
 ]
 
@@ -935,7 +1007,9 @@ export const europeOtherCountries: Country[] = [
       unemploymentRate: { value: "4,5 %", date: "T1 2026" },
       publicDebt: { value: "29,0 % du PIB", date: "2025" },
       publicDeficit: { value: "+2,5 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.962, year: "2023" },
+    gini: { value: 26.8, year: "2019" }
   },
   {
     name: "Irlande",
@@ -960,7 +1034,9 @@ export const europeOtherCountries: Country[] = [
       unemploymentRate: { value: "4,3 %", date: "T1 2026" },
       publicDebt: { value: "42,0 % du PIB", date: "2025" },
       publicDeficit: { value: "+1,2 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.949, year: "2023" },
+    gini: { value: 29.2, year: "2018" }
   },
   {
     name: "Suisse",
@@ -985,7 +1061,9 @@ export const europeOtherCountries: Country[] = [
       unemploymentRate: { value: "4,0 %", date: "T1 2026" },
       publicDebt: { value: "38,0 % du PIB", date: "2025" },
       publicDeficit: { value: "+0,5 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.970, year: "2023" },
+    gini: { value: 31.6, year: "2019" }
   },
   {
     name: "Norvège",
@@ -1010,7 +1088,9 @@ export const europeOtherCountries: Country[] = [
       unemploymentRate: { value: "3,9 %", date: "T1 2026" },
       publicDebt: { value: "43,0 % du PIB", date: "2025" },
       publicDeficit: { value: "+14,0 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.970, year: "2023" },
+    gini: { value: 26.3, year: "2020" }
   },
   {
     name: "Islande",
@@ -1035,7 +1115,9 @@ export const europeOtherCountries: Country[] = [
       unemploymentRate: { value: "3,5 %", date: "T1 2026" },
       publicDebt: { value: "63,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-1,0 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.972, year: "2023" },
+    gini: { value: 25.0, year: "2017" }
   },
   {
     name: "Royaume-Uni",
@@ -1060,7 +1142,9 @@ export const europeOtherCountries: Country[] = [
       unemploymentRate: { value: "4,2 %", date: "T1 2026" },
       publicDebt: { value: "104,0 % du PIB", date: "2025" },
       publicDeficit: { value: "-4,5 % du PIB", date: "2025" }
-    }
+    },
+    hdi: { value: 0.946, year: "2023" },
+    gini: { value: 35.5, year: "2020" }
   }
 ]
 
