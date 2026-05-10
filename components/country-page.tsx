@@ -169,7 +169,7 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
                     <CircleIcon sx={{ fontSize: 8, color: "primary.main" }} />
                   </ListItemIcon>
                   <ListItemText 
-                    primary={<><Typography component="span" sx={{ fontWeight: 600 }}>Indicatif téléphonique :</Typography> {country.phoneCode}</>} 
+                    primary={<><Typography component="span" sx={{ fontWeight: 600 }}>Devise :</Typography> {country.currency}</>} 
                   />
                 </ListItem>
               </List>
@@ -212,7 +212,7 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
                     <CircleIcon sx={{ fontSize: 8, color: "primary.main" }} />
                   </ListItemIcon>
                   <ListItemText 
-                    primary={<><Typography component="span" sx={{ fontWeight: 600 }}>Devise :</Typography> {country.currency}</>} 
+                    primary={<><Typography component="span" sx={{ fontWeight: 600 }}>Indicatif téléphonique :</Typography> {country.phoneCode}</>} 
                   />
                 </ListItem>
               </List>

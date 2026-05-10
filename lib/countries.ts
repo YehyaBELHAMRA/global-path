@@ -30,7 +30,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Luxembourgeois", "Français", "Allemand"],
     population: 0.65,
     area: 2586,
-    currency: "Euro"
+    currency: "Euro (€)"
   },
   {
     name: "Belgique",
@@ -46,7 +46,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Néerlandais", "Français", "Allemand"],
     population: 11.7,
     area: 30528,
-    currency: "Euro"
+    currency: "Euro (€)"
   },
   {
     name: "Allemagne",
@@ -62,7 +62,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Allemand"],
     population: 83.3,
     area: 357022,
-    currency: "Euro"
+    currency: "Euro (€)"
   },
   {
     name: "Autriche",
@@ -78,7 +78,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Allemand"],
     population: 9.1,
     area: 83871,
-    currency: "Euro"
+    currency: "Euro (€)"
   },
   {
     name: "Pays-Bas",
@@ -94,7 +94,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Néerlandais"],
     population: 17.8,
     area: 41543,
-    currency: "Euro"
+    currency: "Euro (€)"
   },
   {
     name: "Suède",
@@ -110,7 +110,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Suédois"],
     population: 10.5,
     area: 450295,
-    currency: "Couronne suédoise"
+    currency: "Couronne suédoise (kr)"
   },
   {
     name: "Finlande",
@@ -126,7 +126,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Finnois", "Suédois"],
     population: 5.5,
     area: 338145,
-    currency: "Euro"
+    currency: "Euro (€)"
   },
   {
     name: "Malte",
@@ -142,7 +142,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Maltais", "Anglais"],
     population: 0.53,
     area: 316,
-    currency: "Euro"
+    currency: "Euro (€)"
   },
   {
     name: "Italie",
@@ -158,7 +158,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Italien"],
     population: 58.9,
     area: 301340,
-    currency: "Euro"
+    currency: "Euro (€)"
   },
   {
     name: "Espagne",
@@ -174,7 +174,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Espagnol"],
     population: 48.1,
     area: 505990,
-    currency: "Euro"
+    currency: "Euro (€)"
   },
   {
     name: "Portugal",
@@ -190,7 +190,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Portugais"],
     population: 10.5,
     area: 92212,
-    currency: "Euro"
+    currency: "Euro (€)"
   },
   {
     name: "Bulgarie",
@@ -206,7 +206,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Bulgare"],
     population: 6.4,
     area: 110994,
-    currency: "Lev bulgare"
+    currency: "Euro (€)"
   },
   {
     name: "Chypre",
@@ -222,7 +222,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Grec", "Turc"],
     population: 1.2,
     area: 9251,
-    currency: "Euro"
+    currency: "Euro (€)"
   },
   {
     name: "Croatie",
@@ -238,7 +238,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Croate"],
     population: 3.8,
     area: 56594,
-    currency: "Euro"
+    currency: "Euro (€)"
   },
   {
     name: "Estonie",
@@ -254,7 +254,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Estonien"],
     population: 1.36,
     area: 45227,
-    currency: "Euro"
+    currency: "Euro (€)"
   },
   {
     name: "France",
@@ -270,7 +270,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Français"],
     population: 68.0,
     area: 551695,
-    currency: "Euro"
+    currency: "Euro (€)"
   },
   {
     name: "Grèce",
@@ -286,7 +286,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Grec"],
     population: 10.4,
     area: 131957,
-    currency: "Euro"
+    currency: "Euro (€)"
   },
   {
     name: "Hongrie",
@@ -302,7 +302,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Hongrois"],
     population: 9.6,
     area: 93028,
-    currency: "Forint hongrois"
+    currency: "Forint hongrois (Ft)"
   },
   {
     name: "Lettonie",
@@ -318,7 +318,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Letton"],
     population: 1.88,
     area: 64589,
-    currency: "Euro"
+    currency: "Euro (€)"
   },
   {
     name: "Lituanie",
@@ -334,7 +334,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Lituanien"],
     population: 2.8,
     area: 65300,
-    currency: "Euro"
+    currency: "Euro (€)"
   },
   {
     name: "Pologne",
@@ -350,7 +350,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Polonais"],
     population: 36.8,
     area: 312696,
-    currency: "Złoty"
+    currency: "Złoty (zł)"
   },
   {
     name: "République tchèque",
@@ -366,7 +366,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Tchèque"],
     population: 10.8,
     area: 78867,
-    currency: "Couronne tchèque"
+    currency: "Couronne tchèque (Kč)"
   },
   {
     name: "Roumanie",
@@ -382,7 +382,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Roumain"],
     population: 19.0,
     area: 238391,
-    currency: "Leu roumain"
+    currency: "Leu roumain (lei)"
   },
   {
     name: "Slovaquie",
@@ -398,7 +398,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Slovaque"],
     population: 5.4,
     area: 49035,
-    currency: "Euro"
+    currency: "Euro (€)"
   },
   {
     name: "Slovénie",
@@ -414,7 +414,7 @@ export const euCountries: Country[] = [
     officialLanguages: ["Slovène"],
     population: 2.1,
     area: 20273,
-    currency: "Euro"
+    currency: "Euro (€)"
   },
 ]
 
@@ -433,7 +433,7 @@ export const northAmericaCountries: Country[] = [
     officialLanguages: ["Anglais", "Français"],
     population: 40.0,
     area: 9984670,
-    currency: "Dollar canadien"
+    currency: "Dollar canadien (CAD)"
   },
   {
     name: "États-Unis",
@@ -449,7 +449,7 @@ export const northAmericaCountries: Country[] = [
     officialLanguages: ["Anglais"],
     population: 334.9,
     area: 9833517,
-    currency: "Dollar américain"
+    currency: "Dollar américain ($)"
   },
 ]
 
@@ -468,7 +468,7 @@ export const gccCountries: Country[] = [
     officialLanguages: ["Arabe"],
     population: 9.4,
     area: 83600,
-    currency: "Dirham des Émirats arabes unis"
+    currency: "Dirham des Émirats arabes unis (AED)"
   },
   {
     name: "Qatar",
@@ -484,7 +484,7 @@ export const gccCountries: Country[] = [
     officialLanguages: ["Arabe"],
     population: 2.7,
     area: 11586,
-    currency: "Riyal qatari"
+    currency: "Riyal qatari (QAR)"
   },
   {
     name: "Koweït",
@@ -500,7 +500,7 @@ export const gccCountries: Country[] = [
     officialLanguages: ["Arabe"],
     population: 4.3,
     area: 17818,
-    currency: "Dinar koweïtien"
+    currency: "Dinar koweïtien (KWD)"
   },
   {
     name: "Bahreïn",
@@ -516,7 +516,7 @@ export const gccCountries: Country[] = [
     officialLanguages: ["Arabe"],
     population: 1.5,
     area: 765,
-    currency: "Dinar bahreïni"
+    currency: "Dinar bahreïni (BHD)"
   },
   {
     name: "Oman",
@@ -532,7 +532,7 @@ export const gccCountries: Country[] = [
     officialLanguages: ["Arabe"],
     population: 4.6,
     area: 309500,
-    currency: "Rial omanais"
+    currency: "Rial omanais (OMR)"
   },
   {
     name: "Arabie Saoudite",
@@ -548,7 +548,7 @@ export const gccCountries: Country[] = [
     officialLanguages: ["Arabe"],
     population: 36.4,
     area: 2149690,
-    currency: "Riyal saoudien"
+    currency: "Riyal saoudien (SAR)"
   },
 ]
 
@@ -567,7 +567,7 @@ export const oceaniaCountries: Country[] = [
     officialLanguages: ["Anglais"],
     population: 26.6,
     area: 7692024,
-    currency: "Dollar australien"
+    currency: "Dollar australien (AUD)"
   },
   {
     name: "Nouvelle-Zélande",
@@ -583,7 +583,7 @@ export const oceaniaCountries: Country[] = [
     officialLanguages: ["Anglais", "Māori"],
     population: 5.2,
     area: 268021,
-    currency: "Dollar néo-zélandais"
+    currency: "Dollar néo-zélandais (NZD)"
   },
 ]
 
@@ -602,7 +602,7 @@ export const europeOtherCountries: Country[] = [
     officialLanguages: ["Danois"],
     population: 5.9,
     area: 42933,
-    currency: "Couronne danoise"
+    currency: "Couronne danoise (kr)"
   },
   {
     name: "Irlande",
@@ -618,7 +618,7 @@ export const europeOtherCountries: Country[] = [
     officialLanguages: ["Irlandais", "Anglais"],
     population: 5.3,
     area: 70273,
-    currency: "Euro"
+    currency: "Euro (€)"
   },
   {
     name: "Suisse",
@@ -634,7 +634,7 @@ export const europeOtherCountries: Country[] = [
     officialLanguages: ["Allemand", "Français", "Italien", "Romanche"],
     population: 8.8,
     area: 41285,
-    currency: "Franc suisse"
+    currency: "Franc suisse (CHF)"
   },
   {
     name: "Norvège",
@@ -650,7 +650,7 @@ export const europeOtherCountries: Country[] = [
     officialLanguages: ["Norvégien"],
     population: 5.5,
     area: 385207,
-    currency: "Couronne norvégienne"
+    currency: "Couronne norvégienne (kr)"
   },
   {
     name: "Islande",
@@ -666,7 +666,7 @@ export const europeOtherCountries: Country[] = [
     officialLanguages: ["Islandais"],
     population: 0.38,
     area: 103000,
-    currency: "Couronne islandaise"
+    currency: "Couronne islandaise (kr)"
   },
   {
     name: "Royaume-Uni",
@@ -682,7 +682,7 @@ export const europeOtherCountries: Country[] = [
     officialLanguages: ["Anglais"],
     population: 67.3,
     area: 242495,
-    currency: "Livre sterling"
+    currency: "Livre sterling (£)"
   }
 ]
 
