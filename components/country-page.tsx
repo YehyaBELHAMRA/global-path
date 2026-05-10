@@ -50,9 +50,17 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
       {/* Country Header */}
       <Box sx={{ mb: 4 }}>
         <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2 }}>
-          <Typography variant="h2" component="span" sx={{ fontSize: "3rem" }}>
-            {country.flag}
-          </Typography>
+          <Box
+            component="img"
+            src={country.flag}
+            alt={`Drapeau ${country.name}`}
+            sx={{
+              height: "3rem",
+              width: "auto",
+              borderRadius: "8px",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+            }}
+          />
           <Box>
             <Typography variant="h3" component="h1" sx={{ fontWeight: 700 }}>
               {country.name}
@@ -154,6 +162,14 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
                   </ListItemIcon>
                   <ListItemText 
                     primary={<><Typography component="span" sx={{ fontWeight: 600 }}>Langues officielles :</Typography> {country.officialLanguages.join(", ")}</>} 
+                  />
+                </ListItem>
+                <ListItem disableGutters sx={{ py: 0.5, alignItems: "flex-start" }}>
+                  <ListItemIcon sx={{ minWidth: 28, mt: 1 }}>
+                    <CircleIcon sx={{ fontSize: 8, color: "primary.main" }} />
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary={<><Typography component="span" sx={{ fontWeight: 600 }}>Indicatif téléphonique :</Typography> {country.phoneCode}</>} 
                   />
                 </ListItem>
               </List>

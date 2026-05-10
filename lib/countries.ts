@@ -2,6 +2,7 @@ export interface Country {
   name: string
   slug: string
   flag: string
+  phoneCode: string
   region: "european-blue-card" | "europe-other" | "north-america" | "gcc" | "oceania"
   description: string
   highlights: string[]
@@ -18,7 +19,8 @@ export const euCountries: Country[] = [
   {
     name: "Luxembourg",
     slug: "luxembourg",
-    flag: "🇱🇺",
+    flag: "https://flagcdn.com/lu.svg",
+    phoneCode: "+352",
     region: "european-blue-card",
     description: "Le Luxembourg offre une Carte Bleue Européenne avec des conditions attractives pour les professionnels qualifiés. Centre financier de l'Europe avec une qualité de vie exceptionnelle.",
     highlights: ["Salaire minimum élevé", "Multilinguisme", "Centre financier européen", "Qualité de vie exceptionnelle"],
@@ -33,7 +35,8 @@ export const euCountries: Country[] = [
   {
     name: "Belgique",
     slug: "belgium",
-    flag: "🇧🇪",
+    flag: "https://flagcdn.com/be.svg",
+    phoneCode: "+32",
     region: "european-blue-card",
     description: "La Belgique propose une Carte Bleue Européenne pour les travailleurs hautement qualifiés. Située au cœur de l'Europe avec accès aux institutions européennes.",
     highlights: ["Capitale de l'UE", "Système de santé excellent", "Position centrale en Europe", "Diversité culturelle"],
@@ -48,7 +51,8 @@ export const euCountries: Country[] = [
   {
     name: "Allemagne",
     slug: "germany",
-    flag: "🇩🇪",
+    flag: "https://flagcdn.com/de.svg",
+    phoneCode: "+49",
     region: "european-blue-card",
     description: "L'Allemagne est la première économie européenne et offre d'excellentes opportunités pour les professionnels qualifiés avec sa Carte Bleue Européenne.",
     highlights: ["Première économie européenne", "Industrie technologique avancée", "Excellentes infrastructures", "Forte demande de talents"],
@@ -63,7 +67,8 @@ export const euCountries: Country[] = [
   {
     name: "Autriche",
     slug: "austria",
-    flag: "🇦🇹",
+    flag: "https://flagcdn.com/at.svg",
+    phoneCode: "+43",
     region: "european-blue-card",
     description: "L'Autriche offre une excellente qualité de vie et des opportunités professionnelles dans un cadre alpin magnifique.",
     highlights: ["Qualité de vie élevée", "Cadre naturel exceptionnel", "Économie stable", "Culture riche"],
@@ -78,7 +83,8 @@ export const euCountries: Country[] = [
   {
     name: "Pays-Bas",
     slug: "netherlands",
-    flag: "🇳🇱",
+    flag: "https://flagcdn.com/nl.svg",
+    phoneCode: "+31",
     region: "european-blue-card",
     description: "Les Pays-Bas sont reconnus pour leur ouverture internationale et leur écosystème startup dynamique.",
     highlights: ["Hub technologique européen", "Population anglophone", "Écosystème startup", "Infrastructure cyclable"],
@@ -93,7 +99,8 @@ export const euCountries: Country[] = [
   {
     name: "Suède",
     slug: "sweden",
-    flag: "🇸🇪",
+    flag: "https://flagcdn.com/se.svg",
+    phoneCode: "+46",
     region: "european-blue-card",
     description: "La Suède offre un équilibre travail-vie personnelle exemplaire et une forte culture d'innovation.",
     highlights: ["Équilibre vie-travail", "Innovation technologique", "Congés parentaux généreux", "Nature préservée"],
@@ -108,7 +115,8 @@ export const euCountries: Country[] = [
   {
     name: "Finlande",
     slug: "finland",
-    flag: "🇫🇮",
+    flag: "https://flagcdn.com/fi.svg",
+    phoneCode: "+358",
     region: "european-blue-card",
     description: "La Finlande est régulièrement classée parmi les pays les plus heureux au monde avec un excellent système éducatif.",
     highlights: ["Pays le plus heureux", "Éducation excellente", "Technologie avancée", "Nature sauvage"],
@@ -123,7 +131,8 @@ export const euCountries: Country[] = [
   {
     name: "Malte",
     slug: "malta",
-    flag: "🇲🇹",
+    flag: "https://flagcdn.com/mt.svg",
+    phoneCode: "+356",
     region: "european-blue-card",
     description: "Malte offre un climat méditerranéen agréable et un secteur des services financiers et du gaming en pleine croissance.",
     highlights: ["Climat méditerranéen", "Anglais langue officielle", "Secteur iGaming", "Fiscalité avantageuse"],
@@ -138,7 +147,8 @@ export const euCountries: Country[] = [
   {
     name: "Italie",
     slug: "italy",
-    flag: "🇮🇹",
+    flag: "https://flagcdn.com/it.svg",
+    phoneCode: "+39",
     region: "european-blue-card",
     description: "L'Italie combine richesse culturelle et opportunités dans les secteurs de la mode, du design et de la technologie.",
     highlights: ["Patrimoine culturel", "Design et mode", "Gastronomie", "Art de vivre"],
@@ -153,7 +163,8 @@ export const euCountries: Country[] = [
   {
     name: "Espagne",
     slug: "spain",
-    flag: "🇪🇸",
+    flag: "https://flagcdn.com/es.svg",
+    phoneCode: "+34",
     region: "european-blue-card",
     description: "L'Espagne offre un excellent climat, une riche culture et des opportunités croissantes dans la tech.",
     highlights: ["Climat ensoleillé", "Qualité de vie", "Coût de vie raisonnable", "Hubs tech émergents"],
@@ -168,7 +179,8 @@ export const euCountries: Country[] = [
   {
     name: "Portugal",
     slug: "portugal",
-    flag: "🇵🇹",
+    flag: "https://flagcdn.com/pt.svg",
+    phoneCode: "+351",
     region: "european-blue-card",
     description: "Le Portugal attire les professionnels avec son climat doux, sa qualité de vie et son écosystème tech en croissance.",
     highlights: ["Climat agréable", "Coût de vie attractif", "Communauté expat", "Écosystème startup"],
@@ -183,7 +195,8 @@ export const euCountries: Country[] = [
   {
     name: "Bulgarie",
     slug: "bulgaria",
-    flag: "🇧🇬",
+    flag: "https://flagcdn.com/bg.svg",
+    phoneCode: "+359",
     region: "european-blue-card",
     description: "La Bulgarie offre un coût de vie bas et des opportunités croissantes dans le secteur IT.",
     highlights: ["Coût de vie bas", "Secteur IT en croissance", "Nature diverse", "Fiscalité attractive"],
@@ -198,7 +211,8 @@ export const euCountries: Country[] = [
   {
     name: "Chypre",
     slug: "cyprus",
-    flag: "🇨🇾",
+    flag: "https://flagcdn.com/cy.svg",
+    phoneCode: "+357",
     region: "european-blue-card",
     description: "Chypre combine climat méditerranéen et opportunités dans les services financiers.",
     highlights: ["Climat méditerranéen", "Services financiers", "Anglais répandu", "Qualité de vie"],
@@ -213,7 +227,8 @@ export const euCountries: Country[] = [
   {
     name: "Croatie",
     slug: "croatia",
-    flag: "🇭🇷",
+    flag: "https://flagcdn.com/hr.svg",
+    phoneCode: "+385",
     region: "european-blue-card",
     description: "La Croatie offre un cadre de vie exceptionnel avec sa côte adriatique et son intégration récente à l'UE.",
     highlights: ["Côte adriatique", "Membre récent de l'UE", "Tourisme développé", "Qualité de vie"],
@@ -228,7 +243,8 @@ export const euCountries: Country[] = [
   {
     name: "Estonie",
     slug: "estonia",
-    flag: "🇪🇪",
+    flag: "https://flagcdn.com/ee.svg",
+    phoneCode: "+372",
     region: "european-blue-card",
     description: "L'Estonie est pionnière en e-gouvernement et offre un écosystème startup dynamique.",
     highlights: ["E-gouvernement avancé", "Écosystème startup", "Société numérique", "E-résidence"],
@@ -243,7 +259,8 @@ export const euCountries: Country[] = [
   {
     name: "France",
     slug: "france",
-    flag: "🇫🇷",
+    flag: "https://flagcdn.com/fr.svg",
+    phoneCode: "+33",
     region: "european-blue-card",
     description: "La France offre une économie diversifiée, une culture riche et un excellent système de protection sociale.",
     highlights: ["Culture riche", "Système de santé", "Gastronomie", "Hubs tech (Paris, Lyon)"],
@@ -258,7 +275,8 @@ export const euCountries: Country[] = [
   {
     name: "Grèce",
     slug: "greece",
-    flag: "🇬🇷",
+    flag: "https://flagcdn.com/gr.svg",
+    phoneCode: "+30",
     region: "european-blue-card",
     description: "La Grèce combine patrimoine historique exceptionnel et qualité de vie méditerranéenne.",
     highlights: ["Patrimoine historique", "Climat méditerranéen", "Coût de vie modéré", "Tourisme"],
@@ -273,7 +291,8 @@ export const euCountries: Country[] = [
   {
     name: "Hongrie",
     slug: "hungary",
-    flag: "🇭🇺",
+    flag: "https://flagcdn.com/hu.svg",
+    phoneCode: "+36",
     region: "european-blue-card",
     description: "La Hongrie offre un coût de vie attractif et une position centrale en Europe.",
     highlights: ["Coût de vie bas", "Position centrale", "Architecture", "Thermes"],
@@ -288,7 +307,8 @@ export const euCountries: Country[] = [
   {
     name: "Lettonie",
     slug: "latvia",
-    flag: "🇱🇻",
+    flag: "https://flagcdn.com/lv.svg",
+    phoneCode: "+371",
     region: "european-blue-card",
     description: "La Lettonie offre un écosystème startup en développement et une qualité de vie nordique.",
     highlights: ["Startup ecosystem", "Nature baltique", "Coût de vie modéré", "IT en croissance"],
@@ -303,7 +323,8 @@ export const euCountries: Country[] = [
   {
     name: "Lituanie",
     slug: "lithuania",
-    flag: "🇱🇹",
+    flag: "https://flagcdn.com/lt.svg",
+    phoneCode: "+370",
     region: "european-blue-card",
     description: "La Lituanie est reconnue pour son secteur fintech et sa qualité de vie.",
     highlights: ["Hub fintech", "Qualité de vie", "Internet rapide", "Coût de vie modéré"],
@@ -318,7 +339,8 @@ export const euCountries: Country[] = [
   {
     name: "Pologne",
     slug: "poland",
-    flag: "🇵🇱",
+    flag: "https://flagcdn.com/pl.svg",
+    phoneCode: "+48",
     region: "european-blue-card",
     description: "La Pologne offre une économie dynamique et un secteur IT en pleine expansion.",
     highlights: ["Économie dynamique", "Secteur IT", "Coût de vie modéré", "Villes historiques"],
@@ -333,7 +355,8 @@ export const euCountries: Country[] = [
   {
     name: "République tchèque",
     slug: "czech-republic",
-    flag: "🇨🇿",
+    flag: "https://flagcdn.com/cz.svg",
+    phoneCode: "+420",
     region: "european-blue-card",
     description: "La République tchèque combine patrimoine culturel et économie industrielle avancée.",
     highlights: ["Prague", "Industrie automobile", "Coût de vie", "Position centrale"],
@@ -348,7 +371,8 @@ export const euCountries: Country[] = [
   {
     name: "Roumanie",
     slug: "romania",
-    flag: "🇷🇴",
+    flag: "https://flagcdn.com/ro.svg",
+    phoneCode: "+40",
     region: "european-blue-card",
     description: "La Roumanie offre un secteur IT compétitif et un coût de vie attractif.",
     highlights: ["Secteur IT fort", "Coût de vie bas", "Francophonie", "Nature diverse"],
@@ -363,7 +387,8 @@ export const euCountries: Country[] = [
   {
     name: "Slovaquie",
     slug: "slovakia",
-    flag: "🇸🇰",
+    flag: "https://flagcdn.com/sk.svg",
+    phoneCode: "+421",
     region: "european-blue-card",
     description: "La Slovaquie offre une position centrale en Europe et une industrie automobile développée.",
     highlights: ["Industrie automobile", "Position centrale", "Coût de vie modéré", "Nature"],
@@ -378,7 +403,8 @@ export const euCountries: Country[] = [
   {
     name: "Slovénie",
     slug: "slovenia",
-    flag: "🇸🇮",
+    flag: "https://flagcdn.com/si.svg",
+    phoneCode: "+386",
     region: "european-blue-card",
     description: "La Slovénie combine qualité de vie alpine et accès méditerranéen.",
     highlights: ["Nature alpine", "Qualité de vie", "Taille humaine", "Accès Adriatique"],
@@ -396,7 +422,8 @@ export const northAmericaCountries: Country[] = [
   {
     name: "Canada",
     slug: "canada",
-    flag: "🇨🇦",
+    flag: "https://flagcdn.com/ca.svg",
+    phoneCode: "+1",
     region: "north-america",
     description: "Le Canada offre des programmes d'immigration variés avec une politique d'accueil reconnue mondialement.",
     highlights: ["Entrée Express", "PNP (Programmes provinciaux)", "Qualité de vie élevée", "Multiculturalisme"],
@@ -411,7 +438,8 @@ export const northAmericaCountries: Country[] = [
   {
     name: "États-Unis",
     slug: "united-states",
-    flag: "🇺🇸",
+    flag: "https://flagcdn.com/us.svg",
+    phoneCode: "+1",
     region: "north-america",
     description: "Les États-Unis offrent diverses catégories de visas pour les professionnels qualifiés.",
     highlights: ["Visa H-1B", "Visa O-1", "Green Card par emploi", "Opportunités Silicon Valley"],
@@ -429,7 +457,8 @@ export const gccCountries: Country[] = [
   {
     name: "Émirats Arabes Unis",
     slug: "united-arab-emirates",
-    flag: "🇦🇪",
+    flag: "https://flagcdn.com/ae.svg",
+    phoneCode: "+971",
     region: "gcc",
     description: "Les EAU offrent des opportunités exceptionnelles à Dubaï et Abu Dhabi avec des salaires attractifs.",
     highlights: ["Pas d'impôt sur le revenu", "Dubaï hub mondial", "Golden Visa", "Infrastructure moderne"],
@@ -444,7 +473,8 @@ export const gccCountries: Country[] = [
   {
     name: "Qatar",
     slug: "qatar",
-    flag: "🇶🇦",
+    flag: "https://flagcdn.com/qa.svg",
+    phoneCode: "+974",
     region: "gcc",
     description: "Le Qatar offre des salaires compétitifs et des projets ambitieux dans divers secteurs.",
     highlights: ["Salaires élevés", "Projets d'infrastructure", "Pas d'impôt", "Qualité de vie"],
@@ -459,7 +489,8 @@ export const gccCountries: Country[] = [
   {
     name: "Koweït",
     slug: "kuwait",
-    flag: "🇰🇼",
+    flag: "https://flagcdn.com/kw.svg",
+    phoneCode: "+965",
     region: "gcc",
     description: "Le Koweït offre des opportunités dans le secteur pétrolier et les services.",
     highlights: ["Secteur pétrolier", "Salaires compétitifs", "Pas d'impôt", "Allocations logement"],
@@ -474,7 +505,8 @@ export const gccCountries: Country[] = [
   {
     name: "Bahreïn",
     slug: "bahrain",
-    flag: "🇧🇭",
+    flag: "https://flagcdn.com/bh.svg",
+    phoneCode: "+973",
     region: "gcc",
     description: "Bahreïn est un centre financier régional avec un environnement business favorable.",
     highlights: ["Centre financier", "Flexi Permit", "Taille humaine", "Diversité économique"],
@@ -489,7 +521,8 @@ export const gccCountries: Country[] = [
   {
     name: "Oman",
     slug: "oman",
-    flag: "🇴🇲",
+    flag: "https://flagcdn.com/om.svg",
+    phoneCode: "+968",
     region: "gcc",
     description: "Oman offre un cadre de vie paisible et des opportunités dans le tourisme et l'énergie.",
     highlights: ["Cadre paisible", "Tourisme en développement", "Secteur énergétique", "Culture authentique"],
@@ -504,7 +537,8 @@ export const gccCountries: Country[] = [
   {
     name: "Arabie Saoudite",
     slug: "saudi-arabia",
-    flag: "🇸🇦",
+    flag: "https://flagcdn.com/sa.svg",
+    phoneCode: "+966",
     region: "gcc",
     description: "L'Arabie Saoudite offre des opportunités majeures avec la Vision 2030 et des mégaprojets.",
     highlights: ["Vision 2030", "Mégaprojets (NEOM)", "Salaires élevés", "Pas d'impôt sur le revenu"],
@@ -522,7 +556,8 @@ export const oceaniaCountries: Country[] = [
   {
     name: "Australie",
     slug: "australia",
-    flag: "🇦🇺",
+    flag: "https://flagcdn.com/au.svg",
+    phoneCode: "+61",
     region: "oceania",
     description: "L'Australie offre une excellente qualité de vie et un système d'immigration par points.",
     highlights: ["Skilled Independent Visa", "Qualité de vie", "Économie stable", "Nature exceptionnelle"],
@@ -537,7 +572,8 @@ export const oceaniaCountries: Country[] = [
   {
     name: "Nouvelle-Zélande",
     slug: "new-zealand",
-    flag: "🇳🇿",
+    flag: "https://flagcdn.com/nz.svg",
+    phoneCode: "+64",
     region: "oceania",
     description: "La Nouvelle-Zélande offre un cadre de vie exceptionnel et des opportunités pour les professionnels qualifiés.",
     highlights: ["Skilled Migrant Category", "Équilibre vie-travail", "Nature préservée", "Société accueillante"],
@@ -555,7 +591,8 @@ export const europeOtherCountries: Country[] = [
   {
     name: "Danemark",
     slug: "denmark",
-    flag: "🇩🇰",
+    flag: "https://flagcdn.com/dk.svg",
+    phoneCode: "+45",
     region: "europe-other",
     description: "Le Danemark est reconnu pour son équilibre vie-travail et son économie innovante.",
     highlights: ["Équilibre vie-travail", "Design danois", "Vélo culture", "Innovation verte"],
@@ -570,7 +607,8 @@ export const europeOtherCountries: Country[] = [
   {
     name: "Irlande",
     slug: "ireland",
-    flag: "🇮🇪",
+    flag: "https://flagcdn.com/ie.svg",
+    phoneCode: "+353",
     region: "europe-other",
     description: "L'Irlande est un hub technologique majeur avec de nombreuses multinationales.",
     highlights: ["Hub tech européen", "Anglophone", "Multinationales", "Culture accueillante"],
@@ -585,7 +623,8 @@ export const europeOtherCountries: Country[] = [
   {
     name: "Suisse",
     slug: "switzerland",
-    flag: "🇨🇭",
+    flag: "https://flagcdn.com/ch.svg",
+    phoneCode: "+41",
     region: "europe-other",
     description: "La Suisse est reconnue pour sa stabilité économique, ses salaires élevés et son cadre de vie premium.",
     highlights: ["Salaires élevés", "Pays multilingue", "Infrastructure de qualité", "Sécurité"],
@@ -600,7 +639,8 @@ export const europeOtherCountries: Country[] = [
   {
     name: "Norvège",
     slug: "norway",
-    flag: "🇳🇴",
+    flag: "https://flagcdn.com/no.svg",
+    phoneCode: "+47",
     region: "europe-other",
     description: "La Norvège offre une excellente qualité de vie, un système social solide et des secteurs énergétiques dynamiques.",
     highlights: ["Qualité de vie élevée", "Nature spectaculaire", "Économie stable", "Système social fort"],
@@ -615,7 +655,8 @@ export const europeOtherCountries: Country[] = [
   {
     name: "Islande",
     slug: "iceland",
-    flag: "🇮🇸",
+    flag: "https://flagcdn.com/is.svg",
+    phoneCode: "+354",
     region: "europe-other",
     description: "L'Islande est idéale pour les professionnels qui recherchent un environnement innovant, durable et une nature préservée.",
     highlights: ["Durabilité", "Innovation", "Cadre naturel unique", "Petite communauté internationale"],
@@ -630,7 +671,8 @@ export const europeOtherCountries: Country[] = [
   {
     name: "Royaume-Uni",
     slug: "united-kingdom",
-    flag: "🇬🇧",
+    flag: "https://flagcdn.com/gb.svg",
+    phoneCode: "+44",
     region: "europe-other",
     description: "Le Royaume-Uni reste une destination majeure pour les professionnels qualifiés, avec un marché du travail international et de nombreuses opportunités.",
     highlights: ["Marché du travail international", "Centres financiers mondiaux", "Diversité culturelle", "Réseaux professionnels"],
