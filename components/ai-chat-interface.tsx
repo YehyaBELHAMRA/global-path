@@ -40,7 +40,283 @@ type MarkdownBlock =
   | { type: "rule" }
   | { type: "table"; headers: string[]; rows: string[][] }
 
-const suggestedQuestions = [
+const countryQuestionsMap: Record<string, string[]> = {
+  luxembourg: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne au Luxembourg ?",
+    "Quel est le seuil salarial pour la Carte Bleue au Luxembourg ?",
+    "Quels sont les avantages pour les travailleurs hautement qualifiés au Luxembourg ?",
+    "Quel est le niveau de langue requis pour travailler au Luxembourg ?",
+  ],
+  belgium: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne en Belgique ?",
+    "Quelles sont les conditions pour la Carte Bleue Européenne en Wallonie ?",
+    "Quelles sont les conditions pour la Carte Bleue Européenne en Flandre ?",
+    "Quelles sont les conditions pour la Carte Bleue Européenne en région Bruxelles-Capitale ?",
+    "Quelles sont les différences entre le permis unique et la Carte Bleue en Belgique ?",
+  ],
+  germany: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne en Allemagne ?",
+    "Quelles sont les conditions pour la Chancenkarte en Allemagne ?",
+    "Quelles sont les conditions pour le permis de travail en Allemagne ?",
+    "Quel est le seuil salarial pour les professionnels de l'IT en Allemagne ?",
+    "Est-il obligatoire de parler allemand pour obtenir la Carte Bleue ?",
+  ],
+  austria: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne en Autriche ?",
+    "Qu'est-ce que la carte Rouge-Blanc-Rouge en Autriche ?",
+    "Quel est le seuil salarial pour les professionnels qualifiés en Autriche ?",
+    "Comment fonctionne le système de points pour l'immigration en Autriche ?",
+    "Quelles sont les professions en pénurie en Autriche ?",
+  ],
+  netherlands: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne aux Pays-Bas ?",
+    "Qu'est-ce que le visa de kennismigrant (migrant hautement qualifié) aux Pays-Bas ?",
+    "Quel est l'avantage de la règle des 30% aux Pays-Bas ?",
+    "Quelles sont les conditions pour obtenir un visa de recherche d'emploi (Orientation year) ?",
+  ],
+  sweden: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne en Suède ?",
+    "Comment obtenir un permis de travail classique en Suède ?",
+    "Quels sont les avantages du modèle de travail suédois ?",
+    "Comment fonctionne le permis de recherche d'emploi pour les diplômés en Suède ?",
+    "Est-ce que l'employeur doit parrainer mon visa en Suède ?",
+  ],
+  finland: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne en Finlande ?",
+    "Comment fonctionne le permis de spécialiste (Specialist permit) en Finlande ?",
+    "Quelles sont les opportunités dans la tech en Finlande ?",
+    "Qu'est-ce que le Fast-track pour les spécialistes en Finlande ?",
+  ],
+  malta: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne à Malte ?",
+    "Quels sont les avantages fiscaux pour les professionnels à Malte ?",
+    "Comment travailler dans le secteur iGaming à Malte ?",
+    "Qu'est-ce que la Key Employee Initiative (KEI) à Malte ?",
+    "Comment obtenir la résidence permanente à Malte ?",
+  ],
+  italy: [
+    "Quelles sont les conditions pour la Carta Blu UE en Italie ?",
+    "Comment fonctionne le système de quotas (Decreto Flussi) en Italie ?",
+    "Quels sont les avantages pour les impatriés (Lavoratori Impatriati) en Italie ?",
+    "Comment obtenir un visa pour travailleur indépendant en Italie ?",
+    "La Carta Blu italienne nécessite-t-elle de parler italien ?",
+  ],
+  spain: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne en Espagne ?",
+    "Quelles sont les conditions pour le visa nomade numérique en Espagne ?",
+    "Qu'est-ce que la loi des startups (Ley de Startups) en Espagne ?",
+    "Comment obtenir un visa pour professionnel hautement qualifié (PAC) en Espagne ?",
+    "Quel est le délai de traitement pour une Carte Bleue en Espagne ?",
+  ],
+  portugal: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne au Portugal ?",
+    "Comment obtenir le visa D3 pour professionnels hautement qualifiés au Portugal ?",
+    "Quelles sont les conditions pour le visa Tech (Tech Visa) au Portugal ?",
+    "Comment fonctionne le visa nomade numérique (D8) au Portugal ?",
+    "Quels sont les avantages fiscaux du régime RNH au Portugal ?",
+  ],
+  bulgaria: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne en Bulgarie ?",
+    "Quels sont les salaires moyens dans l'IT en Bulgarie ?",
+    "Quels sont les avantages fiscaux en Bulgarie ?",
+    "Faut-il une reconnaissance de diplôme pour travailler en Bulgarie ?",
+    "Quel est le coût de la vie pour un expatrié à Sofia ?",
+  ],
+  cyprus: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne à Chypre ?",
+    "Comment obtenir un permis de travail dans une entreprise d'intérêts étrangers à Chypre ?",
+    "Quelles sont les opportunités dans les services financiers à Chypre ?",
+    "Quels sont les avantages fiscaux pour les nouveaux résidents à Chypre ?",
+  ],
+  croatia: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne en Croatie ?",
+    "Comment obtenir un permis de séjour et de travail en Croatie ?",
+    "Quelles sont les conditions pour le visa nomade numérique en Croatie ?",
+    "Comment le test du marché du travail fonctionne-t-il en Croatie ?",
+    "Quels sont les secteurs qui recrutent le plus en Croatie ?",
+  ],
+  estonia: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne en Estonie ?",
+    "Comment fonctionne l'e-résidence (e-Residency) en Estonie ?",
+    "Quels sont les avantages de l'écosystème startup estonien ?",
+    "Quelles sont les conditions pour obtenir un visa startup en Estonie ?",
+    "Quel est le seuil salarial pour un développeur en Estonie ?",
+  ],
+  france: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne en France ?",
+    "Quelles sont les conditions pour le Passeport Talent en France ?",
+    "Quel est le seuil salarial pour le Passeport Talent en France ?",
+    "Comment obtenir un Passeport Talent 'Salarié qualifié' en France ?",
+    "Est-il facile de passer d'un statut étudiant à la Carte Bleue en France ?",
+  ],
+  greece: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne en Grèce ?",
+    "Comment obtenir un visa de travail de long séjour (Visa D) en Grèce ?",
+    "Quels sont les avantages pour les expatriés en Grèce ?",
+    "Comment fonctionne le visa nomade numérique en Grèce ?",
+  ],
+  hungary: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne en Hongrie ?",
+    "Quelles sont les conditions pour la carte nationale hongroise ?",
+    "Comment obtenir un permis de séjour pour travail en Hongrie ?",
+    "Qu'est-ce que le programme 'Enter Hungary Scheme' ?",
+    "Quel est le coût de la vie pour un ingénieur IT à Budapest ?",
+  ],
+  latvia: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne en Lettonie ?",
+    "Comment obtenir un visa startup en Lettonie ?",
+    "Quelles sont les opportunités IT en Lettonie ?",
+    "Quel est le délai pour obtenir une Carte Bleue lettone ?",
+  ],
+  lithuania: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne en Lituanie ?",
+    "Quelles sont les opportunités dans la Fintech en Lituanie ?",
+    "Comment obtenir un visa startup en Lituanie ?",
+    "Quel est le seuil salarial pour les métiers en demande en Lituanie ?",
+    "La Lituanie autorise-t-elle la double nationalité ?",
+  ],
+  poland: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne en Pologne ?",
+    "Comment fonctionne le programme Poland.Business Harbour ?",
+    "Quelles sont les opportunités IT en Pologne ?",
+    "Qu'est-ce qu'une promesse d'embauche (oświadczenie) en Pologne ?",
+    "Quel est le délai pour obtenir un permis de séjour temporaire (Karta Pobytu) ?",
+  ],
+  "czech-republic": [
+    "Quelles sont les conditions pour la Carte Bleue Européenne en République tchèque ?",
+    "Quelles sont les conditions pour la Carte d'employé en République tchèque ?",
+    "Quel est le salaire moyen pour un expatrié à Prague ?",
+    "Comment obtenir un visa de travailleur indépendant (Zivno) ?",
+    "Quelles sont les démarches d'intégration pour les étrangers en République tchèque ?",
+  ],
+  romania: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne en Roumanie ?",
+    "Quelles sont les conditions pour un permis de travail classique en Roumanie ?",
+    "Quels sont les avantages fiscaux pour les développeurs IT en Roumanie ?",
+    "Qu'est-ce que l'avis de travail (Aviz de munca) en Roumanie ?",
+    "Combien de temps faut-il pour obtenir la résidence en Roumanie ?",
+  ],
+  slovakia: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne en Slovaquie ?",
+    "Comment obtenir un permis de séjour unique (Single Permit) en Slovaquie ?",
+    "Quelles sont les industries qui recrutent en Slovaquie ?",
+    "Comment fonctionne l'exemption du test du marché du travail en Slovaquie ?",
+    "Quel est le coût de la vie à Bratislava ?",
+  ],
+  slovenia: [
+    "Quelles sont les conditions pour la Carte Bleue Européenne en Slovénie ?",
+    "Comment obtenir un permis unique de séjour et de travail en Slovénie ?",
+    "Quel est le cadre de vie pour un expatrié en Slovénie ?",
+    "Quels sont les secteurs en demande en Slovénie ?",
+    "Comment faire valider ses diplômes en Slovénie ?",
+  ],
+  canada: [
+    "Comment obtenir la résidence permanente au Canada avec Entrée Express ?",
+    "Quelles sont les opportunités via les Programmes des candidats des provinces (PCP) ?",
+    "Quelles sont les professions les plus en demande au Canada ?",
+    "Comment obtenir un permis de travail fermé avec EIMT au Canada ?",
+    "Qu'est-ce que l'expérience canadienne (CEC) et comment cela aide-t-il ?",
+  ],
+  "united-states": [
+    "Quelles sont les conditions pour le visa H-1B aux États-Unis ?",
+    "Comment obtenir une Green Card par l'emploi (EB-2/EB-3) ?",
+    "Quelles sont les conditions pour le visa O-1 pour talents extraordinaires ?",
+    "Quelle est la différence entre le visa L-1 et le visa H-1B ?",
+    "Comment fonctionne la loterie de la diversité (Diversity Visa) ?",
+  ],
+  "united-arab-emirates": [
+    "Quelles sont les conditions pour le Golden Visa aux Émirats Arabes Unis ?",
+    "Comment obtenir un visa de travail sponsorisé par l'employeur à Dubaï ?",
+    "Quels sont les avantages du visa de travail indépendant (Green Visa) ?",
+    "Quel est le coût de la vie et le niveau des salaires à Dubaï ?",
+  ],
+  qatar: [
+    "Quelles sont les conditions pour un visa de travail au Qatar ?",
+    "Comment fonctionne le système de parrainage (Kafala) révisé au Qatar ?",
+    "Quels sont les avantages de vivre et travailler à Doha ?",
+    "Quelles sont les démarches pour obtenir le Qatar ID (QID) ?",
+    "Le Qatar propose-t-il une résidence permanente pour les expatriés ?",
+  ],
+  kuwait: [
+    "Quelles sont les conditions pour un visa de travail (Article 18) au Koweït ?",
+    "Quelles sont les opportunités pour les professionnels dans le secteur pétrolier au Koweït ?",
+    "Comment fonctionne le transfert de résidence au Koweït ?",
+    "Quels sont les avantages et allocations typiques pour un expat au Koweït ?",
+  ],
+  bahrain: [
+    "Quelles sont les conditions pour un visa de travail à Bahreïn ?",
+    "Qu'est-ce que le Flexi Permit à Bahreïn ?",
+    "Quels sont les avantages du Golden Residency Visa à Bahreïn ?",
+    "Combien de temps faut-il pour obtenir un permis de travail via la LMRA ?",
+    "Quel est le coût de la vie à Manama ?",
+  ],
+  oman: [
+    "Quelles sont les conditions pour un visa de travail en Oman ?",
+    "Quelles sont les opportunités pour les professionnels étrangers en Oman ?",
+    "Comment fonctionne la politique d'Omanisation pour les emplois ?",
+    "Qu'est-ce que le visa investisseur ou partenaire en Oman ?",
+  ],
+  "saudi-arabia": [
+    "Quelles sont les conditions pour un visa de travail (Iqama) en Arabie Saoudite ?",
+    "Qu'est-ce que le Premium Residency en Arabie Saoudite ?",
+    "Quelles opportunités offre le plan Vision 2030 (ex: NEOM) aux professionnels ?",
+    "Comment fonctionne la plateforme Qiwa pour les contrats de travail ?",
+    "Les femmes expatriées peuvent-elles travailler librement en Arabie Saoudite ?",
+  ],
+  australia: [
+    "Quelles sont les conditions pour le visa qualifié indépendant (Subclass 189) en Australie ?",
+    "Comment fonctionne le système de points pour l'immigration en Australie ?",
+    "Quelles sont les conditions pour un visa sponsorisé par un employeur (Subclass 482) ?",
+    "Qu'est-ce que le visa nomade régional (Subclass 491) ?",
+    "Comment faire évaluer ses compétences pour l'Australie (Skills Assessment) ?",
+  ],
+  "new-zealand": [
+    "Quelles sont les conditions pour la résidence dans la catégorie Skilled Migrant en Nouvelle-Zélande ?",
+    "Comment obtenir un Accredited Employer Work Visa (AEWV) ?",
+    "Quelles sont les professions sur la liste verte (Green List) en Nouvelle-Zélande ?",
+    "Comment fonctionne le système de points néo-zélandais ?",
+  ],
+  denmark: [
+    "Quelles sont les conditions pour le Fast-Track Scheme au Danemark ?",
+    "Qu'est-ce que le Pay Limit Scheme au Danemark ?",
+    "Quelles sont les conditions pour la Positive List au Danemark ?",
+    "Comment fonctionne le régime fiscal pour chercheurs et travailleurs hautement qualifiés ?",
+    "Le Danemark autorise-t-il la double nationalité ?",
+  ],
+  ireland: [
+    "Quelles sont les conditions pour le Critical Skills Employment Permit en Irlande ?",
+    "Comment obtenir un General Employment Permit en Irlande ?",
+    "Quelles sont les opportunités dans les grandes entreprises technologiques à Dublin ?",
+    "Combien de temps faut-il pour obtenir la résidence permanente en Irlande ?",
+  ],
+  switzerland: [
+    "Quelles sont les conditions pour le Permis B et Permis L en Suisse ?",
+    "Comment le système de quotas affecte-t-il les travailleurs extra-européens en Suisse ?",
+    "Quels sont les salaires et le coût de la vie en Suisse ?",
+    "Quelle est la différence entre un frontalier (Permis G) et un résident (Permis B) ?",
+  ],
+  norway: [
+    "Quelles sont les conditions pour le visa de travailleur qualifié (Skilled Worker) en Norvège ?",
+    "Quels sont les critères d'études pour travailler en Norvège ?",
+    "Quelles sont les opportunités dans l'ingénierie et l'énergie en Norvège ?",
+    "Comment obtenir la résidence permanente en Norvège ?",
+  ],
+  iceland: [
+    "Quelles sont les conditions pour un permis de travail de professionnel qualifié en Islande ?",
+    "Quelles sont les opportunités pour les spécialistes IT en Islande ?",
+    "Comment obtenir une prolongation de permis de séjour en Islande ?",
+    "Quel est le processus d'intégration et les cours d'islandais obligatoires ?",
+  ],
+  "united-kingdom": [
+    "Quelles sont les conditions pour le Skilled Worker Visa au Royaume-Uni ?",
+    "Comment obtenir le Global Talent Visa au Royaume-Uni ?",
+    "Quel est le seuil de salaire minimum pour travailler au Royaume-Uni ?",
+    "Qu'est-ce que le 'Health and Care Worker visa' ?",
+    "Comment fonctionne le système de parrainage (Sponsorship Certificate) au UK ?",
+  ],
+}
+
+const defaultSuggestedQuestions = [
   "Quelles sont les conditions pour la Carte Bleue Européenne ?",
   "Comment obtenir la résidence permanente au Canada ?",
   "Quel seuil salarial pour l'Allemagne ?",
@@ -48,6 +324,10 @@ const suggestedQuestions = [
 ]
 
 export function AIChatInterface({ country }: AIChatInterfaceProps) {
+  const currentSuggestedQuestions = country && countryQuestionsMap[country]
+    ? countryQuestionsMap[country]
+    : defaultSuggestedQuestions
+
   const initialMessages: Message[] = [
     {
       id: "1",
@@ -332,7 +612,7 @@ export function AIChatInterface({ country }: AIChatInterfaceProps) {
               Questions suggérées :
             </Typography>
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
-              {suggestedQuestions.map((question) => (
+              {currentSuggestedQuestions.map((question) => (
                 <Chip
                   key={question}
                   label={question}
