@@ -17,7 +17,7 @@ import {
 import {
   ArrowBack as ArrowBackIcon,
   CheckCircle as CheckCircleIcon,
-  Info as InfoIcon,
+  TrendingUp as TrendingUpIcon,
   Circle as CircleIcon,
   Public as PublicIcon,
   Assessment as AssessmentIcon,
@@ -76,7 +76,7 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
         <Typography
           variant="body1"
           color="text.secondary"
-          sx={{ maxWidth: 800, fontSize: "1.1rem" }}
+          sx={{ maxWidth: "100%", fontSize: "1.1rem" }}
         >
           {country.description}
         </Typography>
@@ -220,29 +220,120 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
           </Card>
         </Grid>
 
-        {/* Disclaimer */}
+        {/* Indicateurs Économiques */}
         <Grid size={{ xs: 12, lg: 6 }}>
-          <Paper
-            elevation={0}
-            sx={{
-              p: 3,
-              bgcolor: "secondary.light",
-              borderRadius: 3,
-              height: "100%",
-            }}
-          >
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
-              <InfoIcon sx={{ color: "white" }} />
-              <Typography variant="h6" sx={{ fontWeight: 600 }} color="white">
-                Information Importante
+          <Card elevation={2} sx={{ height: "100%" }}>
+            <CardContent>
+              <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
+                <TrendingUpIcon color="secondary" />
+                <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                  Indicateurs Économiques
+                </Typography>
+              </Box>
+              <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                Dernières données macroéconomiques (Sources : FMI, Eurostat)
               </Typography>
-            </Box>
-            <Typography variant="body2" sx={{ color: "rgba(255,255,255,0.9)" }}>
-              Les informations présentées sont à titre indicatif et peuvent évoluer. 
-              Nous vous recommandons de consulter les sources officielles et de faire appel 
-              à un conseiller en immigration agréé pour votre dossier personnel.
-            </Typography>
-          </Paper>
+              {country.economicIndicators ? (
+                <List disablePadding>
+                  <ListItem disableGutters sx={{ py: 0.5, alignItems: "flex-start" }}>
+                    <ListItemIcon sx={{ minWidth: 28, mt: 1 }}>
+                      <CircleIcon sx={{ fontSize: 8, color: "primary.main" }} />
+                    </ListItemIcon>
+                    <ListItemText 
+                    primary={
+                      <>
+                        <Typography component="span" sx={{ fontWeight: 600 }}>PIB :</Typography> {country.economicIndicators.gdp.value}{" "}
+                        <Typography component="span" variant="caption" color="text.secondary">({country.economicIndicators.gdp.date})</Typography>
+                      </>
+                    } 
+                    />
+                  </ListItem>
+                  <ListItem disableGutters sx={{ py: 0.5, alignItems: "flex-start" }}>
+                    <ListItemIcon sx={{ minWidth: 28, mt: 1 }}>
+                      <CircleIcon sx={{ fontSize: 8, color: "primary.main" }} />
+                    </ListItemIcon>
+                    <ListItemText 
+                    primary={
+                      <>
+                        <Typography component="span" sx={{ fontWeight: 600 }}>PIB par habitant :</Typography> {country.economicIndicators.gdpPerCapita.value}{" "}
+                        <Typography component="span" variant="caption" color="text.secondary">({country.economicIndicators.gdpPerCapita.date})</Typography>
+                      </>
+                    } 
+                    />
+                  </ListItem>
+                  <ListItem disableGutters sx={{ py: 0.5, alignItems: "flex-start" }}>
+                    <ListItemIcon sx={{ minWidth: 28, mt: 1 }}>
+                      <CircleIcon sx={{ fontSize: 8, color: "primary.main" }} />
+                    </ListItemIcon>
+                    <ListItemText 
+                    primary={
+                      <>
+                        <Typography component="span" sx={{ fontWeight: 600 }}>Croissance :</Typography> {country.economicIndicators.economicGrowth.value}{" "}
+                        <Typography component="span" variant="caption" color="text.secondary">({country.economicIndicators.economicGrowth.date})</Typography>
+                      </>
+                    } 
+                    />
+                  </ListItem>
+                  <ListItem disableGutters sx={{ py: 0.5, alignItems: "flex-start" }}>
+                    <ListItemIcon sx={{ minWidth: 28, mt: 1 }}>
+                      <CircleIcon sx={{ fontSize: 8, color: "primary.main" }} />
+                    </ListItemIcon>
+                    <ListItemText 
+                    primary={
+                      <>
+                        <Typography component="span" sx={{ fontWeight: 600 }}>Inflation :</Typography> {country.economicIndicators.inflation.value}{" "}
+                        <Typography component="span" variant="caption" color="text.secondary">({country.economicIndicators.inflation.date})</Typography>
+                      </>
+                    } 
+                    />
+                  </ListItem>
+                  <ListItem disableGutters sx={{ py: 0.5, alignItems: "flex-start" }}>
+                    <ListItemIcon sx={{ minWidth: 28, mt: 1 }}>
+                      <CircleIcon sx={{ fontSize: 8, color: "primary.main" }} />
+                    </ListItemIcon>
+                    <ListItemText 
+                    primary={
+                      <>
+                        <Typography component="span" sx={{ fontWeight: 600 }}>Taux de chômage :</Typography> {country.economicIndicators.unemploymentRate.value}{" "}
+                        <Typography component="span" variant="caption" color="text.secondary">({country.economicIndicators.unemploymentRate.date})</Typography>
+                      </>
+                    } 
+                    />
+                  </ListItem>
+                  <ListItem disableGutters sx={{ py: 0.5, alignItems: "flex-start" }}>
+                    <ListItemIcon sx={{ minWidth: 28, mt: 1 }}>
+                      <CircleIcon sx={{ fontSize: 8, color: "primary.main" }} />
+                    </ListItemIcon>
+                    <ListItemText 
+                    primary={
+                      <>
+                        <Typography component="span" sx={{ fontWeight: 600 }}>Dette publique :</Typography> {country.economicIndicators.publicDebt.value}{" "}
+                        <Typography component="span" variant="caption" color="text.secondary">({country.economicIndicators.publicDebt.date})</Typography>
+                      </>
+                    } 
+                    />
+                  </ListItem>
+                  <ListItem disableGutters sx={{ py: 0.5, alignItems: "flex-start" }}>
+                    <ListItemIcon sx={{ minWidth: 28, mt: 1 }}>
+                      <CircleIcon sx={{ fontSize: 8, color: "primary.main" }} />
+                    </ListItemIcon>
+                    <ListItemText 
+                    primary={
+                      <>
+                        <Typography component="span" sx={{ fontWeight: 600 }}>Déficit / Excédent public :</Typography> {country.economicIndicators.publicDeficit.value}{" "}
+                        <Typography component="span" variant="caption" color="text.secondary">({country.economicIndicators.publicDeficit.date})</Typography>
+                      </>
+                    } 
+                    />
+                  </ListItem>
+                </List>
+              ) : (
+                <Typography variant="body2" sx={{ color: "text.secondary", mt: 2, fontStyle: "italic" }}>
+                  Les indicateurs économiques détaillés pour ce pays seront bientôt disponibles.
+                </Typography>
+              )}
+            </CardContent>
+          </Card>
         </Grid>
       </Grid>
 

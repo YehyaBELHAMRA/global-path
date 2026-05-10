@@ -13,6 +13,15 @@ export interface Country {
   population: number
   area: number
   currency: string
+  economicIndicators?: {
+    gdp: { value: string; date: string }
+    gdpPerCapita: { value: string; date: string }
+    economicGrowth: { value: string; date: string }
+    inflation: { value: string; date: string }
+    unemploymentRate: { value: string; date: string }
+    publicDebt: { value: string; date: string }
+    publicDeficit: { value: string; date: string }
+  }
 }
 
 export const euCountries: Country[] = [
@@ -30,7 +39,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Luxembourgeois", "Français", "Allemand"],
     population: 0.65,
     area: 2586,
-    currency: "Euro (€)"
+    currency: "Euro (€)",
+    economicIndicators: {
+      gdp: { value: "110 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "158 733 USD", date: "2026" },
+      economicGrowth: { value: "1,3 %", date: "T1 2026" },
+      inflation: { value: "2,3 %", date: "T1 2026" },
+      unemploymentRate: { value: "5,8 %", date: "T1 2026" },
+      publicDebt: { value: "25,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-1,5 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Belgique",
@@ -46,7 +64,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Néerlandais", "Français", "Allemand"],
     population: 11.7,
     area: 30528,
-    currency: "Euro (€)"
+    currency: "Euro (€)",
+    economicIndicators: {
+      gdp: { value: "777 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "65 112 USD", date: "2026" },
+      economicGrowth: { value: "1,2 %", date: "T1 2026" },
+      inflation: { value: "3,0 %", date: "T1 2026" },
+      unemploymentRate: { value: "6,0 %", date: "T1 2026" },
+      publicDebt: { value: "105,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-4,4 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Allemagne",
@@ -62,7 +89,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Allemand"],
     population: 83.3,
     area: 357022,
-    currency: "Euro (€)"
+    currency: "Euro (€)",
+    economicIndicators: {
+      gdp: { value: "5 453 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "65 303 USD", date: "2026" },
+      economicGrowth: { value: "0,2 %", date: "T1 2026" },
+      inflation: { value: "2,4 %", date: "T1 2026" },
+      unemploymentRate: { value: "3,2 %", date: "T1 2026" },
+      publicDebt: { value: "63,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-1,6 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Autriche",
@@ -78,7 +114,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Allemand"],
     population: 9.1,
     area: 83871,
-    currency: "Euro (€)"
+    currency: "Euro (€)",
+    economicIndicators: {
+      gdp: { value: "624 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "67 761 USD", date: "2026" },
+      economicGrowth: { value: "0,4 %", date: "T1 2026" },
+      inflation: { value: "3,8 %", date: "T1 2026" },
+      unemploymentRate: { value: "5,2 %", date: "T1 2026" },
+      publicDebt: { value: "77,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-2,9 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Pays-Bas",
@@ -94,7 +139,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Néerlandais"],
     population: 17.8,
     area: 41543,
-    currency: "Euro (€)"
+    currency: "Euro (€)",
+    economicIndicators: {
+      gdp: { value: "1 450 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "79 918 USD", date: "2026" },
+      economicGrowth: { value: "0,8 %", date: "T1 2026" },
+      inflation: { value: "2,8 %", date: "T1 2026" },
+      unemploymentRate: { value: "3,7 %", date: "T1 2026" },
+      publicDebt: { value: "46,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-2,0 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Suède",
@@ -110,7 +164,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Suédois"],
     population: 10.5,
     area: 450295,
-    currency: "Couronne suédoise (kr)"
+    currency: "Couronne suédoise (kr)",
+    economicIndicators: {
+      gdp: { value: "760 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "70 676 USD", date: "2026" },
+      economicGrowth: { value: "0,6 %", date: "T1 2026" },
+      inflation: { value: "2,7 %", date: "T1 2026" },
+      unemploymentRate: { value: "8,3 %", date: "T1 2026" },
+      publicDebt: { value: "31,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-0,8 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Finlande",
@@ -126,7 +189,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Finnois", "Suédois"],
     population: 5.5,
     area: 338145,
-    currency: "Euro (€)"
+    currency: "Euro (€)",
+    economicIndicators: {
+      gdp: { value: "338 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "60 130 USD", date: "2026" },
+      economicGrowth: { value: "-0,4 %", date: "T1 2026" },
+      inflation: { value: "2,0 %", date: "T1 2026" },
+      unemploymentRate: { value: "7,4 %", date: "T1 2026" },
+      publicDebt: { value: "75,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-3,0 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Malte",
@@ -142,7 +214,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Maltais", "Anglais"],
     population: 0.53,
     area: 316,
-    currency: "Euro (€)"
+    currency: "Euro (€)",
+    economicIndicators: {
+      gdp: { value: "31 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "53 560 USD", date: "2026" },
+      economicGrowth: { value: "5,0 %", date: "T1 2026" },
+      inflation: { value: "2,8 %", date: "T1 2026" },
+      unemploymentRate: { value: "2,6 %", date: "T1 2026" },
+      publicDebt: { value: "50,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-4,0 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Italie",
@@ -158,7 +239,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Italien"],
     population: 58.9,
     area: 301340,
-    currency: "Euro (€)"
+    currency: "Euro (€)",
+    economicIndicators: {
+      gdp: { value: "2 738 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "46 505 USD", date: "2026" },
+      economicGrowth: { value: "0,7 %", date: "T1 2026" },
+      inflation: { value: "1,7 %", date: "T1 2026" },
+      unemploymentRate: { value: "7,2 %", date: "T1 2026" },
+      publicDebt: { value: "137,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-4,3 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Espagne",
@@ -174,7 +264,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Espagnol"],
     population: 48.1,
     area: 505990,
-    currency: "Euro (€)"
+    currency: "Euro (€)",
+    economicIndicators: {
+      gdp: { value: "2 091 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "41 563 USD", date: "2026" },
+      economicGrowth: { value: "1,9 %", date: "T1 2026" },
+      inflation: { value: "3,0 %", date: "T1 2026" },
+      unemploymentRate: { value: "11,6 %", date: "T1 2026" },
+      publicDebt: { value: "106,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-3,0 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Portugal",
@@ -190,7 +289,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Portugais"],
     population: 10.5,
     area: 92212,
-    currency: "Euro (€)"
+    currency: "Euro (€)",
+    economicIndicators: {
+      gdp: { value: "381 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "35 434 USD", date: "2026" },
+      economicGrowth: { value: "1,7 %", date: "T1 2026" },
+      inflation: { value: "2,5 %", date: "T1 2026" },
+      unemploymentRate: { value: "6,5 %", date: "T1 2026" },
+      publicDebt: { value: "98,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "+0,2 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Bulgarie",
@@ -206,7 +314,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Bulgare"],
     population: 6.4,
     area: 110994,
-    currency: "Euro (€)"
+    currency: "Euro (€)",
+    economicIndicators: {
+      gdp: { value: "148 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "23 850 USD", date: "2026" },
+      economicGrowth: { value: "2,7 %", date: "T1 2026" },
+      inflation: { value: "3,4 %", date: "T1 2026" },
+      unemploymentRate: { value: "4,3 %", date: "T1 2026" },
+      publicDebt: { value: "23,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-2,8 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Chypre",
@@ -222,7 +339,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Grec", "Turc"],
     population: 1.2,
     area: 9251,
-    currency: "Euro (€)"
+    currency: "Euro (€)",
+    economicIndicators: {
+      gdp: { value: "45 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "45 410 USD", date: "2026" },
+      economicGrowth: { value: "2,7 %", date: "T1 2026" },
+      inflation: { value: "2,4 %", date: "T1 2026" },
+      unemploymentRate: { value: "5,8 %", date: "T1 2026" },
+      publicDebt: { value: "72,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "+2,0 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Croatie",
@@ -238,7 +364,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Croate"],
     population: 3.8,
     area: 56594,
-    currency: "Euro (€)"
+    currency: "Euro (€)",
+    economicIndicators: {
+      gdp: { value: "117 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "30 030 USD", date: "2026" },
+      economicGrowth: { value: "3,0 %", date: "T1 2026" },
+      inflation: { value: "3,1 %", date: "T1 2026" },
+      unemploymentRate: { value: "5,8 %", date: "T1 2026" },
+      publicDebt: { value: "60,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-1,9 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Estonie",
@@ -254,7 +389,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Estonien"],
     population: 1.36,
     area: 45227,
-    currency: "Euro (€)"
+    currency: "Euro (€)",
+    economicIndicators: {
+      gdp: { value: "52 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "37 720 USD", date: "2026" },
+      economicGrowth: { value: "-0,5 %", date: "T1 2026" },
+      inflation: { value: "3,5 %", date: "T1 2026" },
+      unemploymentRate: { value: "7,0 %", date: "T1 2026" },
+      publicDebt: { value: "20,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-3,0 % du PIB", date: "2025" }
+    }
   },
   {
     name: "France",
@@ -270,7 +414,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Français"],
     population: 68.0,
     area: 551695,
-    currency: "Euro (€)"
+    currency: "Euro (€)",
+    economicIndicators: {
+      gdp: { value: "3 596 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "52 083 USD", date: "2026" },
+      economicGrowth: { value: "0,7 %", date: "T1 2026" },
+      inflation: { value: "2,4 %", date: "T1 2026" },
+      unemploymentRate: { value: "7,4 %", date: "T1 2026" },
+      publicDebt: { value: "111,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-5,0 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Grèce",
@@ -286,7 +439,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Grec"],
     population: 10.4,
     area: 131957,
-    currency: "Euro (€)"
+    currency: "Euro (€)",
+    economicIndicators: {
+      gdp: { value: "308 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "29 700 USD", date: "2026" },
+      economicGrowth: { value: "2,0 %", date: "T1 2026" },
+      inflation: { value: "2,8 %", date: "T1 2026" },
+      unemploymentRate: { value: "10,0 %", date: "T1 2026" },
+      publicDebt: { value: "152,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-1,2 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Hongrie",
@@ -302,7 +464,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Hongrois"],
     population: 9.6,
     area: 93028,
-    currency: "Forint hongrois (Ft)"
+    currency: "Forint hongrois (Ft)",
+    economicIndicators: {
+      gdp: { value: "271 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "28 430 USD", date: "2026" },
+      economicGrowth: { value: "2,2 %", date: "T1 2026" },
+      inflation: { value: "4,5 %", date: "T1 2026" },
+      unemploymentRate: { value: "4,4 %", date: "T1 2026" },
+      publicDebt: { value: "73,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-4,5 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Lettonie",
@@ -318,7 +489,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Letton"],
     population: 1.88,
     area: 64589,
-    currency: "Euro (€)"
+    currency: "Euro (€)",
+    economicIndicators: {
+      gdp: { value: "54 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "28 910 USD", date: "2026" },
+      economicGrowth: { value: "1,7 %", date: "T1 2026" },
+      inflation: { value: "2,0 %", date: "T1 2026" },
+      unemploymentRate: { value: "6,7 %", date: "T1 2026" },
+      publicDebt: { value: "43,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-2,8 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Lituanie",
@@ -334,7 +514,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Lituanien"],
     population: 2.8,
     area: 65300,
-    currency: "Euro (€)"
+    currency: "Euro (€)",
+    economicIndicators: {
+      gdp: { value: "106 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "36 540 USD", date: "2026" },
+      economicGrowth: { value: "2,2 %", date: "T1 2026" },
+      inflation: { value: "2,4 %", date: "T1 2026" },
+      unemploymentRate: { value: "6,4 %", date: "T1 2026" },
+      publicDebt: { value: "39,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-2,4 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Pologne",
@@ -350,7 +539,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Polonais"],
     population: 36.8,
     area: 312696,
-    currency: "Złoty (zł)"
+    currency: "Złoty (zł)",
+    economicIndicators: {
+      gdp: { value: "1 134 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "31 340 USD", date: "2026" },
+      economicGrowth: { value: "3,1 %", date: "T1 2026" },
+      inflation: { value: "5,0 %", date: "T1 2026" },
+      unemploymentRate: { value: "5,1 %", date: "T1 2026" },
+      publicDebt: { value: "54,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-5,4 % du PIB", date: "2025" }
+    }
   },
   {
     name: "République tchèque",
@@ -366,7 +564,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Tchèque"],
     population: 10.8,
     area: 78867,
-    currency: "Couronne tchèque (Kč)"
+    currency: "Couronne tchèque (Kč)",
+    economicIndicators: {
+      gdp: { value: "433 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "39 800 USD", date: "2026" },
+      economicGrowth: { value: "1,2 %", date: "T1 2026" },
+      inflation: { value: "2,1 %", date: "T1 2026" },
+      unemploymentRate: { value: "2,8 %", date: "T1 2026" },
+      publicDebt: { value: "45,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-2,5 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Roumanie",
@@ -382,7 +589,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Roumain"],
     population: 19.0,
     area: 238391,
-    currency: "Leu roumain (lei)"
+    currency: "Leu roumain (lei)",
+    economicIndicators: {
+      gdp: { value: "481 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "25 690 USD", date: "2026" },
+      economicGrowth: { value: "2,8 %", date: "T1 2026" },
+      inflation: { value: "5,0 %", date: "T1 2026" },
+      unemploymentRate: { value: "5,5 %", date: "T1 2026" },
+      publicDebt: { value: "52,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-5,0 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Slovaquie",
@@ -398,7 +614,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Slovaque"],
     population: 5.4,
     area: 49035,
-    currency: "Euro (€)"
+    currency: "Euro (€)",
+    economicIndicators: {
+      gdp: { value: "169 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "31 240 USD", date: "2026" },
+      economicGrowth: { value: "2,1 %", date: "T1 2026" },
+      inflation: { value: "3,0 %", date: "T1 2026" },
+      unemploymentRate: { value: "5,4 %", date: "T1 2026" },
+      publicDebt: { value: "59,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-5,5 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Slovénie",
@@ -414,7 +639,16 @@ export const euCountries: Country[] = [
     officialLanguages: ["Slovène"],
     population: 2.1,
     area: 20273,
-    currency: "Euro (€)"
+    currency: "Euro (€)",
+    economicIndicators: {
+      gdp: { value: "87 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "40 630 USD", date: "2026" },
+      economicGrowth: { value: "2,0 %", date: "T1 2026" },
+      inflation: { value: "2,7 %", date: "T1 2026" },
+      unemploymentRate: { value: "3,6 %", date: "T1 2026" },
+      publicDebt: { value: "68,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-3,5 % du PIB", date: "2025" }
+    }
   },
 ]
 
@@ -433,7 +667,16 @@ export const northAmericaCountries: Country[] = [
     officialLanguages: ["Anglais", "Français"],
     population: 40.0,
     area: 9984670,
-    currency: "Dollar canadien (CAD)"
+    currency: "Dollar canadien (CAD)",
+    economicIndicators: {
+      gdp: { value: "2 507 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "60 304 USD", date: "2026" },
+      economicGrowth: { value: "1,2 %", date: "T1 2026" },
+      inflation: { value: "2,6 %", date: "T1 2026" },
+      unemploymentRate: { value: "6,1 %", date: "T1 2026" },
+      publicDebt: { value: "104,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-1,5 % du PIB", date: "2025" }
+    }
   },
   {
     name: "États-Unis",
@@ -449,7 +692,16 @@ export const northAmericaCountries: Country[] = [
     officialLanguages: ["Anglais"],
     population: 334.9,
     area: 9833517,
-    currency: "Dollar américain ($)"
+    currency: "Dollar américain ($)",
+    economicIndicators: {
+      gdp: { value: "32 384 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "94 430 USD", date: "2026" },
+      economicGrowth: { value: "2,7 %", date: "T1 2026" },
+      inflation: { value: "2,9 %", date: "T1 2026" },
+      unemploymentRate: { value: "3,8 %", date: "T1 2026" },
+      publicDebt: { value: "123,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-6,5 % du PIB", date: "2025" }
+    }
   },
 ]
 
@@ -468,7 +720,16 @@ export const gccCountries: Country[] = [
     officialLanguages: ["Arabe"],
     population: 9.4,
     area: 83600,
-    currency: "Dirham des Émirats arabes unis (AED)"
+    currency: "Dirham des Émirats arabes unis (AED)",
+    economicIndicators: {
+      gdp: { value: "622 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "54 214 USD", date: "2026" },
+      economicGrowth: { value: "3,5 %", date: "T1 2026" },
+      inflation: { value: "2,1 %", date: "T1 2026" },
+      unemploymentRate: { value: "2,8 %", date: "T1 2026" },
+      publicDebt: { value: "29,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "+4,5 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Qatar",
@@ -484,7 +745,16 @@ export const gccCountries: Country[] = [
     officialLanguages: ["Arabe"],
     population: 2.7,
     area: 11586,
-    currency: "Riyal qatari (QAR)"
+    currency: "Riyal qatari (QAR)",
+    economicIndicators: {
+      gdp: { value: "217 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "68 138 USD", date: "2026" },
+      economicGrowth: { value: "2,0 %", date: "T1 2026" },
+      inflation: { value: "2,2 %", date: "T1 2026" },
+      unemploymentRate: { value: "0,1 %", date: "T1 2026" },
+      publicDebt: { value: "39,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "+6,0 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Koweït",
@@ -500,7 +770,16 @@ export const gccCountries: Country[] = [
     officialLanguages: ["Arabe"],
     population: 4.3,
     area: 17818,
-    currency: "Dinar koweïtien (KWD)"
+    currency: "Dinar koweïtien (KWD)",
+    economicIndicators: {
+      gdp: { value: "173 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "33 160 USD", date: "2026" },
+      economicGrowth: { value: "-1,4 %", date: "T1 2026" },
+      inflation: { value: "3,2 %", date: "T1 2026" },
+      unemploymentRate: { value: "2,1 %", date: "T1 2026" },
+      publicDebt: { value: "3,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-2,0 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Bahreïn",
@@ -516,7 +795,16 @@ export const gccCountries: Country[] = [
     officialLanguages: ["Arabe"],
     population: 1.5,
     area: 765,
-    currency: "Dinar bahreïni (BHD)"
+    currency: "Dinar bahreïni (BHD)",
+    economicIndicators: {
+      gdp: { value: "49 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "29 570 USD", date: "2026" },
+      economicGrowth: { value: "3,6 %", date: "T1 2026" },
+      inflation: { value: "1,4 %", date: "T1 2026" },
+      unemploymentRate: { value: "5,4 %", date: "T1 2026" },
+      publicDebt: { value: "121,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-3,0 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Oman",
@@ -532,7 +820,16 @@ export const gccCountries: Country[] = [
     officialLanguages: ["Arabe"],
     population: 4.6,
     area: 309500,
-    currency: "Rial omanais (OMR)"
+    currency: "Rial omanais (OMR)",
+    economicIndicators: {
+      gdp: { value: "117 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "21 640 USD", date: "2026" },
+      economicGrowth: { value: "1,2 %", date: "T1 2026" },
+      inflation: { value: "1,5 %", date: "T1 2026" },
+      unemploymentRate: { value: "2,3 %", date: "T1 2026" },
+      publicDebt: { value: "36,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "+1,5 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Arabie Saoudite",
@@ -548,7 +845,16 @@ export const gccCountries: Country[] = [
     officialLanguages: ["Arabe"],
     population: 36.4,
     area: 2149690,
-    currency: "Riyal saoudien (SAR)"
+    currency: "Riyal saoudien (SAR)",
+    economicIndicators: {
+      gdp: { value: "1 389 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "37 810 USD", date: "2026" },
+      economicGrowth: { value: "2,6 %", date: "T1 2026" },
+      inflation: { value: "2,2 %", date: "T1 2026" },
+      unemploymentRate: { value: "4,4 %", date: "T1 2026" },
+      publicDebt: { value: "26,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-1,7 % du PIB", date: "2025" }
+    }
   },
 ]
 
@@ -567,7 +873,16 @@ export const oceaniaCountries: Country[] = [
     officialLanguages: ["Anglais"],
     population: 26.6,
     area: 7692024,
-    currency: "Dollar australien (AUD)"
+    currency: "Dollar australien (AUD)",
+    economicIndicators: {
+      gdp: { value: "2 124 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "75 648 USD", date: "2026" },
+      economicGrowth: { value: "1,5 %", date: "T1 2026" },
+      inflation: { value: "3,5 %", date: "T1 2026" },
+      unemploymentRate: { value: "4,0 %", date: "T1 2026" },
+      publicDebt: { value: "49,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-1,2 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Nouvelle-Zélande",
@@ -583,7 +898,16 @@ export const oceaniaCountries: Country[] = [
     officialLanguages: ["Anglais", "Māori"],
     population: 5.2,
     area: 268021,
-    currency: "Dollar néo-zélandais (NZD)"
+    currency: "Dollar néo-zélandais (NZD)",
+    economicIndicators: {
+      gdp: { value: "279 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "52 023 USD", date: "2026" },
+      economicGrowth: { value: "1,0 %", date: "T1 2026" },
+      inflation: { value: "3,0 %", date: "T1 2026" },
+      unemploymentRate: { value: "4,7 %", date: "T1 2026" },
+      publicDebt: { value: "45,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-3,0 % du PIB", date: "2025" }
+    }
   },
 ]
 
@@ -602,7 +926,16 @@ export const europeOtherCountries: Country[] = [
     officialLanguages: ["Danois"],
     population: 5.9,
     area: 42933,
-    currency: "Couronne danoise (kr)"
+    currency: "Couronne danoise (kr)",
+    economicIndicators: {
+      gdp: { value: "504 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "83 445 USD", date: "2026" },
+      economicGrowth: { value: "2,1 %", date: "T1 2026" },
+      inflation: { value: "1,9 %", date: "T1 2026" },
+      unemploymentRate: { value: "4,5 %", date: "T1 2026" },
+      publicDebt: { value: "29,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "+2,5 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Irlande",
@@ -618,7 +951,16 @@ export const europeOtherCountries: Country[] = [
     officialLanguages: ["Irlandais", "Anglais"],
     population: 5.3,
     area: 70273,
-    currency: "Euro (€)"
+    currency: "Euro (€)",
+    economicIndicators: {
+      gdp: { value: "779 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "140 186 USD", date: "2026" },
+      economicGrowth: { value: "1,5 %", date: "T1 2026" },
+      inflation: { value: "2,2 %", date: "T1 2026" },
+      unemploymentRate: { value: "4,3 %", date: "T1 2026" },
+      publicDebt: { value: "42,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "+1,2 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Suisse",
@@ -634,7 +976,16 @@ export const europeOtherCountries: Country[] = [
     officialLanguages: ["Allemand", "Français", "Italien", "Romanche"],
     population: 8.8,
     area: 41285,
-    currency: "Franc suisse (CHF)"
+    currency: "Franc suisse (CHF)",
+    economicIndicators: {
+      gdp: { value: "1 147 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "126 177 USD", date: "2026" },
+      economicGrowth: { value: "1,3 %", date: "T1 2026" },
+      inflation: { value: "1,5 %", date: "T1 2026" },
+      unemploymentRate: { value: "4,0 %", date: "T1 2026" },
+      publicDebt: { value: "38,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "+0,5 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Norvège",
@@ -650,7 +1001,16 @@ export const europeOtherCountries: Country[] = [
     officialLanguages: ["Norvégien"],
     population: 5.5,
     area: 385207,
-    currency: "Couronne norvégienne (kr)"
+    currency: "Couronne norvégienne (kr)",
+    economicIndicators: {
+      gdp: { value: "599 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "105 877 USD", date: "2026" },
+      economicGrowth: { value: "1,5 %", date: "T1 2026" },
+      inflation: { value: "3,8 %", date: "T1 2026" },
+      unemploymentRate: { value: "3,9 %", date: "T1 2026" },
+      publicDebt: { value: "43,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "+14,0 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Islande",
@@ -666,7 +1026,16 @@ export const europeOtherCountries: Country[] = [
     officialLanguages: ["Islandais"],
     population: 0.38,
     area: 103000,
-    currency: "Couronne islandaise (kr)"
+    currency: "Couronne islandaise (kr)",
+    economicIndicators: {
+      gdp: { value: "44 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "110 048 USD", date: "2026" },
+      economicGrowth: { value: "1,1 %", date: "T1 2026" },
+      inflation: { value: "5,4 %", date: "T1 2026" },
+      unemploymentRate: { value: "3,5 %", date: "T1 2026" },
+      publicDebt: { value: "63,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-1,0 % du PIB", date: "2025" }
+    }
   },
   {
     name: "Royaume-Uni",
@@ -682,7 +1051,16 @@ export const europeOtherCountries: Country[] = [
     officialLanguages: ["Anglais"],
     population: 67.3,
     area: 242495,
-    currency: "Livre sterling (£)"
+    currency: "Livre sterling (£)",
+    economicIndicators: {
+      gdp: { value: "4 265 milliards USD", date: "2026" },
+      gdpPerCapita: { value: "61 056 USD", date: "2026" },
+      economicGrowth: { value: "0,5 %", date: "T1 2026" },
+      inflation: { value: "2,5 %", date: "T1 2026" },
+      unemploymentRate: { value: "4,2 %", date: "T1 2026" },
+      publicDebt: { value: "104,0 % du PIB", date: "2025" },
+      publicDeficit: { value: "-4,5 % du PIB", date: "2025" }
+    }
   }
 ]
 
