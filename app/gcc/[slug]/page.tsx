@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `Visa de Travail - ${country.name} | Global-Path`,
+    title: `Visa de travail - ${country.name} | Global-Path`,
     description: country.description,
   }
 }

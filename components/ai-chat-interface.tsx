@@ -43,7 +43,7 @@ type MarkdownBlock =
 const countryQuestionsMap: Record<string, string[]> = {
   luxembourg: [
     "Quelles sont les conditions pour la Carte Bleue Européenne au Luxembourg ?",
-    "Quel est le seuil salarial pour la Carte Bleue au Luxembourg ?",
+    "Quel est le seuil salarial pour la Carte Bleue Européenne au Luxembourg ?",
     "Quels sont les avantages pour les travailleurs hautement qualifiés au Luxembourg ?",
     "Quel est le niveau de langue requis pour travailler au Luxembourg ?",
   ],
@@ -52,14 +52,14 @@ const countryQuestionsMap: Record<string, string[]> = {
     "Quelles sont les conditions pour la Carte Bleue Européenne en Wallonie ?",
     "Quelles sont les conditions pour la Carte Bleue Européenne en Flandre ?",
     "Quelles sont les conditions pour la Carte Bleue Européenne en région Bruxelles-Capitale ?",
-    "Quelles sont les différences entre le permis unique et la Carte Bleue en Belgique ?",
+    "Quelles sont les différences entre le permis unique et la Carte Bleue Européenne en Belgique ?",
   ],
   germany: [
     "Quelles sont les conditions pour la Carte Bleue Européenne en Allemagne ?",
     "Quelles sont les conditions pour la Chancenkarte en Allemagne ?",
     "Quelles sont les conditions pour le permis de travail en Allemagne ?",
     "Quel est le seuil salarial pour les professionnels de l'IT en Allemagne ?",
-    "Est-il obligatoire de parler allemand pour obtenir la Carte Bleue ?",
+    "Est-il obligatoire de parler allemand pour obtenir la Carte Bleue Européenne ?",
   ],
   austria: [
     "Quelles sont les conditions pour la Carte Bleue Européenne en Autriche ?",
@@ -106,7 +106,7 @@ const countryQuestionsMap: Record<string, string[]> = {
     "Quelles sont les conditions pour le visa nomade numérique en Espagne ?",
     "Qu'est-ce que la loi des startups (Ley de Startups) en Espagne ?",
     "Comment obtenir un visa pour professionnel hautement qualifié (PAC) en Espagne ?",
-    "Quel est le délai de traitement pour une Carte Bleue en Espagne ?",
+    "Quel est le délai de traitement pour une Carte Bleue Européenne en Espagne ?",
   ],
   portugal: [
     "Quelles sont les conditions pour la Carte Bleue Européenne au Portugal ?",
@@ -142,13 +142,6 @@ const countryQuestionsMap: Record<string, string[]> = {
     "Quelles sont les conditions pour obtenir un visa startup en Estonie ?",
     "Quel est le seuil salarial pour un développeur en Estonie ?",
   ],
-  france: [
-    "Quelles sont les conditions pour la Carte Bleue Européenne en France ?",
-    "Quelles sont les conditions pour le Passeport Talent en France ?",
-    "Quel est le seuil salarial pour le Passeport Talent en France ?",
-    "Comment obtenir un Passeport Talent 'Salarié qualifié' en France ?",
-    "Est-il facile de passer d'un statut étudiant à la Carte Bleue en France ?",
-  ],
   greece: [
     "Quelles sont les conditions pour la Carte Bleue Européenne en Grèce ?",
     "Comment obtenir un visa de travail de long séjour (Visa D) en Grèce ?",
@@ -166,7 +159,7 @@ const countryQuestionsMap: Record<string, string[]> = {
     "Quelles sont les conditions pour la Carte Bleue Européenne en Lettonie ?",
     "Comment obtenir un visa startup en Lettonie ?",
     "Quelles sont les opportunités IT en Lettonie ?",
-    "Quel est le délai pour obtenir une Carte Bleue lettone ?",
+    "Quel est le délai pour obtenir une Carte Bleue Européenne lettone ?",
   ],
   lithuania: [
     "Quelles sont les conditions pour la Carte Bleue Européenne en Lituanie ?",
@@ -498,7 +491,7 @@ export function AIChatInterface({ country }: AIChatInterfaceProps) {
         </Avatar>
         <Box sx={{ flex: 1 }}>
           <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
-            Assistant Immigration
+            Assistant immigration
           </Typography>
           <Typography variant="caption" color="text.secondary">
             Conseils juridiques par IA
@@ -1326,7 +1319,7 @@ function getContextualResponse(question: string): string {
   const lowerQuestion = question.toLowerCase()
 
   if (lowerQuestion.includes("carte bleue") || lowerQuestion.includes("blue card") || lowerQuestion.includes("européenne")) {
-    return "La Carte Bleue Européenne est un permis de travail et de séjour pour les ressortissants non-UE hautement qualifiés. Conditions principales : (1) Un contrat de travail valide ou une offre d'emploi ferme avec un salaire minimum (varie selon le pays, généralement 1,5x le salaire moyen), (2) Diplôme d'enseignement supérieur ou 5+ ans d'expérience professionnelle, (3) Couverture d'assurance maladie. Pour les professionnels algériens, l'Allemagne et la France sont des destinations privilégiées avec de solides relations bilatérales."
+    return "La Carte Bleue Européenne est un permis de travail et de séjour pour les ressortissants non-UE hautement qualifiés. Conditions principales : (1) Un contrat de travail valide ou une offre d'emploi ferme avec un salaire minimum (varie selon le pays, généralement 1,5x le salaire moyen), (2) Diplôme d'enseignement supérieur ou 5+ ans d'expérience professionnelle, (3) Couverture d'assurance maladie. Pour les professionnels algériens, l'Allemagne est une destination privilégiée avec de solides relations bilatérales."
   }
 
   if (lowerQuestion.includes("canada") || lowerQuestion.includes("canadien") || lowerQuestion.includes("permanente")) {
@@ -1338,7 +1331,7 @@ function getContextualResponse(question: string): string {
   }
 
   if (lowerQuestion.includes("salaire") || lowerQuestion.includes("seuil") || lowerQuestion.includes("allemagne")) {
-    return "Les seuils salariaux varient selon le pays et le type de visa. Pour les Cartes Bleues Européennes : l'Allemagne exige ~45 300€/an (ou 41 042€ pour les métiers en pénurie), la France exige ~1,5x le SMIC (~28 000€), les Pays-Bas exigent ~5 008€/mois. Ces seuils sont actualisés annuellement, je recommande de vérifier les chiffres actuels auprès des sources officielles avant de postuler."
+    return "Les seuils salariaux varient selon le pays et le type de visa. Pour les Cartes Bleues Européennes : l'Allemagne exige ~45 300€/an (ou 41 042€ pour les métiers en pénurie), les Pays-Bas exigent ~5 008€/mois. Ces seuils sont actualisés annuellement, je recommande de vérifier les chiffres actuels auprès des sources officielles avant de postuler."
   }
 
   return "Merci pour votre question. Pour vous fournir des conseils précis, pourriez-vous préciser : (1) Votre pays ou région de destination, (2) Votre domaine d'expertise et années d'expérience, et (3) Vos qualifications académiques ? Cela me permettra d'adapter mes recommandations à votre situation spécifique en tant que professionnel algérien cherchant des opportunités internationales."

@@ -95,7 +95,7 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
               <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
                 <CheckCircleIcon color="secondary" />
                 <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                  Points Forts
+                  Points forts
                 </Typography>
               </Box>
               <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
@@ -139,7 +139,7 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
               <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
                 <PublicIcon color="secondary" />
                 <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                  Informations Générales
+                  Informations générales
                 </Typography>
               </Box>
               <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
@@ -192,7 +192,7 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
               <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
                 <AssessmentIcon color="secondary" />
                 <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                  Chiffres Clés
+                  Chiffres clés
                 </Typography>
               </Box>
               <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
@@ -267,7 +267,7 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
               <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
                 <TrendingUpIcon color="secondary" />
                 <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                  Indicateurs Économiques
+                  Indicateurs économiques
                 </Typography>
               </Box>
               <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
@@ -382,7 +382,7 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
       <Box sx={{ mt: 5 }}>
         <FadeIn delay={0.5}>
         <Typography variant="h4" component="h2" sx={{ mb: 3, textAlign: "center", fontWeight: 600 }}>
-          Assistant IA - Conseils Personnalisés
+          Assistant IA - Conseils personnalisés
         </Typography>
         <AIChatInterface country={country.slug} />
         </FadeIn>
