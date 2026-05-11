@@ -93,6 +93,8 @@ export async function POST(
                     ragCorpus: corpusId,
                   },
                 ],
+                // Retrieve only the 3 most relevant chunks to drastically reduce input tokens
+                similarityTopK: 3,
               },
             },
           },
@@ -100,7 +102,8 @@ export async function POST(
         systemInstruction: GeminiSystemPrompt,
         maxOutputTokens: 32767,
         temperature: 0.2,
-        topP: 0.95,
+        topP: 0.8,
+        topK: 10,
       },
     })
 
