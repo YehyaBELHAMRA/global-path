@@ -1,6 +1,7 @@
-import { Box, Container, Typography } from "@mui/material"
+import { Box, Container } from "@mui/material"
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
+import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
@@ -14,22 +15,7 @@ export default function Home() {
         </Box>
       </Container>
 
-      {/* Footer */}
-      <Box
-        component="footer"
-        sx={{
-          borderTop: 1,
-          borderColor: "divider",
-          bgcolor: "background.paper",
-          py: 3,
-        }}
-      >
-        <Container maxWidth="lg">
-          <Typography variant="body2" color="text.secondary" align="center">
-            Global-Path. À titre informatif uniquement.
-          </Typography>
-        </Container>
-      </Box>
+      <Footer />
     </Box>
   )
 }

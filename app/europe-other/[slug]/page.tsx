@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation"
-import { Box, Container, Typography } from "@mui/material"
+import { Box } from "@mui/material"
 import { Header } from "@/components/header"
 import { CountryPage } from "@/components/country-page"
+import { Footer } from "@/components/footer"
 import { allCountries } from "@/lib/countries"
 import type { Metadata } from "next"
 
@@ -51,6 +52,7 @@ export default async function EuropeOtherCountryPage({ params }: PageProps) {
           backLabel="Retour à l'accueil"
         />
       </Box>
+      <Footer />
     </Box>
   )
 }

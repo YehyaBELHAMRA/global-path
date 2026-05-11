@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation"
-import { Box, Container, Typography } from "@mui/material"
+import { Box } from "@mui/material"
 import { Header } from "@/components/header"
 import { CountryPage } from "@/components/country-page"
+import { Footer } from "@/components/footer"
 import { gccCountries } from "@/lib/countries"
 import type { Metadata } from "next"
 
@@ -49,21 +50,7 @@ export default async function GCCCountryPage({ params }: PageProps) {
           backLabel="Retour à l'accueil"
         />
       </Box>
-      <Box
-        component="footer"
-        sx={{
-          borderTop: 1,
-          borderColor: "divider",
-          bgcolor: "background.paper",
-          py: 3,
-        }}
-      >
-        <Container maxWidth="lg">
-          <Typography variant="body2" color="text.secondary" align="center">
-            Global Path. À titre informatif uniquement.
-          </Typography>
-        </Container>
-      </Box>
+      <Footer />
     </Box>
   )
 }
