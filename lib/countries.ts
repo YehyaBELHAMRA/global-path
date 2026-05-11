@@ -433,33 +433,6 @@ export const euCountries: Country[] = [
     gini: { value: 30.5, year: "2019" }
   },
   {
-    name: "France",
-    slug: "france",
-    flag: "https://flagcdn.com/fr.svg",
-    phoneCode: "+33",
-    region: "european-blue-card",
-    description: "La France offre une économie diversifiée, une culture riche et un excellent système de protection sociale.",
-    highlights: ["Culture riche", "Système de santé", "Gastronomie", "Hubs tech (Paris, Lyon)"],
-    visaType: "Carte Bleue Européenne",
-    officialName: "République française",
-    capital: "Paris",
-    officialLanguages: ["Français"],
-    population: 68.0,
-    area: 551695,
-    currency: "Euro (€)",
-    economicIndicators: {
-      gdp: { value: "3 596 milliards USD", date: "2026" },
-      gdpPerCapita: { value: "52 083 USD", date: "2026" },
-      economicGrowth: { value: "0,7 %", date: "T1 2026" },
-      inflation: { value: "2,4 %", date: "T1 2026" },
-      unemploymentRate: { value: "7,4 %", date: "T1 2026" },
-      publicDebt: { value: "111,0 % du PIB", date: "2025" },
-      publicDeficit: { value: "-5,0 % du PIB", date: "2025" }
-    },
-    hdi: { value: 0.920, year: "2023" },
-    gini: { value: 29.2, year: "2019" }
-  },
-  {
     name: "Grèce",
     slug: "greece",
     flag: "https://flagcdn.com/gr.svg",
