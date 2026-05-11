@@ -378,16 +378,60 @@ export function AIChatInterface({ country }: AIChatInterfaceProps) {
           throw new Error('API request failed')
         }
 
-        const data = await response.json()
+        const reader = response.body?.getReader()
+        if (!reader) throw new Error('Response body is not readable')
 
-        const assistantMessage: Message = {
-          id: (Date.now() + 1).toString(),
-          role: "assistant",
-          content: data.response,
-          sources: data.sources,
-          timestamp: new Date(),
+        // Create a placeholder message for the incoming stream
+        const messageId = (Date.now() + 1).toString()
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: messageId,
+            role: "assistant",
+            content: "",
+            timestamp: new Date(),
+          }
+        ])
+        setIsTyping(false) // Turn off the bouncing dots as soon as TTFT finishes
+
+        const decoder = new TextDecoder()
+        let done = false
+        let buffer = ""
+        let fullText = ""
+        let sources: string[] = []
+
+        while (!done) {
+          const { value, done: readerDone } = await reader.read()
+          done = readerDone
+          if (value) {
+            buffer += decoder.decode(value, { stream: true })
+            let boundary = buffer.indexOf('\n\n')
+            
+            while (boundary !== -1) {
+              const chunk = buffer.slice(0, boundary)
+              buffer = buffer.slice(boundary + 2)
+              
+              if (chunk.startsWith('data: ')) {
+                try {
+                  const data = JSON.parse(chunk.slice(6))
+                  if (data.text) fullText += data.text
+                  if (data.sources) sources = data.sources
+                  
+                  setMessages((prev) => 
+                    prev.map((msg) => 
+                      msg.id === messageId 
+                        ? { ...msg, content: fullText, sources } 
+                        : msg
+                    )
+                  )
+                } catch (e) {
+                  console.error("Failed to parse SSE JSON:", chunk)
+                }
+              }
+              boundary = buffer.indexOf('\n\n')
+            }
+          }
         }
-        setMessages((prev) => [...prev, assistantMessage])
       } else {
         // Fallback to stubbed response
         setTimeout(() => {

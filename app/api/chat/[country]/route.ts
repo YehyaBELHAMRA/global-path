@@ -79,8 +79,8 @@ export async function POST(
       )
     }
 
-    // Generate content directly from the Vertex AI model with RAG grounding
-    const result = await genAI.models.generateContent({
+    // Stream content directly from the Vertex AI model with RAG grounding
+    const resultStream = await genAI.models.generateContentStream({
       model: 'gemini-2.5-flash',
       contents: message,
       config: {
@@ -98,36 +98,50 @@ export async function POST(
           },
         ],
         systemInstruction: GeminiSystemPrompt,
-        maxOutputTokens: 65535,
-        temperature: 1,
-        topP: 0.95
+        maxOutputTokens: 32767,
+        temperature: 0.2,
+        topP: 0.95,
       },
     })
 
-    // Correct way to extract text from the response
-    const responseText = result.candidates?.[0]?.content?.parts?.[0]?.text || ''
-
-    console.log('Finish Reason:', result.candidates?.[0]?.finishReason)
-    console.log('Safety Ratings:', JSON.stringify(result.candidates?.[0]?.safetyRatings))
-
-    if (!responseText) {
-      console.log('No text returned. Check safety filters or RAG grounding.')
-    }
-
-    // Extract source links from grounding metadata
-    const sources: string[] = []
-    const groundingChunks = result.candidates?.[0]?.groundingMetadata?.groundingChunks
-    if (groundingChunks) {
-      for (const chunk of groundingChunks) {
-        if (chunk.web?.uri) {
-          sources.push(chunk.web.uri)
+    const encoder = new TextEncoder()
+    const stream = new ReadableStream({
+      async start(controller) {
+        const sources = new Set<string>()
+        try {
+          for await (const chunk of resultStream) {
+            const text = chunk.candidates?.[0]?.content?.parts?.[0]?.text || ''
+            if (text) {
+              controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text })}\n\n`))
+            }
+            
+            const groundingChunks = chunk.candidates?.[0]?.groundingMetadata?.groundingChunks
+            if (groundingChunks) {
+              for (const gChunk of groundingChunks) {
+                if (gChunk.web?.uri) {
+                  sources.add(gChunk.web.uri)
+                }
+              }
+            }
+          }
+          
+          if (sources.size > 0) {
+            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ sources: Array.from(sources) })}\n\n`))
+          }
+          controller.close()
+        } catch (error) {
+          console.error('Streaming error:', error)
+          controller.error(error)
         }
       }
-    }
+    })
 
-    return NextResponse.json({
-      response: responseText,
-      sources: [...new Set(sources)], // Remove duplicates
+    return new Response(stream, {
+      headers: {
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+      },
     })
 
   } catch (error) {
