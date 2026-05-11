@@ -1,6 +1,11 @@
 import { Box, Container, Typography } from "@mui/material"
 import { Header } from "@/components/header"
-import { HeroSection } from "@/components/hero-section"
+import dynamic from "next/dynamic"
+
+// Dynamically import HeroSection to reduce initial JS bundle size
+const HeroSection = dynamic(() => import("@/components/hero-section").then((mod) => mod.HeroSection), {
+  ssr: true,
+})
 
 export default function Home() {
   return (
@@ -26,7 +31,7 @@ export default function Home() {
       >
         <Container maxWidth="lg">
           <Typography variant="body2" color="text.secondary" align="center">
-            Global Path. À titre informatif uniquement.
+            Global-Path. À titre informatif uniquement.
           </Typography>
         </Container>
       </Box>

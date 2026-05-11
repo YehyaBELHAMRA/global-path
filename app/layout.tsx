@@ -1,11 +1,26 @@
 import type { Metadata } from 'next'
+import { Roboto } from 'next/font/google'
 import { MuiThemeProvider } from '@/components/mui-theme-provider'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter'
 import './globals.css'
 
+const roboto = Roboto({
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto',
+})
+
 export const metadata: Metadata = {
-  title: 'Global Path | Portail de mobilité internationale',
+  title: 'Global-Path | Portail de mobilité internationale',
   description: 'Passerelle vers la mobilité internationale pour les professionnels algériens : Carte Bleue Européenne, résidence permanente nord-américaine et visas du Golfe.',
+  openGraph: {
+    title: 'Global-Path | Portail de mobilité internationale',
+    description: 'Passerelle vers la mobilité internationale pour les professionnels algériens.',
+    siteName: 'Global-Path',
+    locale: 'fr_FR',
+    type: 'website',
+  },
   icons: {
     icon: [
       {
@@ -31,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr">
+    <html lang="fr" className={roboto.variable}>
       <body>
         <AppRouterCacheProvider>
           <MuiThemeProvider>

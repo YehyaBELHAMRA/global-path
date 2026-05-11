@@ -60,14 +60,11 @@ export async function POST(
       )
     }
 
-    // Fetch system prompt from Google Secret Manager
+    // Fetch system prompt using our cached wrapper
     let GeminiSystemPrompt: string
     try {
-      GeminiSystemPrompt = await getSecret('GEMINI_SYSTEM_PROMPT')
-      console.log('✅ System prompt loaded from Google Secret Manager')
-      console.log('📝 GeminiSystemPrompt:', GeminiSystemPrompt)
+      GeminiSystemPrompt = await getSystemPrompt()
     } catch (error) {
-      console.error('❌ Failed to fetch system prompt from Secret Manager:', error)
       return NextResponse.json(
         { error: 'Failed to load system prompt' },
         { status: 500 }
