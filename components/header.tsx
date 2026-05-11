@@ -95,23 +95,83 @@ function NavDropdown({
       >
         {countries.map((country, index) => (
           <Box key={country.slug}>
-            <Link href={`${basePath}/${country.slug}`} passHref>
-              <MenuItem
-                onClick={handleClose}
-                sx={{
-                  borderRadius: 1,
-                  mx: 1,
-                  "&:hover": {
-                    backgroundColor: "primary.light",
-                    color: "white",
+            <MenuItem
+              component={Link}
+              href={`${basePath}/${country.slug}`}
+              onClick={handleClose}
+              sx={{
+                borderRadius: 1,
+                mx: 1,
+                "&:hover": {
+                  backgroundColor: "primary.light",
+                  color: "white",
                 },
               }}
             >
               {country.name}
             </MenuItem>
-            </Link>
             {showDivider && index === 10 && <Divider sx={{ my: 1 }} />}
           </Box>
+        ))}
+      </Menu>
+    </>
+  )
+}
+
+function AboutDropdown() {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+  const open = Boolean(anchorEl)
+
+  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+
+  const menuItems = [
+    { name: "À propos", path: "/about" },
+    { name: "Témoignages", path: "/about/testimonials" },
+    { name: "Partenaires", path: "/about/partners" },
+  ]
+
+  return (
+    <>
+      <Button
+        onClick={handleClick}
+        endIcon={<ChevronDownIcon />}
+        sx={{
+          color: "white",
+          textTransform: "none",
+          fontSize: { xs: "0.75rem", sm: "0.875rem" },
+          px: { xs: 1, sm: 2 },
+          "&:hover": {
+            backgroundColor: "rgba(255,255,255,0.1)",
+          },
+        }}
+      >
+        À propos
+      </Button>
+      <Menu
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        slotProps={{
+          list: { sx: { py: 1 } },
+          paper: { sx: { maxHeight: 400, width: 240 } },
+        }}
+      >
+        {menuItems.map((item) => (
+          <MenuItem 
+            key={item.path}
+            component={Link}
+            href={item.path}
+            onClick={handleClose} 
+            sx={{ borderRadius: 1, mx: 1, "&:hover": { backgroundColor: "primary.light", color: "white" } }}
+          >
+            {item.name}
+          </MenuItem>
         ))}
       </Menu>
     </>
@@ -161,6 +221,19 @@ export function Header() {
             overflow: "auto",
           }}
         >
+        <Button
+          component={Link}
+          href="/evaluation"
+          sx={{
+            color: "white",
+            textTransform: "none",
+            fontSize: { xs: "0.75rem", sm: "0.875rem" },
+            px: { xs: 1, sm: 2 },
+            "&:hover": { backgroundColor: "rgba(255,255,255,0.1)" },
+          }}
+        >
+          Évaluation
+        </Button>
           <NavDropdown 
             label="Carte Bleue Européenne" 
             countries={europeanBlueCardCountriesForHeader} 
@@ -187,6 +260,7 @@ export function Header() {
             countries={oceaniaCountriesForHeader} 
             basePath="/oceania" 
           />
+        <AboutDropdown />
         </Box>
 
         {/* User Menu */}
