@@ -333,8 +333,8 @@ export function AIChatInterface({ country }: AIChatInterfaceProps) {
       id: "1",
       role: "assistant",
       content: country 
-        ? `Bienvenue sur Global Blue Card ! Je suis votre assistant IA spécialisé en immigration pour ${country === 'belgium' ? 'la Belgique' : country === 'luxembourg' ? 'le Luxembourg' : 'ce pays'}. Je peux vous aider avec des informations précises et actualisées sur les visas et procédures d'immigration. Comment puis-je vous aider aujourd'hui ?`
-        : "Bienvenue sur Global Blue Card ! Je suis votre assistant IA spécialisé en immigration, dédié à accompagner les professionnels algériens dans leurs démarches de visa et de résidence à l'international. Comment puis-je vous aider aujourd'hui ?",
+        ? `Bienvenue sur Global-Path ! Je suis votre assistant IA spécialisé en immigration pour ${country === 'belgium' ? 'la Belgique' : country === 'luxembourg' ? 'le Luxembourg' : 'ce pays'}. Je peux vous aider avec des informations précises et actualisées sur les visas et procédures d'immigration. Comment puis-je vous aider aujourd'hui ?`
+        : "Bienvenue sur Global-Path ! Je suis votre assistant IA spécialisé en immigration, dédié à accompagner les professionnels algériens dans leurs démarches de visa et de résidence à l'international. Comment puis-je vous aider aujourd'hui ?",
       timestamp: new Date(),
     },
   ]

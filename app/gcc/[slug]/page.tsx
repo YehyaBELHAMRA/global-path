@@ -22,12 +22,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   
   if (!country) {
     return {
-      title: "Pays non trouvé | Global Blue Card",
+      title: "Pays non trouvé | Global-Path",
     }
   }
 
   return {
-    title: `Visa de Travail - ${country.name} | Global Blue Card`,
+    title: `Visa de Travail - ${country.name} | Global-Path`,
     description: country.description,
   }
 }

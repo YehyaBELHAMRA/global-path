@@ -146,7 +146,7 @@ export function Header() {
               display: { xs: "none", sm: "block" },
             }}
           >
-            Global Path
+            Global-Path
           </Typography>
         </Link>
 

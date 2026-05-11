@@ -22,12 +22,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   
   if (!country) {
     return {
-      title: "Pays non trouvé | Global Blue Card",
+      title: "Pays non trouvé | Global-Path",
     }
   }
 
   return {
-    title: `Immigration ${country.name} | Global Blue Card`,
+    title: `Immigration ${country.name} | Global-Path`,
     description: country.description,
   }
 }
