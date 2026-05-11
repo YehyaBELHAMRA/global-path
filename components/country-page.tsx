@@ -22,6 +22,7 @@ import {
   Public as PublicIcon,
   Assessment as AssessmentIcon,
 } from "@mui/icons-material"
+import { FadeIn } from "@/components/fade-in"
 import { AIChatInterface } from "@/components/ai-chat-interface"
 import type { Country } from "@/lib/countries"
 
@@ -48,6 +49,7 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
       </Box>
 
       {/* Country Header */}
+      <FadeIn delay={0}>
       <Box sx={{ mb: 4 }}>
         <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2 }}>
           <Box
@@ -81,11 +83,13 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
           {country.description}
         </Typography>
       </Box>
+      </FadeIn>
 
       {/* Main Content Grid */}
       <Grid container spacing={3}>
         {/* Highlights */}
         <Grid size={{ xs: 12, lg: 6 }}>
+          <FadeIn delay={0.1}>
           <Card elevation={2} sx={{ height: "100%" }}>
             <CardContent>
               <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
@@ -124,10 +128,12 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
               </List>
             </CardContent>
           </Card>
+          </FadeIn>
         </Grid>
 
         {/* Informations Générales */}
         <Grid size={{ xs: 12, lg: 6 }}>
+          <FadeIn delay={0.2}>
           <Card elevation={2} sx={{ height: "100%" }}>
             <CardContent>
               <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
@@ -175,10 +181,12 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
               </List>
             </CardContent>
           </Card>
+          </FadeIn>
         </Grid>
 
         {/* Chiffres Clés */}
         <Grid size={{ xs: 12, lg: 6 }}>
+          <FadeIn delay={0.3}>
           <Card elevation={2} sx={{ height: "100%" }}>
             <CardContent>
               <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
@@ -248,10 +256,12 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
               </List>
             </CardContent>
           </Card>
+          </FadeIn>
         </Grid>
 
         {/* Indicateurs Économiques */}
         <Grid size={{ xs: 12, lg: 6 }}>
+          <FadeIn delay={0.4}>
           <Card elevation={2} sx={{ height: "100%" }}>
             <CardContent>
               <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
@@ -364,19 +374,23 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
               )}
             </CardContent>
           </Card>
+          </FadeIn>
         </Grid>
       </Grid>
 
       {/* AI Chat Interface */}
       <Box sx={{ mt: 5 }}>
+        <FadeIn delay={0.5}>
         <Typography variant="h4" component="h2" sx={{ mb: 3, textAlign: "center", fontWeight: 600 }}>
           Assistant IA - Conseils Personnalisés
         </Typography>
         <AIChatInterface country={country.slug} />
+        </FadeIn>
       </Box>
 
       {/* CTA */}
       <Box sx={{ mt: 5, textAlign: "center" }}>
+        <FadeIn delay={0.6}>
         <Link href="/" passHref>
           <Button
             variant="outlined"
@@ -387,6 +401,7 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
             Explorer d&apos;autres destinations
           </Button>
         </Link>
+        </FadeIn>
       </Box>
     </Container>
   )

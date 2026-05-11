@@ -5,6 +5,7 @@ import {
   Container,
   Typography,
 } from "@mui/material"
+import { motion } from "motion/react"
 
 export function HeroSection() {
   return (
@@ -29,7 +30,13 @@ export function HeroSection() {
       />
 
       <Container maxWidth="lg" sx={{ position: "relative" }}>
-        <Box sx={{ maxWidth: 800, mx: "auto", textAlign: "center" }}>
+        <Box
+          component={motion.div}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          sx={{ maxWidth: 800, mx: "auto", textAlign: "center" }}
+        >
           <Typography
             variant="h2"
             component="h1"

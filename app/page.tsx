@@ -1,11 +1,6 @@
 import { Box, Container, Typography } from "@mui/material"
 import { Header } from "@/components/header"
-import dynamic from "next/dynamic"
-
-// Dynamically import HeroSection to reduce initial JS bundle size
-const HeroSection = dynamic(() => import("@/components/hero-section").then((mod) => mod.HeroSection), {
-  ssr: true,
-})
+import { HeroSection } from "@/components/hero-section"
 
 export default function Home() {
   return (
