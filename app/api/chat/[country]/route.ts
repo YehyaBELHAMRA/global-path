@@ -2,6 +2,9 @@ import { GoogleGenAI } from '@google/genai'
 import { NextRequest, NextResponse } from 'next/server'
 import { getSecret } from '@/lib/secrets'
 
+export const dynamic = 'force-dynamic'
+export const maxDuration = 60 // Prevents the request from timing out during Vertex AI cold starts
+
 // Initialize Google GenAI client for Vertex AI
 const genAI = new GoogleGenAI({
   vertexai: true,
@@ -100,7 +103,7 @@ export async function POST(
           },
         ],
         systemInstruction: GeminiSystemPrompt,
-        maxOutputTokens: 32767,
+        maxOutputTokens: 4096,
         temperature: 0.2,
         topP: 0.8,
         topK: 10,

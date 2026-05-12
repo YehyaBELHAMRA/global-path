@@ -1,4 +1,8 @@
+"use client"
+
 import Link from "next/link"
+import Image from "next/image"
+import dynamic from "next/dynamic"
 import {
   Box,
   Container,
@@ -13,6 +17,7 @@ import {
   ListItemIcon,
   ListItemText,
   Paper,
+  Skeleton,
 } from "@mui/material"
 import {
   ArrowBack as ArrowBackIcon,
@@ -23,8 +28,15 @@ import {
   Assessment as AssessmentIcon,
 } from "@mui/icons-material"
 import { FadeIn } from "@/components/fade-in"
-import { AIChatInterface } from "@/components/ai-chat-interface"
 import type { Country } from "@/lib/countries"
+
+const AIChatInterface = dynamic(
+  () => import("@/components/ai-chat-interface").then((mod) => mod.AIChatInterface),
+  { 
+    ssr: false, 
+    loading: () => <Skeleton variant="rectangular" height={400} sx={{ borderRadius: 2, width: '100%' }} /> 
+  }
+)
 
 interface CountryPageProps {
   country: Country
@@ -53,16 +65,23 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
       <Box sx={{ mb: 4 }}>
         <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2 }}>
           <Box
-            component="img"
-            src={country.flag}
-            alt={`Drapeau ${country.name}`}
             sx={{
+              position: "relative",
               height: "3rem",
-              width: "auto",
+              width: "4.5rem",
               borderRadius: "8px",
+              overflow: "hidden",
               boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
             }}
-          />
+          >
+            <Image
+              src={country.flag}
+              alt={`Drapeau ${country.name}`}
+              fill
+              style={{ objectFit: "cover" }}
+              sizes="72px"
+            />
+          </Box>
           <Box>
             <Typography variant="h3" component="h1" sx={{ fontWeight: 700 }}>
               {country.name}

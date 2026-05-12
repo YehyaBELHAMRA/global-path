@@ -385,7 +385,7 @@ export function AIChatInterface({ country }: AIChatInterfaceProps) {
             timestamp: new Date(),
           }
         ])
-        setIsTyping(false) // Turn off the bouncing dots as soon as TTFT finishes
+        // setIsTyping(false) // Turn off the bouncing dots as soon as TTFT finishes
 
         const decoder = new TextDecoder()
         let done = false

@@ -51,7 +51,6 @@ export default function RootLayout({
       <body>
         <AppRouterCacheProvider>
           <MuiThemeProvider>
-            <CssBaseline />
             {children}
           </MuiThemeProvider>
         </AppRouterCacheProvider>
