@@ -97,16 +97,16 @@ export async function POST(
                   },
                 ],
                 // Retrieve only the 3 most relevant chunks to drastically reduce input tokens
-                similarityTopK: 3,
+                similarityTopK: 40,
               },
             },
           },
         ],
         systemInstruction: GeminiSystemPrompt,
-        maxOutputTokens: 4096,
-        temperature: 0.2,
-        topP: 0.8,
-        topK: 10,
+        maxOutputTokens: 8192,
+        temperature: 1.0,
+        topP: 0.2,
+        topK: 5,
       },
     })
 
