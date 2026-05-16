@@ -73,6 +73,8 @@ export async function POST(
         { status: 500 }
       )
     }
+    // Print the system prompt to verify it's loaded correctly (remove in production)
+    // console.log('GeminiSystemPrompt:', GeminiSystemPrompt)
 
     const corpusId = COUNTRY_CORPORA[country]
     if (!corpusId) {
@@ -96,8 +98,7 @@ export async function POST(
                     ragCorpus: corpusId,
                   },
                 ],
-                // Retrieve only the 3 most relevant chunks to drastically reduce input tokens
-                similarityTopK: 40,
+                similarityTopK: 15,
               },
             },
           },
