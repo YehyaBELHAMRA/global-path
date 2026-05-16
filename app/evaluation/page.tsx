@@ -1,8 +1,17 @@
+import { Metadata } from "next"
 import { Box, Container, Typography } from "@mui/material"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
-export const metadata = { title: "Évaluation | Global-Path" }
+export const metadata: Metadata = { 
+  title: "Évaluation de profil | Global-Path",
+  description: "Évaluez votre profil d'immigration et découvrez les programmes (Carte Bleue Européenne, Entrée Express, Golden Visa) les plus adaptés à votre situation.",
+  openGraph: {
+    title: "Évaluation de profil | Global-Path",
+    description: "Évaluez votre profil d'immigration et découvrez les programmes les plus adaptés à votre situation.",
+    type: "website"
+  }
+}
 
 export default function EvaluationPage() {
   return (

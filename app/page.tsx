@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import { Box, Container, Typography, Card, CardContent, CardActions, Button } from "@mui/material"
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
@@ -54,6 +55,19 @@ const row2Regions = [
     link: "/regions/oceania",
   }
 ]
+
+export const metadata: Metadata = {
+  title: "Global-Path | Votre mobilité internationale et programmes d'immigration qualifiée",
+  description: "Explorez les principales destinations mondiales et trouvez le programme d'immigration qualifiée adapté à votre projet professionnel : Carte Bleue Européenne, Résidence Permanente, Golden Visa.",
+  openGraph: {
+    title: "Global-Path | Votre mobilité internationale et programmes d'immigration qualifiée",
+    description: "Trouvez le programme d'immigration qualifiée adapté à votre projet professionnel (Carte Bleue, Résidence Permanente, Visas de travail) vers l'Europe, l'Amérique du Nord, le Golfe et l'Océanie.",
+    url: "https://global-path.com",
+    siteName: "Global-Path",
+    locale: "fr_FR",
+    type: "website",
+  },
+}
 
 export default function Home() {
   return (

@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import { Box, Container, Typography, Card, CardContent, Grid, List, ListItem, ListItemIcon, ListItemText, Divider, Link } from "@mui/material"
 import CheckCircleIcon from "@mui/icons-material/CheckCircle"
 import OpenInNewIcon from "@mui/icons-material/OpenInNew"
@@ -12,6 +13,16 @@ const destinations = [
   { name: "Oman", code: "om" },
   { name: "Qatar", code: "qa" }
 ]
+
+export const metadata: Metadata = {
+  title: "Pays du Golfe (GCC) | Visas de travail et Golden Visas - Global-Path",
+  description: "Découvrez les opportunités professionnelles dans les pays du GCC : Golden Visas aux Émirats, Premium Residency en Arabie Saoudite, Visas de travail au Qatar.",
+  openGraph: {
+    title: "Immigration dans les pays du Golfe (GCC) | Global-Path",
+    description: "Découvrez les visas de travail et de résidence pour les professionnels hautement qualifiés dans les six nations du Gulf Cooperation Council.",
+    type: "website",
+  },
+}
 
 export default function GCC() {
   return (

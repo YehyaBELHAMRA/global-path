@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import { Box, Container, Typography, Card, CardContent, Grid, List, ListItem, ListItemIcon, ListItemText, Divider, Link } from "@mui/material"
 import CheckCircleIcon from "@mui/icons-material/CheckCircle"
 import OpenInNewIcon from "@mui/icons-material/OpenInNew"
@@ -18,6 +19,16 @@ const countries = [
   { name: "Slovaquie", code: "sk" }, { name: "Slovénie", code: "si" },
   { name: "Suède", code: "se" }, { name: "Tchéquie", code: "cz" }
 ]
+
+export const metadata: Metadata = {
+  title: "Carte Bleue Européenne | Travailler dans 24 pays de l'UE - Global-Path",
+  description: "Découvrez la Carte Bleue Européenne, le titre de séjour pour les travailleurs hautement qualifiés. Conditions, avantages, pays éligibles, salaires.",
+  openGraph: {
+    title: "Carte Bleue Européenne | Global-Path",
+    description: "Votre passeport pour une carrière internationale dans 24 pays de l'Union Européenne.",
+    type: "website",
+  },
+}
 
 export default function EuropeanBlueCard() {
   return (

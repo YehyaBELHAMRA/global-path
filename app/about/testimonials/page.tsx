@@ -1,9 +1,18 @@
+import { Metadata } from "next"
 import { Box, Container, Typography } from "@mui/material"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
 export const dynamic = 'force-static'
-export const metadata = { title: "Témoignages | Global-Path" }
+export const metadata: Metadata = { 
+  title: "Témoignages | Global-Path",
+  description: "Découvrez les témoignages et retours d'expérience de professionnels qui ont réussi leur mobilité internationale grâce à Global-Path.",
+  openGraph: {
+    title: "Témoignages | Global-Path",
+    description: "Découvrez les témoignages de professionnels qui ont réussi leur mobilité internationale avec Global-Path.",
+    type: "website"
+  }
+}
 
 export default function TestimonialsPage() {
   return (

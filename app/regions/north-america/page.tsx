@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import { Box, Container, Typography, Card, CardContent, Grid, List, ListItem, ListItemIcon, ListItemText, Divider, Link } from "@mui/material"
 import CheckCircleIcon from "@mui/icons-material/CheckCircle"
 import OpenInNewIcon from "@mui/icons-material/OpenInNew"
@@ -8,6 +9,16 @@ const destinations = [
   { name: "Canada", code: "ca" },
   { name: "États-Unis", code: "us" }
 ]
+
+export const metadata: Metadata = {
+  title: "Amérique du Nord | Immigration Canada et États-Unis - Global-Path",
+  description: "Explorez les opportunités de résidence permanente (Entrée Express, Mobilité Francophone) et de travail (H-1B, Green Card) au Canada et aux États-Unis.",
+  openGraph: {
+    title: "Amérique du Nord | Global-Path",
+    description: "Explorez les opportunités de résidence permanente et de travail au Canada et aux États-Unis.",
+    type: "website",
+  },
+}
 
 export default function NorthAmerica() {
   return (

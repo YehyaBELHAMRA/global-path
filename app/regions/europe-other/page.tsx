@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import { Box, Container, Typography, Card, CardContent, Grid, Divider } from "@mui/material"
 import CheckCircleIcon from "@mui/icons-material/CheckCircle"
 import { Header } from "@/components/header"
@@ -11,6 +12,16 @@ const destinations = [
   { name: "Islande", code: "is" },
   { name: "Royaume-Uni", code: "gb" }
 ]
+
+export const metadata: Metadata = {
+  title: "Europe (Autres Programmes) | Visas de travail UK, Suisse, etc. - Global-Path",
+  description: "Explorez les opportunités et visas de travail dans les pays européens hors système Carte Bleue : Royaume-Uni, Suisse, Norvège, Danemark, Irlande, Islande.",
+  openGraph: {
+    title: "Europe (Autres Programmes) | Global-Path",
+    description: "Découvrez les visas de travail pour les professionnels qualifiés dans les pays hors système Carte Bleue (UK, Suisse, Norvège, Danemark).",
+    type: "website",
+  },
+}
 
 export default function EuropeOther() {
   return (

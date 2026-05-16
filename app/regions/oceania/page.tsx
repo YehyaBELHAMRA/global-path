@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import { Box, Container, Typography, Card, CardContent, Grid, List, ListItem, ListItemIcon, ListItemText, Divider, Link } from "@mui/material"
 import CheckCircleIcon from "@mui/icons-material/CheckCircle"
 import OpenInNewIcon from "@mui/icons-material/OpenInNew"
@@ -8,6 +9,16 @@ const destinations = [
   { name: "Australie", code: "au" },
   { name: "Nouvelle-Zélande", code: "nz" }
 ]
+
+export const metadata: Metadata = {
+  title: "Océanie | Immigration Australie et Nouvelle-Zélande - Global-Path",
+  description: "Opportunités d'expatriation et visas de travail qualifiés en Océanie. Découvrez les systèmes d'immigration par points pour l'Australie et la Nouvelle-Zélande.",
+  openGraph: {
+    title: "Océanie : Australie et Nouvelle-Zélande | Global-Path",
+    description: "Opportunités d'expatriation et de résidence permanente en Australie et Nouvelle-Zélande via le système de points.",
+    type: "website",
+  },
+}
 
 export default function Oceania() {
   return (
