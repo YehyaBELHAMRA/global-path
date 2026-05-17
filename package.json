@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "deploy": "npm run build && firebase deploy --only hosting",
+    "deploy": "pnpm run build && firebase deploy --only hosting",
     "firebase:login": "firebase login",
     "firebase:init": "firebase init hosting"
   },

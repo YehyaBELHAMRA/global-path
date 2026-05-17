@@ -14,14 +14,16 @@ secrets:
     secret: GOOGLE_GENAI_API_KEY
 
 # Additional environment variables.
-# env:
-  # Configure environment variables.
-  # See https://firebase.google.com/docs/app-hosting/configure#user-defined-environment
-  # - variable: MESSAGE
-  #   value: Hello world!
-  #   availability:
-  #     - BUILD
-  #     - RUNTIME
+env:
+  - variable: GOOGLE_CLOUD_PROJECT
+    value: global-path-213
+  - variable: GOOGLE_CLOUD_LOCATION
+    value: europe-west3
+  - variable: BELGIUM_RAG_CORPUS_ID
+    value: your-belgium-corpus-id
+  - variable: LUXEMBOURG_RAG_CORPUS_ID
+    value: your-luxembourg-corpus-id
+
 
   # Grant access to secrets in Cloud Secret Manager.
   # You can create secrets with the CLI command `firebase apphosting:secrets:set <secretName>`.

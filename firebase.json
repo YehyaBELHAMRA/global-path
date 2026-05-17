@@ -44,17 +44,6 @@
         "firebase-debug.*.log",
         "functions"
       ]
-    },
-    {
-      "backendId": "global-path",
-      "rootDir": ".next",
-      "ignore": [
-        "node_modules",
-        ".git",
-        "firebase-debug.log",
-        "firebase-debug.*.log",
-        "functions"
-      ]
     }
   ]
 }
