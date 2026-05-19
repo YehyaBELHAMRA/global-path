@@ -43,28 +43,28 @@ type MarkdownBlock =
 const countryQuestionsMap: Record<string, string[]> = {
   luxembourg: [
     "Quelles sont les conditions pour la Carte Bleue Européenne au Luxembourg ?",
-    "Quel est le seuil salarial pour la Carte Bleue Européenne au Luxembourg ?",
+    "Quel est le minimum salarial pour la Carte Bleue Européenne au Luxembourg ?",
     "Quels sont les avantages pour les travailleurs hautement qualifiés au Luxembourg ?",
-    "Quel est le niveau de langue requis pour travailler au Luxembourg ?",
   ],
   belgium: [
     "Quelles sont les conditions pour la Carte Bleue Européenne en Belgique ?",
     "Quelles sont les conditions pour la Carte Bleue Européenne en Wallonie ?",
     "Quelles sont les conditions pour la Carte Bleue Européenne en Flandre ?",
     "Quelles sont les conditions pour la Carte Bleue Européenne en région Bruxelles-Capitale ?",
+    "Quel est le minimum salarial pour la Carte Bleue Européenne dans chaque région en Belgique ?",
     "Quelles sont les différences entre le permis unique et la Carte Bleue Européenne en Belgique ?",
   ],
   germany: [
     "Quelles sont les conditions pour la Carte Bleue Européenne en Allemagne ?",
+    "Quel est le minimum salarial pour la Carte Bleue Européenne en Allemagne ?",
     "Quelles sont les conditions pour la Chancenkarte en Allemagne ?",
-    "Quelles sont les conditions pour le permis de travail en Allemagne ?",
-    "Quel est le seuil salarial pour les professionnels de l'IT en Allemagne ?",
+    "Quel est le minimum salarial pour la Carte Bleue Européenne pour les professionnels de l'IT en Allemagne ?",
     "Est-il obligatoire de parler allemand pour obtenir la Carte Bleue Européenne ?",
   ],
   austria: [
     "Quelles sont les conditions pour la Carte Bleue Européenne en Autriche ?",
     "Qu'est-ce que la carte Rouge-Blanc-Rouge en Autriche ?",
-    "Quel est le seuil salarial pour les professionnels qualifiés en Autriche ?",
+    "Quel est le minimum salarial pour la Carte Bleue Européenne en Autriche ?",
     "Comment fonctionne le système de points pour l'immigration en Autriche ?",
     "Quelles sont les professions en pénurie en Autriche ?",
   ],
@@ -311,9 +311,7 @@ const countryQuestionsMap: Record<string, string[]> = {
 
 const defaultSuggestedQuestions = [
   "Quelles sont les conditions pour la Carte Bleue Européenne ?",
-  "Comment obtenir la résidence permanente au Canada ?",
-  "Quel seuil salarial pour l'Allemagne ?",
-  "Comparer les visas de travail EAU vs Qatar",
+  "Quel est le minimum salarial pour la Carte Bleue Européenne ?",
 ]
 
 export function AIChatInterface({ country }: AIChatInterfaceProps) {
@@ -327,7 +325,7 @@ export function AIChatInterface({ country }: AIChatInterfaceProps) {
       role: "assistant",
       content: country 
         ? `Bienvenue sur Global-Path ! Je suis votre assistant IA spécialisé en immigration pour ${country === 'belgium' ? 'la Belgique' : country === 'luxembourg' ? 'le Luxembourg' : 'ce pays'}. Je peux vous aider avec des informations précises et actualisées sur les visas et procédures d'immigration. Comment puis-je vous aider aujourd'hui ?`
-        : "Bienvenue sur Global-Path ! Je suis votre assistant IA spécialisé en immigration, dédié à accompagner les professionnels algériens dans leurs démarches de visa et de résidence à l'international. Comment puis-je vous aider aujourd'hui ?",
+        : "Bienvenue sur Global-Path ! Je suis votre assistant IA spécialisé en immigration, dédié à accompagner les professionnels algériens dans leurs démarches de visa de travail qualifié et de résidence à l'international. Comment puis-je vous aider aujourd'hui ?",
       timestamp: new Date(),
     },
   ]
@@ -385,7 +383,6 @@ export function AIChatInterface({ country }: AIChatInterfaceProps) {
             timestamp: new Date(),
           }
         ])
-        // setIsTyping(false) // Turn off the bouncing dots as soon as TTFT finishes
 
         const decoder = new TextDecoder()
         let done = false
@@ -1323,7 +1320,7 @@ function getContextualResponse(question: string): string {
   }
 
   if (lowerQuestion.includes("canada") || lowerQuestion.includes("canadien") || lowerQuestion.includes("permanente")) {
-    return "Pour la résidence permanente canadienne, les professionnels algériens passent généralement par Entrée Express via le Programme des travailleurs qualifiés. Facteurs clés du Système de classement global (SCG) : âge (max points à 20-29 ans), études, compétences linguistiques (IELTS/TEF), expérience professionnelle et offres d'emploi. Un score SCG de 470+ reçoit typiquement une Invitation à présenter une demande. Les Programmes des candidats des provinces (PCP) peuvent ajouter 600 points."
+    return "Pour la résidence permanente canadienne, les professionnels algériens passent généralement par Entrée Express via le Programme des travailleurs qualifiés. Facteurs clés du Système de Classement Global (SCG) : âge (max points à 20-29 ans), études, compétences linguistiques (IELTS/TEF), expérience professionnelle et offres d'emploi. Un score SCG de 470+ reçoit typiquement une Invitation à présenter une demande. Les Programmes des Candidats Provinciaux (PCP) peuvent ajouter 600 points."
   }
 
   if (lowerQuestion.includes("gcc") || lowerQuestion.includes("eau") || lowerQuestion.includes("qatar") || lowerQuestion.includes("golfe") || lowerQuestion.includes("émirats")) {

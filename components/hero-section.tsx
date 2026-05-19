@@ -71,7 +71,7 @@ export function HeroSection() {
             }}
           >
             Naviguez vos différentes options de mobilité internationale avec confiance :<br />
-            - Carte Bleue Européenne (24 pays de l'UE, toute l'UE sauf la France, le Danemark, et l'Irlande)<br />
+            - Carte Bleue Européenne (24 pays de l'Union Européenne, toute l'Union Européenne sauf la France, le Danemark, et l'Irlande)<br />
             - Autres destinations européennes (Irlande, Danemark, Royaume-Uni, Suisse, Norvège, Islande)<br />
             - Résidence Permanente (RP) au Canada et aux États-Unis<br />
             - Visas des six pays du Golfe (Émirats Arabes Unis, Qatar, Arabie Saoudite, Bahreïn, Koweït, Oman)<br />

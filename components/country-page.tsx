@@ -401,7 +401,7 @@ export function CountryPage({ country, backLink, backLabel }: CountryPageProps) 
       <Box sx={{ mt: 5 }}>
         <FadeIn delay={0.5}>
         <Typography variant="h4" component="h2" sx={{ mb: 3, textAlign: "center", fontWeight: 600 }}>
-          Assistant IA - Conseils personnalisés
+          Assistant IA de Global-Path - Conseils personnalisés
         </Typography>
         <AIChatInterface country={country.slug} />
         </FadeIn>

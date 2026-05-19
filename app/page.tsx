@@ -7,7 +7,7 @@ import Link from "next/link"
 
 const row1Regions = [
   {
-    title: "Carte Bleue Européenne (24 pays)",
+    title: "Carte Bleue Européenne (24 pays de l'UE)",
     description: "Accédez à des opportunités de carrière uniques dans 24 pays de l'Union Européenne (à l'exclusion de la France, du Danemark et de l'Irlande). La Carte Bleue Européenne facilite l'installation des professionnels hautement qualifiés avec des conditions de travail et de résidence attractives.",
     flags: [
       "https://flagcdn.com/lu.svg", "https://flagcdn.com/be.svg", "https://flagcdn.com/de.svg", 
@@ -126,14 +126,14 @@ export default function Home() {
                     />
                   ))}
                 </Box>
-                <Typography variant="h5" sx={{ mb: 1, fontWeight: 700 }}>
+                <Typography variant="h5" sx={{ mb: 1, fontWeight: 700, textAlign: 'center' }}>
                   {region.title}
                 </Typography>
-                <Typography variant="body1" sx={{ color: "text.secondary", mb: 2 }}>
+                <Typography variant="body1" sx={{ color: "text.secondary", mb: 2, textAlign: 'justify' }}>
                   {region.description}
                 </Typography>
               </CardContent>
-              <CardActions sx={{ p: 2, pt: 0 }}>
+              <CardActions sx={{ p: 2, pt: 0, justifyContent: 'center' }}>
                 <Link href={region.link} style={{ textDecoration: 'none' }}>
                   <Button variant="contained" color="primary" disableElevation component="span">
                     Découvrir
@@ -183,14 +183,14 @@ export default function Home() {
                     />
                   ))}
                 </Box>
-                <Typography variant="h5" sx={{ mb: 1, fontWeight: 700 }}>
+                <Typography variant="h5" sx={{ mb: 1, fontWeight: 700, textAlign: 'center' }}>
                   {region.title}
                 </Typography>
-                <Typography variant="body1" sx={{ color: "text.secondary", mb: 2 }}>
+                <Typography variant="body1" sx={{ color: "text.secondary", mb: 2, textAlign: 'justify' }}>
                   {region.description}
                 </Typography>
               </CardContent>
-              <CardActions sx={{ p: 2, pt: 0 }}>
+              <CardActions sx={{ p: 2, pt: 0, justifyContent: 'center' }}>
                 <Link href={region.link} style={{ textDecoration: 'none' }}>
                   <Button variant="contained" color="primary" disableElevation component="span">
                     Découvrir

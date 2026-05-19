@@ -39,7 +39,7 @@ export const euCountries: Country[] = [
     officialName: "Grand-Duché de Luxembourg",
     capital: "Luxembourg",
     officialLanguages: ["Luxembourgeois", "Français", "Allemand"],
-    population: 0.65,
+    population: 0.690,
     area: 2586,
     currency: "Euro (€)",
     economicIndicators: {
