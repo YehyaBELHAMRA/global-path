@@ -23,7 +23,7 @@ const row1Regions = [
   },
   {
     title: "Résidence Permanente (RP) en Amérique du Nord",
-    description: "L'Amérique du Nord offre d'excellentes options de résidence permanente (RP). Découvrez les programmes d'immigration clés au Canada (comme l'Entrée Express) et aux États-Unis (Green Card, visas spécialisés) pour une installation durable.",
+    description: "L'Amérique du Nord offre d'excellentes options de résidence permanente (RP). Découvrez les programmes d'immigration clés au Canada, comme l'Entrée Express, le Programme de Sélection des Travailleurs Qualifiés (PSTQ) du Québec, les Programmes de Candidats Provinciaux (PCP), et aux États-Unis (Green Card, visas spécialisés) pour une installation durable.",
     flags: ["https://flagcdn.com/ca.svg", "https://flagcdn.com/us.svg"],
     link: "/regions/north-america",
   },
@@ -41,7 +41,7 @@ const row1Regions = [
 const row2Regions = [
   {
     title: "Autres destinations européennes",
-    description: "Découvrez les opportunités professionnelles dans les pays européens hors du programme de la Carte Bleue, tels que le Royaume-Uni, la Suisse, la Norvège, le Danemark, l'Irlande ou l'Islande, réputés pour leurs opportunités professionnelles et pour leur qualité de vie.",
+    description: "Découvrez les opportunités professionnelles dans les pays européens hors du programme de la Carte Bleue Européenne, tels que l'Irlande, le Royaume-Uni, la Suisse, la Norvège, le Danemark,  ou l'Islande, réputés pour leurs opportunités professionnelles et pour leur qualité de vie.",
     flags: [
       "https://flagcdn.com/dk.svg", "https://flagcdn.com/ie.svg", "https://flagcdn.com/ch.svg", 
       "https://flagcdn.com/no.svg", "https://flagcdn.com/is.svg", "https://flagcdn.com/gb.svg"
@@ -61,8 +61,8 @@ export const metadata: Metadata = {
   description: "Explorez les principales destinations mondiales et trouvez le programme d'immigration qualifiée adapté à votre projet professionnel : Carte Bleue Européenne, Résidence Permanente, Golden Visa.",
   openGraph: {
     title: "Global-Path | Votre mobilité internationale et programmes d'immigration qualifiée",
-    description: "Trouvez le programme d'immigration qualifiée adapté à votre projet professionnel (Carte Bleue, Résidence Permanente, Visas de travail) vers l'Europe, l'Amérique du Nord, le Golfe et l'Océanie.",
-    url: "https://global-path.com",
+    description: "Trouvez le programme d'immigration qualifiée adapté à votre projet professionnel (Carte Bleue Européenne, Résidence Permanente, Visas de travail) vers l'Europe, l'Amérique du Nord, le Golfe et l'Océanie.",
+    url: "https://global-path.fr",
     siteName: "Global-Path",
     locale: "fr_FR",
     type: "website",

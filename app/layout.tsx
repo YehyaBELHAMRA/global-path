@@ -14,7 +14,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: 'Global-Path | Portail de mobilité internationale',
-  description: 'Passerelle vers la mobilité internationale pour les professionnels algériens : Carte Bleue Européenne, résidence permanente nord-américaine et visas du Golfe.',
+  description: 'Passerelle vers la mobilité internationale pour les professionnels algériens : Carte Bleue Européenne, Résidence Permanente (RP) au Canada et aux États-Unis, et visas du Golfe.',
   openGraph: {
     title: 'Global-Path | Portail de mobilité internationale',
     description: 'Passerelle vers la mobilité internationale pour les professionnels algériens.',
