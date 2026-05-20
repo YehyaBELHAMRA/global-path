@@ -20,9 +20,13 @@ env:
   - variable: GOOGLE_CLOUD_LOCATION
     value: europe-west3
   - variable: BELGIUM_RAG_CORPUS_ID
-    value: projects/global-path-213/locations/europe-west3/ragCorpora/4611686018427387904
+    value: projects/global-path-213/locations/europe-west3/ragCorpora/6301661778598166528
   - variable: LUXEMBOURG_RAG_CORPUS_ID
-    value: projects/global-path-213/locations/europe-west3/ragCorpora/3379951520341557248
+    value: projects/global-path-213/locations/europe-west3/ragCorpora/2842897264777625600
+  - variable: GERMANY_RAG_CORPUS_ID
+    value: projects/global-path-213/locations/europe-west3/ragCorpora/1113515007867355136
+  - variable: AUSTRIA_RAG_CORPUS_ID
+    value: projects/global-path-213/locations/europe-west3/ragCorpora/8031044035508436992
 
 
   # Grant access to secrets in Cloud Secret Manager.
