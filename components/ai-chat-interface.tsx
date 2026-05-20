@@ -320,6 +320,8 @@ export function AIChatInterface({ country }: AIChatInterfaceProps) {
     ? countryQuestionsMap[country]
     : defaultSuggestedQuestions
 
+  const [suggestedQuestions, setSuggestedQuestions] = useState(currentSuggestedQuestions)
+
   const initialMessages: Message[] = [
     {
       id: "1",
@@ -336,6 +338,10 @@ export function AIChatInterface({ country }: AIChatInterfaceProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    setSuggestedQuestions(currentSuggestedQuestions)
+  }, [currentSuggestedQuestions])
+
+  useEffect(() => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollTop = scrollContainerRef.current.scrollHeight
     }
@@ -343,6 +349,10 @@ export function AIChatInterface({ country }: AIChatInterfaceProps) {
 
   const handleSendMessage = async () => {
     if (!inputValue.trim()) return
+
+    if (suggestedQuestions.includes(inputValue)) {
+      setSuggestedQuestions((prev) => prev.filter((q) => q !== inputValue))
+    }
 
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -637,7 +647,7 @@ export function AIChatInterface({ country }: AIChatInterfaceProps) {
         )}
 
         {/* Suggested Questions */}
-        {messages.length <= 1 && (
+        {suggestedQuestions.length > 0 && (
           <Box sx={{ mt: 3 }}>
             <Typography
               variant="body2"
@@ -647,7 +657,7 @@ export function AIChatInterface({ country }: AIChatInterfaceProps) {
               Questions suggérées :
             </Typography>
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
-              {currentSuggestedQuestions.map((question) => (
+              {suggestedQuestions.map((question) => (
                 <Chip
                   key={question}
                   label={question}
