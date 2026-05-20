@@ -1123,6 +1123,8 @@ export const europeOtherCountries: Country[] = [
 
 export const allCountries = [...euCountries, ...europeOtherCountries, ...northAmericaCountries, ...gccCountries, ...oceaniaCountries]
 
+export const AVAILABLE_RAG_COUNTRIES = ['belgium', 'luxembourg', 'germany', 'austria']
+
 export function getCountryBySlug(slug: string): Country | undefined {
   return allCountries.find(country => country.slug === slug)
 }

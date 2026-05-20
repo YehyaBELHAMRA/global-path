@@ -17,6 +17,7 @@ import {
   Person as PersonIcon,
   AutoAwesome as SparklesIcon,
 } from "@mui/icons-material"
+import { AVAILABLE_RAG_COUNTRIES } from "@/lib/countries"
 
 interface Message {
   id: string
@@ -355,7 +356,7 @@ export function AIChatInterface({ country }: AIChatInterfaceProps) {
     setIsTyping(true)
 
     try {
-      if (country && (country === 'belgium' || country === 'luxembourg' || country === 'germany' || country === 'austria')) {
+      if (country && AVAILABLE_RAG_COUNTRIES.includes(country)) {
         // Call the RAG API
         const response = await fetch(`/api/chat/${country}`, {
           method: 'POST',
