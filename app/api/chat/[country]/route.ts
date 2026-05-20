@@ -17,6 +17,8 @@ const genAI = new GoogleGenAI({
 const COUNTRY_CORPORA: Record<string, string> = {
   belgium: process.env.BELGIUM_RAG_CORPUS_ID || '',
   luxembourg: process.env.LUXEMBOURG_RAG_CORPUS_ID || '',
+  germany: process.env.GERMANY_RAG_CORPUS_ID || '',
+  austria: process.env.AUSTRIA_RAG_CORPUS_ID || '',
 }
 
 // Module-level cache for system prompt (loaded once)

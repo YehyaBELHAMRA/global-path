@@ -355,7 +355,7 @@ export function AIChatInterface({ country }: AIChatInterfaceProps) {
     setIsTyping(true)
 
     try {
-      if (country && (country === 'belgium' || country === 'luxembourg')) {
+      if (country && (country === 'belgium' || country === 'luxembourg' || country === 'germany' || country === 'austria')) {
         // Call the RAG API
         const response = await fetch(`/api/chat/${country}`, {
           method: 'POST',
