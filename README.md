@@ -1,17 +1,17 @@
 # Global-Path 🌍
 
-Global-Path is a comprehensive web platform designed to guide international professionals (with a specific focus on Algerian talents) in their global mobility and immigration projects. The platform provides detailed insights into various global visa programs and features an **AI-powered Immigration Assistant** to answer specific, legal, and procedural questions.
+Global-Path is a comprehensive web platform designed to guide international professionals (with a specific focus on Algerian talents and highly qualified professionals in France) in their global mobility and relocation projects. The platform provides detailed insights into various global visa programs and features an **AI-powered Highly Qualified Immigration Assistant** to answer specific, legal, and procedural questions.
 
 ## 🚀 Features
 
-- **Global Immigration Guides:** Explore residency and work visa opportunities across major regions:
-  - European Blue Card (24 EU countries - All EU except France, Denmark, and Ireland)
+- **Global Qualified Immigration Guides:** Explore residency and work visa opportunities across major regions:
+  - European Blue Card (24 EU countries - All EU member states except France, Denmark, and Ireland)
   - North America (Canada & USA)
   - Gulf Cooperation Council (GCC) nations
   - Oceania (Australia & New Zealand)
   - Other European destinations (Denmark, Ireland, Switzerland, Norway, Iceland, United Kingdom)
 - **AI Immigration Assistant:** A smart chat interface powered by **Gemini 2.5 Flash**.
-- **RAG (Retrieval-Augmented Generation):** Provides highly accurate, context-aware answers by retrieving grounded data from Google Cloud Vertex AI RagStore (specifically configured for Belgium and Luxembourg).
+- **RAG (Retrieval-Augmented Generation):** Provides highly accurate, context-aware answers by retrieving grounded data from Google Cloud Vertex AI RagStore (specifically configured for Belgium, Luxembourg, Germany, and Austria, as a first step).
 - **Streaming Responses:** Real-time AI response streaming using Server-Sent Events (SSE).
 - **Modern UI/UX:** Fully responsive and accessible interface built with Material-UI (MUI), Tailwind CSS, and Radix UI.
 
@@ -29,7 +29,7 @@ Global-Path is a comprehensive web platform designed to guide international prof
 ## ⚙️ Prerequisites
 
 - Node.js (v18 or higher)
-- npm, yarn, or pnpm
+- `npm`, `yarn`, or `pnpm`
 - A Google Cloud Project with Vertex AI enabled
 - Firebase CLI (`pnpm install -g firebase-tools`)
 
@@ -46,6 +46,8 @@ GOOGLE_GENAI_API_KEY="your-gemini-api-key" # Optional if using Vertex AI default
 # RAG Corpora IDs for specific countries
 BELGIUM_RAG_CORPUS_ID="your-belgium-corpus-id"
 LUXEMBOURG_RAG_CORPUS_ID="your-luxembourg-corpus-id"
+GERMANY_RAG_CORPUS_ID="your-germany-corpus-id"
+AUSTRIA_RAG_CORPUS_ID="your-austria-corpus-id"
 
 # AI Assistant System Prompt
 GEMINI_SYSTEM_PROMPT="You are a helpful qualified immigration AI assistant..."
@@ -100,10 +102,4 @@ This project is pre-configured to be deployed using **Firebase App Hosting**, wh
    ```
 
 4. **Deploy the application:**
-   The deployment is handled by Firebase App Hosting via GitHub integration, or manually using:
-
-   ```bash
-   pnpm run deploy
-   ```
-
-   *(Note: The `deploy` script in `package.json` builds the Next.js app and deploys to Firebase).*
+   Deployment to Firebase App Hosting is automatically handled by pushing to the connected GitHub repository branch (e.g., `main`). For this workflow, no manual deployment command is necessary.
