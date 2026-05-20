@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import NextLink from "next/link"
 import { Box, Container, Typography, Card, CardContent, Grid, List, ListItem, ListItemIcon, ListItemText, Divider, Link } from "@mui/material"
 import CheckCircleIcon from "@mui/icons-material/CheckCircle"
 import OpenInNewIcon from "@mui/icons-material/OpenInNew"
@@ -6,18 +7,18 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
 const countries = [
-  { name: "Allemagne", code: "de" }, { name: "Autriche", code: "at" },
-  { name: "Belgique", code: "be" }, { name: "Bulgarie", code: "bg" },
-  { name: "Chypre", code: "cy" }, { name: "Croatie", code: "hr" },
-  { name: "Espagne", code: "es" }, { name: "Estonie", code: "ee" },
-  { name: "Finlande", code: "fi" }, { name: "Grèce", code: "gr" },
-  { name: "Hongrie", code: "hu" }, { name: "Italie", code: "it" },
-  { name: "Lettonie", code: "lv" }, { name: "Lituanie", code: "lt" },
-  { name: "Luxembourg", code: "lu" }, { name: "Malte", code: "mt" },
-  { name: "Pays-Bas", code: "nl" }, { name: "Pologne", code: "pl" },
-  { name: "Portugal", code: "pt" }, { name: "Roumanie", code: "ro" },
-  { name: "Slovaquie", code: "sk" }, { name: "Slovénie", code: "si" },
-  { name: "Suède", code: "se" }, { name: "Tchéquie", code: "cz" }
+  { name: "Allemagne", code: "de", slug: "germany" }, { name: "Autriche", code: "at", slug: "austria" },
+  { name: "Belgique", code: "be", slug: "belgium" }, { name: "Bulgarie", code: "bg", slug: "bulgaria" },
+  { name: "Chypre", code: "cy", slug: "cyprus" }, { name: "Croatie", code: "hr", slug: "croatia" },
+  { name: "Espagne", code: "es", slug: "spain" }, { name: "Estonie", code: "ee", slug: "estonia" },
+  { name: "Finlande", code: "fi", slug: "finland" }, { name: "Grèce", code: "gr", slug: "greece" },
+  { name: "Hongrie", code: "hu", slug: "hungary" }, { name: "Italie", code: "it", slug: "italy" },
+  { name: "Lettonie", code: "lv", slug: "latvia" }, { name: "Lituanie", code: "lt", slug: "lithuania" },
+  { name: "Luxembourg", code: "lu", slug: "luxembourg" }, { name: "Malte", code: "mt", slug: "malta" },
+  { name: "Pays-Bas", code: "nl", slug: "netherlands" }, { name: "Pologne", code: "pl", slug: "poland" },
+  { name: "Portugal", code: "pt", slug: "portugal" }, { name: "Roumanie", code: "ro", slug: "romania" },
+  { name: "Slovaquie", code: "sk", slug: "slovakia" }, { name: "Slovénie", code: "si", slug: "slovenia" },
+  { name: "Suède", code: "se", slug: "sweden" }, { name: "Tchéquie", code: "cz", slug: "czech-republic" }
 ]
 
 export const metadata: Metadata = {
@@ -208,30 +209,31 @@ export default function EuropeanBlueCard() {
                 <Divider sx={{ my: 2 }} />
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, justifyContent: 'center' }}>
                   {countries.sort((a, b) => a.name.localeCompare(b.name)).map((country, idx) => (
-                    <Box 
-                      key={idx} 
-                      sx={{ 
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 1,
-                        bgcolor: 'action.hover', 
-                        px: 1.5, 
-                        py: 0.5, 
-                        borderRadius: 1,
-                        border: '1px solid',
-                        borderColor: 'divider',
-                      }}
-                    >
-                      <Box
-                        component="img"
-                        src={`https://flagcdn.com/${country.code}.svg`}
-                        alt={`Drapeau ${country.name}`}
-                        sx={{ width: 20, height: 15, objectFit: 'cover', borderRadius: '2px', boxShadow: '0 0 0 1px rgba(0,0,0,0.1)' }}
-                      />
-                      <Typography variant="body2" sx={{ fontSize: '0.85rem' }}>
-                        {country.name}
-                      </Typography>
-                    </Box>
+                    <NextLink href={`/european-blue-card/${country.slug}`} key={idx} style={{ textDecoration: 'none', color: 'inherit' }}>
+                      <Box 
+                        sx={{ 
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 1,
+                          bgcolor: 'action.hover', 
+                          px: 1.5, 
+                          py: 0.5, 
+                          borderRadius: 1,
+                          border: '1px solid',
+                          borderColor: 'divider',
+                        }}
+                      >
+                        <Box
+                          component="img"
+                          src={`https://flagcdn.com/${country.code}.svg`}
+                          alt={`Drapeau ${country.name}`}
+                          sx={{ width: 20, height: 15, objectFit: 'cover', borderRadius: '2px', boxShadow: '0 0 0 1px rgba(0,0,0,0.1)' }}
+                        />
+                        <Typography variant="body2" sx={{ fontSize: '0.85rem' }}>
+                          {country.name}
+                        </Typography>
+                      </Box>
+                    </NextLink>
                   ))}
                 </Box>
                 <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 3, textAlign: 'center' }}>

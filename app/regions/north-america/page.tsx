@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import NextLink from "next/link"
 import { Box, Container, Typography, Card, CardContent, Grid, List, ListItem, ListItemIcon, ListItemText, Divider, Link } from "@mui/material"
 import CheckCircleIcon from "@mui/icons-material/CheckCircle"
 import OpenInNewIcon from "@mui/icons-material/OpenInNew"
@@ -6,8 +7,8 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
 const destinations = [
-  { name: "Canada", code: "ca" },
-  { name: "États-Unis", code: "us" }
+  { name: "Canada", code: "ca", slug: "canada" },
+  { name: "États-Unis", code: "us", slug: "united-states" }
 ]
 
 export const metadata: Metadata = {
@@ -171,29 +172,30 @@ export default function NorthAmerica() {
                 <Divider sx={{ my: 2 }} />
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                   {destinations.map((dest, idx) => (
-                    <Box 
-                      key={idx} 
-                      sx={{ 
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 2,
-                        bgcolor: 'action.hover', 
-                        p: 2, 
-                        borderRadius: 1,
-                        border: '1px solid',
-                        borderColor: 'divider',
-                      }}
-                    >
-                      <Box
-                        component="img"
-                        src={`https://flagcdn.com/${dest.code}.svg`}
-                        alt={`Drapeau ${dest.name}`}
-                        sx={{ width: 40, height: 30, objectFit: 'cover', borderRadius: '4px', boxShadow: '0 0 0 1px rgba(0,0,0,0.1)' }}
-                      />
-                      <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
-                        {dest.name}
-                      </Typography>
-                    </Box>
+                    <NextLink href={`/north-america/${dest.slug}`} key={idx} style={{ textDecoration: 'none', color: 'inherit' }}>
+                      <Box 
+                        sx={{ 
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 2,
+                          bgcolor: 'action.hover', 
+                          p: 2, 
+                          borderRadius: 1,
+                          border: '1px solid',
+                          borderColor: 'divider',
+                        }}
+                      >
+                        <Box
+                          component="img"
+                          src={`https://flagcdn.com/${dest.code}.svg`}
+                          alt={`Drapeau ${dest.name}`}
+                          sx={{ width: 40, height: 30, objectFit: 'cover', borderRadius: '4px', boxShadow: '0 0 0 1px rgba(0,0,0,0.1)' }}
+                        />
+                        <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                          {dest.name}
+                        </Typography>
+                      </Box>
+                    </NextLink>
                   ))}
                 </Box>
               </CardContent>

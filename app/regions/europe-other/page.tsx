@@ -1,16 +1,17 @@
 import { Metadata } from "next"
+import NextLink from "next/link"
 import { Box, Container, Typography, Card, CardContent, Grid, Divider } from "@mui/material"
 import CheckCircleIcon from "@mui/icons-material/CheckCircle"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
 const destinations = [
-  { name: "Danemark", code: "dk" },
-  { name: "Irlande", code: "ie" },
-  { name: "Suisse", code: "ch" },
-  { name: "Norvège", code: "no" },
-  { name: "Islande", code: "is" },
-  { name: "Royaume-Uni", code: "gb" }
+  { name: "Danemark", code: "dk", slug: "denmark" },
+  { name: "Irlande", code: "ie", slug: "ireland" },
+  { name: "Suisse", code: "ch", slug: "switzerland" },
+  { name: "Norvège", code: "no", slug: "norway" },
+  { name: "Islande", code: "is", slug: "iceland" },
+  { name: "Royaume-Uni", code: "gb", slug: "united-kingdom" }
 ]
 
 export const metadata: Metadata = {
@@ -207,24 +208,25 @@ export default function EuropeOther() {
                 <Divider sx={{ my: 2 }} />
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                   {destinations.map((dest, idx) => (
-                    <Box 
-                      key={idx} 
-                      sx={{ 
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 2,
-                        bgcolor: 'action.hover', 
-                        p: 2, 
-                        borderRadius: 1,
-                        border: '1px solid',
-                        borderColor: 'divider',
-                      }}
-                    >
-                      <Box component="img" src={`https://flagcdn.com/${dest.code}.svg`} alt={`Drapeau ${dest.name}`} sx={{ width: 40, height: 30, objectFit: 'cover', borderRadius: '4px', boxShadow: '0 0 0 1px rgba(0,0,0,0.1)' }} />
-                      <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
-                        {dest.name}
-                      </Typography>
-                    </Box>
+                    <NextLink href={`/europe-other/${dest.slug}`} key={idx} style={{ textDecoration: 'none', color: 'inherit' }}>
+                      <Box 
+                        sx={{ 
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 2,
+                          bgcolor: 'action.hover', 
+                          p: 2, 
+                          borderRadius: 1,
+                          border: '1px solid',
+                          borderColor: 'divider',
+                        }}
+                      >
+                        <Box component="img" src={`https://flagcdn.com/${dest.code}.svg`} alt={`Drapeau ${dest.name}`} sx={{ width: 40, height: 30, objectFit: 'cover', borderRadius: '4px', boxShadow: '0 0 0 1px rgba(0,0,0,0.1)' }} />
+                        <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                          {dest.name}
+                        </Typography>
+                      </Box>
+                    </NextLink>
                   ))}
                 </Box>
               </CardContent>
